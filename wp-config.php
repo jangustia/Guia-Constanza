@@ -80,6 +80,13 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', true);
 
+/**
+ * Site URLs to enable multiple developers from the same datbase
+ * (change to your URLs)
+ */
+define('WP_HOME',    'http://localhost/guiaconstanza');
+define('WP_SITEURL', 'http://localhost/guiaconstanza');
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
