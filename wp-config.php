@@ -42,14 +42,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('AUTH_KEY',         '_$e)y[lia#%Hgf0GAQGUIWsea~V%|1dhbB=m!}d1wr+`?dE3BDiZjE}lB9G7g^ZC');
+define('SECURE_AUTH_KEY',  ')3R<Q:sJr&pqI+h[$KXzP?hh+}Sn3Wiu%+6yJ/WBD!UQm6mVa_98=aU~ullbW ~O');
+define('LOGGED_IN_KEY',    'x4X|+HykZ_F?hXq5i`8pXq9JclJAb}~)4P:$Qs`xcFADJ`K+{p![)SryBZI)do+W');
+define('NONCE_KEY',        'e3OrCcY%G%[wH9A+hVc+Nq0MEHUk#j#+m$WA|Qs?0ThUSmwp|~|UScy<x60or!=)');
+define('AUTH_SALT',        '94hF*{G4g5$D`mV74Enj/4_Q1#w3bk`S]ga?6g}-n|T=?&yVTp6)`|+M579d}Gm#');
+define('SECURE_AUTH_SALT', 's$h/e[6v[6nsie#-X%>38=)Ag7g9fG(n?+EM!~-rP(n@GAYVs}$=.v3c]W{jN5}u');
+define('LOGGED_IN_SALT',   'qof_9|I8--{~ /XD}E|#rPjT>tY ~sE5wNFB{&o%IiA20s[w{/;ERj+wvb-pASwy');
+define('NONCE_SALT',       'vP1Ny^7*Inq8W<TmS(9/__mj]|mEk{M,>q-)oLu[YHfgq`)q;2!ci0qR+p(JF`A=');
 
 /**#@-*/
 
@@ -78,7 +78,7 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 
 /* That's all, stop editing! Happy blogging. */
 
