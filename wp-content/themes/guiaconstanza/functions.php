@@ -630,6 +630,14 @@ function guiaconstanza_meta_init() {
 		'advanced',              // Part of the page in which to display
 		'high'                   // Priority
 	);
+	add_meta_box(
+		'bares_meta',
+		'Información del Bar o Restaurante',
+		'hotel_form',
+		'gc_bares_y_rests',
+		'advanced',
+		'high'
+	);
 	
 	// add a callback function to save any data a user enters in
 	add_action('save_post', 'my_meta_save');
@@ -673,7 +681,8 @@ function my_meta_save($post_id) {
 		return $post_id;
 	
 	// The array of accepted fields for Books
-	$accepted_fields['gc_hoteles'] = array (
+	$accepted_fields['gc_hoteles']       = 
+	$accepted_fields['gc_bares_y_rests'] = array (
 		'image1',
 		'image2',
 		'image3',
@@ -710,6 +719,9 @@ function my_meta_save($post_id) {
 	switch ($post_type_id) {
 	case 'gc_hoteles':
 		wp_set_object_terms ($post_id, array ('hoteles'), 'category');
+		break;
+	case 'gc_bares_y_rests':
+		wp_set_object_terms ($post_id, array ('bares-y-restaurantes'), 'category');
 		break;
 	}
 	
