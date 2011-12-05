@@ -614,4 +614,106 @@ function guiaconstanza_register_post_types() {
 }
 endif;
 
+//This initializes the write panel.
+add_action('admin_init','guiaconstanza_meta_init');
+function guiaconstanza_meta_init() {
+	wp_enqueue_style(
+		'hotel_css',
+		STYLESHEETPATH . '/css/hotel_form.css'
+	);
+	
+	add_meta_box(
+		'hotel_meta',            // HTML Element ID
+		'Información del Hotel', // Title 
+		'hotel_form',            // Callback display function
+		'gc_hoteles',            // Page in which to display this
+		'advanced',              // Part of the page in which to display
+		'high'                   // Priority
+	);
+	
+	// add a callback function to save any data a user enters in
+	add_action('save_post', 'my_meta_save');
+}
+
+//----
+
+function hotel_form() {
+	global $post;
+	
+	$image1      = get_post_meta ($post->ID, 'image1',      TRUE);
+	$image2      = get_post_meta ($post->ID, 'image2',      TRUE);
+	$image3      = get_post_meta ($post->ID, 'image3',      TRUE);
+	$image4      = get_post_meta ($post->ID, 'image4',      TRUE);
+	$description = get_post_meta ($post->ID, 'description', TRUE);
+	$tv          = get_post_meta ($post->ID, 'tv',          TRUE);
+	$wifi        = get_post_meta ($post->ID, 'wifi',        TRUE);
+	$delivery    = get_post_meta ($post->ID, 'delivery',    TRUE);
+	$menu        = get_post_meta ($post->ID, 'menu',        TRUE);
+	$tragos      = get_post_meta ($post->ID, 'tragos',      TRUE);
+	$address     = get_post_meta ($post->ID, 'address',     TRUE);
+	$phone       = get_post_meta ($post->ID, 'phone',       TRUE);
+	$fax         = get_post_meta ($post->ID, 'fax',         TRUE);
+	$email       = get_post_meta ($post->ID, 'email',       TRUE);
+	$website     = get_post_meta ($post->ID, 'website',     TRUE);
+	$geo_lat     = get_post_meta ($post->ID, 'geo_lat',     TRUE);
+	$geo_long    = get_post_meta ($post->ID, 'geo_long',    TRUE);
+	
+	include (STYLESHEETPATH . '/views/hotel_form.php');
+	
+	// create a custom nonce for submit verification later
+	echo '<input type="hidden" name="my_meta_noncename" value="' . wp_create_nonce(__FILE__) . '" />';
+}
+
+
+function my_meta_save($post_id) {
+	// authentication checks
+	if (!wp_verify_nonce ($_REQUEST['my_meta_noncename'], __FILE__))
+		return $post_id;
+	if (!current_user_can ('edit_post', $post_id))
+		return $post_id;
+	
+	// The array of accepted fields for Books
+	$accepted_fields['gc_hoteles'] = array (
+		'image1',
+		'image2',
+		'image3',
+		'image4',
+		'description',
+		'tv',
+		'wifi',
+		'delivery',
+		'menu',
+		'tragos',
+		'address',
+		'phone',
+		'fax',
+		'email',
+		'website',
+		'geo_lat',
+		'geo_long'
+	);
+	
+	$post_type_id = $_REQUEST['post_type'];
+	
+	foreach($accepted_fields[$post_type_id] as $key)
+	{
+		$custom_field = $_REQUEST[$key];
+		
+		if (is_null ($custom_field))
+			delete_post_meta ($post_id, $key);
+		elseif (isset ($custom_field) && !is_null ($custom_field))
+			update_post_meta ($post_id, $key, $custom_field);
+		else
+			add_post_meta ($post_id, $key, $custom_field, TRUE);
+	}
+	
+	switch ($post_type_id) {
+	case 'gc_hoteles':
+		wp_set_object_terms ($post_id, array ('hoteles'), 'category');
+		break;
+	}
+	
+	return $post_id;
+}
+
 ?>
