@@ -529,4 +529,200 @@ if ( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post-thumbnails' );
 }
 
+
+
+
+// !Guia Constanza Code
+//------------------------------------------
+
+if ( ! function_exists( 'guiaconstanza_register_post_types' ) ) :
+add_action( 'init', 'guiaconstanza_register_post_types' );
+function guiaconstanza_register_post_types() {
+	$template_url = get_bloginfo ('template_url');
+	
+	register_post_type ('gc_hoteles',
+		array (
+			'labels'       => array (
+				'name'               => __('Hoteles'),
+				'singular_name'      => __('Hotel'),
+				'add_new'            => _x('Añadir nuevo', 'guiaconstanza_hotel'),
+				'all_items'          => __('Todos los hoteles'),
+				'add_new_item'       => __('Añadir nuevo hotel'),
+				'edit_item'          => __('Editar hotel'),
+				'new_item'           => __('Nuevo hotel'),
+				'view_item'          => __('Ver hotel'),
+				'search_items'       => __('Buscar hoteles'),
+				'not_found'          => __('No se encontraron hoteles'),
+				'not_found_in_trash' => __('No se encontraron hoteles en la papelera')
+			),
+			'public'       => true,
+			'show_in_menu' => true,
+			'menu_icon'    => $template_url . '/images/icon_hotels_small.png',
+			'supports'     => array ('title', 'thumbnail', 'revisions'),
+			'taxonomies'   => array ('category', 'post_tag')
+		)
+	);
+	
+	register_post_type ('gc_bares_y_rests',
+		array (
+			'labels'       => array (
+				'name'               => __('Bares y Restaurantes'),
+				'singular_name'      => __('Bar o Restaurante'),
+				'add_new'            => _x('Añadir nuevo', 'guiaconstanza_bares-y-restaurantes'),
+				'all_items'          => __('Todos los bares y restaurtantes'),
+				'add_new_item'       => __('Añadir nuevo bar o restaurante'),
+				'edit_item'          => __('Editar bar o restaurante'),
+				'new_item'           => __('Nuevo bar o restaurante'),
+				'view_item'          => __('Ver bar o restaurante'),
+				'search_items'       => __('Buscar bares y restaurtantes'),
+				'not_found'          => __('No se encontraron bares y restaurtantes'),
+				'not_found_in_trash' => __('No se encontraron bares y restaurtantes en la papelera')
+			),
+			'public'       => true,
+			'show_in_menu' => true,
+			'menu_icon'    => $template_url . '/images/icon_bars_small.png',
+			'supports'     => array ('title', 'thumbnail', 'revisions'),
+			'taxonomies'   => array ('category', 'post_tag')
+		)
+	);
+	
+	register_post_type ('gc_atractivos',
+		array (
+			'labels'       => array (
+				'name'               => __('Atractivos'),
+				'singular_name'      => __('Atractivo'),
+				'add_new'            => _x('Añadir nuevo', 'guiaconstanza_hotel'),
+				'all_items'          => __('Todos los atractivos'),
+				'add_new_item'       => __('Añadir nuevo atractivo'),
+				'edit_item'          => __('Editar atractivo'),
+				'new_item'           => __('Nuevo atractivo'),
+				'view_item'          => __('Ver atractivo'),
+				'search_items'       => __('Buscar atractivos'),
+				'not_found'          => __('No se encontraron atractivos'),
+				'not_found_in_trash' => __('No se encontraron atractivos en la papelera')
+			),
+			'public'       => true,
+			'show_in_menu' => true,
+			'menu_icon'    => $template_url . '/images/icon_atractivos_small.png',
+			'supports'     => array ('title', 'thumbnail', 'revisions'),
+			'taxonomies'   => array ('category', 'post_tag')
+		)
+	);
+}
+endif;
+
+//This initializes the write panel.
+add_action('admin_init','guiaconstanza_meta_init');
+function guiaconstanza_meta_init() {
+	wp_enqueue_style(
+		'hotel_css',
+		STYLESHEETPATH . '/css/hotel_form.css'
+	);
+	
+	add_meta_box(
+		'hotel_meta',            // HTML Element ID
+		'Información del Hotel', // Title 
+		'hotel_form',            // Callback display function
+		'gc_hoteles',            // Page in which to display this
+		'advanced',              // Part of the page in which to display
+		'high'                   // Priority
+	);
+	add_meta_box(
+		'bares_meta',
+		'Información del Bar o Restaurante',
+		'hotel_form',
+		'gc_bares_y_rests',
+		'advanced',
+		'high'
+	);
+	
+	// add a callback function to save any data a user enters in
+	add_action('save_post', 'my_meta_save');
+}
+
+//----
+
+function hotel_form() {
+	global $post;
+	
+	$image1      = get_post_meta ($post->ID, 'image1',      TRUE);
+	$image2      = get_post_meta ($post->ID, 'image2',      TRUE);
+	$image3      = get_post_meta ($post->ID, 'image3',      TRUE);
+	$image4      = get_post_meta ($post->ID, 'image4',      TRUE);
+	$description = get_post_meta ($post->ID, 'description', TRUE);
+	$tv          = get_post_meta ($post->ID, 'tv',          TRUE);
+	$wifi        = get_post_meta ($post->ID, 'wifi',        TRUE);
+	$delivery    = get_post_meta ($post->ID, 'delivery',    TRUE);
+	$menu        = get_post_meta ($post->ID, 'menu',        TRUE);
+	$tragos      = get_post_meta ($post->ID, 'tragos',      TRUE);
+	$address     = get_post_meta ($post->ID, 'address',     TRUE);
+	$phone       = get_post_meta ($post->ID, 'phone',       TRUE);
+	$fax         = get_post_meta ($post->ID, 'fax',         TRUE);
+	$email       = get_post_meta ($post->ID, 'email',       TRUE);
+	$website     = get_post_meta ($post->ID, 'website',     TRUE);
+	$geo_lat     = get_post_meta ($post->ID, 'geo_lat',     TRUE);
+	$geo_long    = get_post_meta ($post->ID, 'geo_long',    TRUE);
+	
+	include (STYLESHEETPATH . '/views/hotel_form.php');
+	
+	// create a custom nonce for submit verification later
+	echo '<input type="hidden" name="my_meta_noncename" value="' . wp_create_nonce(__FILE__) . '" />';
+}
+
+
+function my_meta_save($post_id) {
+	// authentication checks
+	if (!wp_verify_nonce ($_REQUEST['my_meta_noncename'], __FILE__))
+		return $post_id;
+	if (!current_user_can ('edit_post', $post_id))
+		return $post_id;
+	
+	// The array of accepted fields for Books
+	$accepted_fields['gc_hoteles']       = 
+	$accepted_fields['gc_bares_y_rests'] = array (
+		'image1',
+		'image2',
+		'image3',
+		'image4',
+		'description',
+		'tv',
+		'wifi',
+		'delivery',
+		'menu',
+		'tragos',
+		'address',
+		'phone',
+		'fax',
+		'email',
+		'website',
+		'geo_lat',
+		'geo_long'
+	);
+	
+	$post_type_id = $_REQUEST['post_type'];
+	
+	foreach($accepted_fields[$post_type_id] as $key)
+	{
+		$custom_field = $_REQUEST[$key];
+		
+		if (is_null ($custom_field))
+			delete_post_meta ($post_id, $key);
+		elseif (isset ($custom_field) && !is_null ($custom_field))
+			update_post_meta ($post_id, $key, $custom_field);
+		else
+			add_post_meta ($post_id, $key, $custom_field, TRUE);
+	}
+	
+	switch ($post_type_id) {
+	case 'gc_hoteles':
+		wp_set_object_terms ($post_id, array ('hoteles'), 'category');
+		break;
+	case 'gc_bares_y_rests':
+		wp_set_object_terms ($post_id, array ('bares-y-restaurantes'), 'category');
+		break;
+	}
+	
+	return $post_id;
+}
+
 ?>
