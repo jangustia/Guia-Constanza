@@ -111,10 +111,8 @@ sub { bottom: -0.25em; }
 Lists
 ========================================================================== */
 
-ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+ul, ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 dd { margin: 0 0 0 40px; }
-nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
-
 
 /* =============================================================================
 Embedded content
@@ -221,36 +219,42 @@ Author: Waldemar Figueroa Medina @ http://waldemar.fm/
 /**
  * Structure
  */
+body {
+	background: url('images/bg_page.png') repeat-x;
+	font: 81.25%/1.4 "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
 .wrap {
 	margin: 0 auto;
 	position: relative;
-	width: 94em;
+	width: 930px;
 }
-	header .wrap, .subheader,
+	header .wrap, #subheader,
 	nav.wrap,
-	#featured.wrap {width: 96em;}
+	#featured.wrap {
+		margin: 0 auto;
+		width: 960px;
+	}
 
 
 /* Main Content Styles */
-.content {
+#content {
 	background: #FFF;
 	border: 1px solid #999;
 	border-top: 0;
 	border-radius: 0 0 1em 1em;
 	box-shadow: 0 2px 15px rgba(0,0,0,0.25);
-	margin-bottom: 2em;
+	margin: 0 auto 2em;
 	overflow: hidden;
-	padding-top: 2em;
 	z-index: 1; /* Behind flowers */
 	}
-	.content > section { float: left; margin: 0 2em; width:50%; }
-	.content h2 { color: #A1420F; font-size: 1.8em; margin-bottom: .5em; }
-	.content article {border-bottom: 1px dashed #CCC; margin-bottom: 2em; overflow: auto; padding-bottom: 2em;}
-		.content article h3 a:link {font-size: 1.4em;}
-		.content article img {float: left; margin-right: 1em;}
-		.content article p {
-			font-size: 1.2em;
-		}
+	#content > section { float: left; margin: 0 2em; width:50%; }
+	#content h2 { color: #A1420F; font-size: 1.4em; margin-bottom: .5em; }
+
+	#places-list { padding: 1em; margin-right: 35em; }
+		#places-list article {border-bottom: 1px dashed #CCC; margin-bottom: 1em; overflow: auto; padding-bottom: 1em;}
+		#places-list article h3 a:link {font-size: 1.2em; margin: 0;}
+		#places-list article img {float: left; margin-right: 1em;}
 
 /* White/Gray Gradient Boxes */
 .box {
@@ -272,7 +276,7 @@ section.box p {margin-left: 10em;}
 /* Navigation
  ******************************/
 body > nav {
-	background: #b90000 url('../img/nav_bg.png') repeat-x bottom;
+	background: #b90000 url('images/nav_bg.png') repeat-x bottom;
 	background: -moz-linear-gradient(top, #b90000 0%, #6d0000 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b90000), color-stop(100%,#6d0000));
 	background: -webkit-linear-gradient(top, #b90000 0%,#6d0000 100%);
@@ -282,24 +286,23 @@ body > nav {
 	background: linear-gradient(top, #b90000 0%,#6d0000 100%);  border-radius: 1em 1em 0 0;
 	border: .1em solid #333;
 	border-bottom: none;
-	border-radius: 1em 1em 0 0;
-	margin-top: -2em !important;
+	border-radius: 0.5em 0.5em 0 0;
+	margin-top: -1em !important;
 	overflow: hidden;
 	position: relative;
 	z-index: 100;
 	}
 	body > nav h2 {float: left; text-indent: -9999px}
-	body > nav ul {padding-right: 1em;}
+	body > nav ul {padding-right: 1em; list-style: none;}
 	body > nav li a:link, body > nav li a:visited {
 		color: #FFF;
 		display: block;
 		float: left;
-		font-size: 1.3em;
-		font-weight: bold;
-		line-height: 3em;
-		padding: 0 1.4em;
+		font-size: 1.1em;
+		line-height: 2.7em;
+		padding: 0 1.2em;
 		text-decoration: none;
-		text-shadow: 0 -1px 1px rgba(0,0,0,0.50);
+		text-shadow: 0 1px 1px rgba(0,0,0,1);
 		}
 	body > nav a[href*=facebook],
 	body > nav a[href*=twitter] {
@@ -309,8 +312,8 @@ body > nav {
 		padding: 0 1em !important;
 		text-indent: -9999px;
 	}
-	body > nav a[href*=facebook] {background-image: url('../img/h-fb_icon.png')}
-	body > nav a[href*=twitter] {background-image: url('../img/h-twitter_icon.png')}
+	body > nav a[href*=facebook] {background-image: url('images/h-fb_icon.png')}
+	body > nav a[href*=twitter] {background-image: url('images/h-twitter_icon.png')}
 
 a:link {color: #345901; text-decoration: none;}
 a:visited {color: #345901;}
@@ -320,7 +323,7 @@ input[type=submit], input[type=button],
 button, .clickable {cursor: pointer;}
 
 input[type=submit], input[type=button], .button {
-	background: #b90000 url('../img/nav_bg.png') repeat-x bottom;
+	background: #b90000 url('images/nav_bg.png') repeat-x bottom;
 	background: -moz-linear-gradient(top, #b90000 0%, #6d0000 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b90000), color-stop(100%,#6d0000));
 	background: -webkit-linear-gradient(top, #b90000 0%,#6d0000 100%);
@@ -340,9 +343,8 @@ input[type=submit], input[type=button], .button {
 .breadcrumbs {
 	border-bottom: 2px solid #335900;
 	color: #999;
-	font-size: 1.2em;
 	margin-bottom: 2em;
-	padding-bottom: .7em;
+	padding: 0 0 .7em;
 	}
 	.breadcrumbs li {display: inline;}
 	.breadcrumbs li:after {content: ' »';}
@@ -354,8 +356,8 @@ input[type=submit], input[type=button], .button {
 
 /* Header and Subheaders
  ******************************/
-body > header, .subheader {
-  background: #81B017 url('../img/header_bg.png') repeat-x bottom;
+body > header, #subheader {
+  background: #81B017 url('images/header_bg.png') repeat-x bottom;
 	background: -moz-linear-gradient(top, #82b117 0%, #325800 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#82b117), color-stop(100%,#325800));
 	background: -webkit-linear-gradient(top, #82b117 0%,#325800 100%);
@@ -364,30 +366,34 @@ body > header, .subheader {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#82b117', endColorstr='#325800',GradientType=0 );
 	background: linear-gradient(top, #82b117 0%,#325800 100%);
   box-shadow: 0 3px 7px rgba(0,0,0,0.50);
+  color: #FFF;
   overflow: hidden;
   position: relative;
   z-index: 100; /* On top of flowers */
 	}
 	body > header h1 {
 		float: left;
-		padding: 1em 0 4em;
+		padding: 0;
 		}
 	body > header h1 a {
-		background: transparent url('../img/header-logo.png') no-repeat;
+		background: transparent url('images/header-logo.png') no-repeat;
 		display: block;
 		height: 68px;
 		width: 340px;
 		text-indent: -9999px;
 		}
-	.subheader span {
-		background-image: url('../img/hotel_icon.png');
+	#subheader {
+		box-shadow: 0 5px 3px rgba(0, 0, 0, 0.25);
+	}
+	#subheader span {
+		background-image: url('images/hotel_icon.png');
 		background-repeat: no-repeat;
 		background-position: center left;
 		color: #FFF;
 		display: block;
-		font-size: 3.0em;
-		margin-left: .5em;
-		padding: .5em 1em .5em 2em;
+		font-size: 1.2em;
+		margin-left: .7em;
+		padding: 0.7em 1em 0.7em 2em;
 		}
 
 
@@ -400,23 +406,23 @@ body > header, .subheader {
 	z-index: 25;
 }
 #l-flower {
-	background-image: url('../img/orn-left_flower.png');
+	background-image: url('images/orn-left_flower.png');
 	left: -5em;
 }
 #r-flower {
-	background-image: url('../img/orn-right_flower.png');
+	background-image: url('images/orn-right_flower.png');
 	right: -5em;
 }
 
 #header_info {
 	color: #FFF;
-	font-size: 1.2em;
+	font-size: 1em;
 	margin-top: 2em;
 	position: absolute;
 	right: 0;
 	}
 	#weather {display: none;}
-	#search {position: relative; top: .7em;}
+	#search {position: relative; top: 1em;}
 		#search input[type=text], #search input[type=submit] {
 			border: 1px solid #333;
 			border-radius: 2em;
@@ -448,8 +454,8 @@ body > header, .subheader {
 
 /* Footer
  ******************************/
-.content > footer {
-	background: #6b960d url('../img/footer_bg.png') repeat-x bottom;
+#content > footer {
+	background: #6b960d url('images/footer_bg.png') repeat-x bottom;
 	background: -moz-linear-gradient(top, #6b960d 0%, #2d5100 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6b960d), color-stop(100%,#2d5100));
 	background: -webkit-linear-gradient(top, #6b960d 0%,#2d5100 100%);
@@ -462,11 +468,11 @@ body > header, .subheader {
 	overflow: hidden;
 	padding: 3em 0 3em 1em;
 	}
-	.content > footer ul, .content > footer aside {float: left;}
-	.content > footer ul { border-right: 1px dotted #999; margin-right: 3.3em; padding-right: 3.3em;}
-	.content > footer aside ul {margin-right: 0; border:0;}
-	.content > footer li {}
-	.content > footer li a:link, .content > footer li a:visited {
+	#content > footer ul, #content > footer aside {float: left;}
+	#content > footer ul { border-right: 1px dotted #999; margin-right: 3.3em; padding-right: 3.3em;}
+	#content > footer aside ul {margin-right: 0; border:0;}
+	#content > footer li {}
+	#content > footer li a:link, #content > footer li a:visited {
 		color: #FFF;
 		font-size: 1.3em;
 		font-weight: bold;
@@ -474,7 +480,7 @@ body > header, .subheader {
 		text-decoration: none;
 		text-transform: uppercase;
 		}
-		.content > footer aside a:link, .content > footer aside a:visited {text-transform: none;}
+		#content > footer aside a:link, #content > footer aside a:visited {text-transform: none;}
 
 
 
@@ -485,7 +491,19 @@ body > header, .subheader {
 	background: #FFF;
 	box-shadow: 0 2px 15px 1px rgba(0,0,0,0.25);
 	overflow: hidden;
+	position: relative;
 	z-index: 150;
+	}
+	#featured:before {
+		border-color: transparent transparent #6f6f6f transparent;
+		border-style: solid;
+		border-width: 15px;
+		height: 0;
+		width: 0;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: -1;
 	}
 	#featured section {
 		background: #ffffff;
@@ -498,7 +516,7 @@ body > header, .subheader {
 		background: linear-gradient(top, #ffffff 51%,#f0f0f0 100%);
 		float: left;
 		margin-bottom: -.5em;
-		height: 25.4em;
+		height: 20em;
 		overflow: hidden;
 		}
 		#featured section h2 {
@@ -511,57 +529,71 @@ body > header, .subheader {
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#808080', endColorstr='#4c4c4c',GradientType=0 );
 			background: linear-gradient(top, #808080 0%,#4c4c4c 100%);
 			color: #FFF;
-			font-size: 1.2em;
+			font-size: 1em;
+			margin: 0;
 			padding: .5em 1em;
 			text-shadow: 0 -1px 1px rgba(0,0,0,1.0);
 			}
-		#featured_hotel {width:39.2em;}
+		#featured_hotel {width: 30.769em;}
 			.hotel_slide {position: relative;}
 				.hotel_slide img {width: 100%;}
 				.hotel_slide figcaption {
 					background: #333;
 					background: rgba(0,0,0,0.65);
 					color: #FFF;
-					margin: 0 0 1em 1em;
-					padding: 1em;
+					margin: 0 0 .5em .5em;
+					padding: .7em;
 					position: absolute;
-					bottom: 1em;
-					max-width: 25em;
+					bottom: .7em;
+					max-width: 20em;
 					}
-					.hotel_slide h3 {font-size: 2.1em; margin: 0 !important;}
-					.hotel_slide p {font-size: 1em !important;}
-		#featured_bars, #featured_posts {border-left: 1px solid #CCC; width: 28.3em;}
-			.slide {padding: 1.2em;}
-				.slide h3 {font-size: 1.6em; line-height: 1.3; margin-bottom: 1em;}
+					.hotel_slide h3 {font-size: 1.2em; margin: 0 !important;}
+					.hotel_slide p {font-size: 0.8em !important; margin: .5em;}
+		#featured_bars, #featured_posts {border-left: 1px solid #CCC; width: 21.46em;}
+			.slide {padding: 1em;}
+				.slide h3 {font-size: 1.2em; line-height: 1.3; margin: 0 0 1em;}
 				.slide img {float: left; margin-right: 1em; width: 35%;}
-				.slide p {font-size: 1.1em; margin-bottom: 1em;}
-				.slide ul {margin-top: 3em;}
+				.slide p {font-size: 1em; margin-bottom: 1em;}
+				.slide ul {list-style: none; margin-top: 3em; padding: 0;}
 
-.tv, .wifi, .delivery, .menu, .drink {
-	background-repeat: no-repeat;
-	float: left;
-	height: 4.5em;
-	width: 4.5em;
-	margin-right: .5em;
-	text-indent: -9999px;
-	}
-.tv {background-image: url('../img/tv.png');}
-.wifi {background-image: url('../img/wifi.png');}
-.delivery {background-image: url('../img/delivery.png');}
-.menu {background-image: url('../img/spacial_menu.png');}
-.drink {background-image: url('../img/drink.png');}
+.incluye {
+	list-style: none;
+	margin: 1em 0;
+	overflow: hidden;
+	padding: 0;
+}
+.incluye li {
+    background-image: url("images/icons_services.png");
+    color: #FFFFFF;
+    float: left;
+    height: auto;
+    margin-right: 1em;
+    padding: 60px 0 5px;
+    text-align: center;
+    width: 83px;
+}
+.tv {background-position: 0 0;}
+.wifi {background-position: 25% 0;}
+.delivery {background-position: 50% 0;}
+.menu {background-position: 75.1% 0;}
+.drink {background-position: 100% 0;}
+
+li.not-inc {color: #AAA; padding-top: 59px;}
+.wifi.not-inc {background-position: 25% 100%;}
+.delivery.not-inc {background-position: 50% 100%;}
+.menu.not-inc {background-position: 75% 100%;}
+.drink.not-inc {background-position: 100% 100%;}
 
 
 /* Side Information */
 .sideinfo {
-	margin-right: 2em;
+	margin: 2em 2em 0 0;
 	position: absolute;
-	top: 2em;
 	right: 0;
-	width: 41em;
+	width: 28em;
 	}
 	.sideinfo h3, .sideinfo h4 {color: #A1420F;}
-	.sideinfo h3 {font-size: 1.8em; margin: 0 0 .5em 0; padding: 0;}
+	.sideinfo h3 {font-size: 1.2em; margin: 0 0 .5em 0; padding: 0;}
 	.sideinfo section.box {
 		margin-bottom: 2em;
 		overflow: hidden;
@@ -580,8 +612,7 @@ body > header, .subheader {
 			width: 3.5em;
 			height: 3.5em;
 			}
-		.sideinfo .box p {font-size: 1.2em; line-height: 1.2;}
-	.sideinfo h4 a:link {font-size: 1.4em;}
+		.sideinfo .box p {line-height: 1.2;}
 	.sideinfo section:last-child {padding-right: 15em; position: relative;}
 	.sideinfo section:last-child .skyscraper {position: absolute; right: 0; top: 1em;}
 	.sideinfo section article {
@@ -604,41 +635,47 @@ body > header, .subheader {
 #hoteles {}
 #bares {}
 
+#details {
+	float: left;
+	margin: 0 0 0 2em;
+	width: 37em;
+}
+
+
 /* Pagina con detalles */
-#hotel h3 {color: #A1420F; font-size: 1.6em; margin: 1em 0 0;}
-#hotel .org {
+#details h3 {color: #A1420F; font-size: 1.4em; margin: 1em 0 0;}
+#details .org {
 	border-bottom: 1px dashed #CCC;
 	color: #335900;
-	font-size: 2.4em;
-	padding-bottom: .5em;
+	font-size: 2em;
+	padding-bottom: .3em;
 	}
-#hotel figure {position: relative;}
-	#hotel figure img {border: 1px solid #999; width: 100%;}
-	#hotel figure span {
-	background-color: rgb(0,0,0);
-	background-color: rgba(0,0,0,0.75);
-	color: #FFF;
-	display: block;
-	font-size: 1.8em;
-	font-weight: bold;
-	padding: .3em;
-	position: absolute;
-	left: 0;
-	bottom: 2em;
+#details figure {position: relative;}
+	#details figure img {border: 1px solid #999; width: 100%;}
+	#details figure span {
+    background-color: rgba(0, 0, 0, 0.75);
+		box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    bottom: 1em;
+    color: #FFFFFF;
+    display: block;
+    font-size: 1.8em;
+    font-weight: bold;
+    left: -0.5em;
+    padding: 0.3em;
+    position: absolute;
 	}
-#hotel p, #hoteles .vcard, #comments {font-size: 1.2em; line-height: 1.5;}
-#hotel ul {overflow:hidden; margin-top: 3px;}
+
 .ratings {}
 	.ratings form {
 		background-color: #E8F6C3;
 		border: .1em solid #C3DE7B;
 		border-radius: .5em;
-		font-size: 1.2em;
+		font-size: 1em;
 		min-height: 10em;
-		padding: 1.5em;
+		padding: 1em;
 		position: relative;
 		}
-	.ratings form h4 {font-size: 1.2em;}
+	.ratings form h4 {font-size: 1.2em; margin: 0;}
 	.ratings form a:link {
 		clear: both;
 		font-weight: bold;
@@ -662,39 +699,47 @@ body > header, .subheader {
 		float: left;
 		margin-right: 1em;
 		}
-	#hotel aside h4 a:link {font-size: 1.4em;}
+	#hotel aside h4 a:link {font-size: 1.2em;}
 	#hotel section:last-child {padding-right: 15em; position: relative;}
 	#hotel section:last-child .skyscraper {position: absolute; right: 0; top: 1em;}
 	#checkins {}
 		#checkins div {
 			border-bottom: 1px dotted #CCC;
 			clear: both;
-			margin-bottom: 2em;
+			margin-bottom: 1em;
 			overflow: hidden;
-			padding-bottom: 2em;
+			padding-bottom: 1em;
 			}
-			#checkins div:last-child {border: 0; margin: 0;}
+			#checkins div:last-child {border: 0; margin: 0; padding: 0;}
 			#checkins div img {
 				border: .1em solid #CCC;
 				box-shadow: 0 0 5px 0 rgba(0,0,0,0.15);
 				padding: .3em;}
 			#checkins span {display: block;}
-			#checkins .name { color: #666; font-size: 1.4em; font-weight: bold; }
-			#checkins .origin {font-size: 1.2em; color: #666;}
+			#checkins .name { color: #666; font-size: 1.1	em; font-weight: bold; }
+			#checkins .origin {color: #666;}
 
-#adv_search {
-	float: right;
-	width: 42em;
+#sidebar {
+	position: absolute;
+	right: 0;
+	top: 2em;
+	width: 30em;
 	}
-	#adv_search form {
-		border: 1px solid #CCC;
-		border-radius: 1em;
-		float: left;
+	#adv_search {
+		background: #e5e696 url('images/bg_advsearch.png') repeat-x;
+		background: -moz-linear-gradient(top, #e5e696 0%, #c8ca56 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e696), color-stop(100%,#c8ca56));
+		background: -webkit-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
+		background: -o-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
+		background: -ms-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
+		background: linear-gradient(top, #e5e696 0%,#c8ca56 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e696', endColorstr='#c8ca56',GradientType=0 );
+		border: 1px solid #bec04b;
+		box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
 		overflow: hidden;
 		margin-bottom: 2em;
 		overflow: hidden;
 		position: relative;
-		width: 38em;
 		}
 		#adv_search input[type=text] {
 			border: 1px solid #CCC;
@@ -717,6 +762,7 @@ body > header, .subheader {
 		#adv_search label {
 			display: block;
 			float: left;
+			font-size: 0.8em;
 			padding: 0 0 1em 0;
 			width: 8em;
 			}
@@ -736,7 +782,7 @@ body > header, .subheader {
 
 /* Recomendaciones
  ****************************/
-#recomend .subheader span {background-image: url('/img/recomendaciones_icon.png');}
+#recomend #subheader span {background-image: url('/img/recomendaciones_icon.png');}
 	#recomend h2 {
 		border-bottom: 1px dashed #CCC;
 		color: #666;
@@ -758,7 +804,7 @@ body > header, .subheader {
 		top: -.5em;
 		}
 		#recomend .button span {
-			background: url('../img/fb_icon.png') no-repeat center left;
+			background: url('images/fb_icon.png') no-repeat center left;
 			display: block;
 			padding: 0 1em;
 			width: 15em;
@@ -767,17 +813,16 @@ body > header, .subheader {
 /* Somos
  ****************************/
 #somos .breadcrumbs {margin: 0 2em 2em; clear: both;}
-	#somos .content div {margin: 0 2em;}
+	#somos #content div {margin: 0 2em;}
 	#somos p {font-size: 1.2em; margin: 0 24em 1em 0;}
 	#somos .button {
 		display: block;
 		float: none;
-		font-size: 1.2em;
 		border-radius: .5em;
 		width: 20em;
 		}
-		#somos .content div li {margin-bottom: 1em;}
-		#somos .content div ul {position: absolute; top: 7em; right: 2em;}
+		#somos #content li {margin-bottom: 1em;}
+		#somos #content ul {position: absolute; top: 7em; right: 2em;}
 
 /* Blog
  ****************************/
@@ -800,7 +845,7 @@ body > header, .subheader {
 
 /* Comments
  ****************************/
-#comments {border-top: 2px solid #CCC; padding: 2em 0 0; margin-left: 2em;}
+#comments {border-top: 2px solid #CCC; padding: 2em 0 0;}
 	#comments h2, #reply h2 {
 		color: #325A01;
 		border-bottom: 2px solid #325A01;
@@ -808,7 +853,8 @@ body > header, .subheader {
 		padding-bottom: .3em;
 		}
 		#reply h2 {margin-bottom: 1em;}
-	#comments article {padding:0;}
+	#comments ol {list-style: none; padding: 0;}
+	#comments article {padding:0; position: relative;}
 		#comments article .meta {
 			clear: both;
 			color: #999;
@@ -818,10 +864,20 @@ body > header, .subheader {
 			padding: 0 0 .5em 0;
 			}
 			#comments .meta a:link, #comments .meta a:visited {
-				font-size: 1.2em;
+				font-size: 1em;
 				}
-		#comments article.comment-reply {
-			margin-left: 5em;
+		#comments .comment-body p {
+			font-size: 1em;
+		}
+		#comments .comment-edit-link {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+		#comments .comment-reply-link {
+			position: absolute;
+			top: 0;
+			right: 0;
 			}
 
 #reply {margin-bottom: 3em;}
@@ -882,7 +938,7 @@ Please define your styles before this section.
 /* Hide only visually, but have it available for screenreaders: h5bp.com/v */
 .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 
-/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+/* Extends the .visuallyhidden class to allow the element to be focusable when  igated to via the keyboard: h5bp.com/p */
 .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
 
 /* Hide visually and from screenreaders, but maintain layout */
