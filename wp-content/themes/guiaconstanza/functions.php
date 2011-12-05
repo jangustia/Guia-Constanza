@@ -532,4 +532,86 @@ if ( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post-thumbnails' );
 }
 
+
+
+
+// !Guia Constanza Code
+//------------------------------------------
+
+if ( ! function_exists( 'guiaconstanza_register_post_types' ) ) :
+add_action( 'init', 'guiaconstanza_register_post_types' );
+function guiaconstanza_register_post_types() {
+	$template_url = get_bloginfo ('template_url');
+	
+	register_post_type ('gc_hoteles',
+		array (
+			'labels'       => array (
+				'name'               => __('Hoteles'),
+				'singular_name'      => __('Hotel'),
+				'add_new'            => _x('Añadir nuevo', 'guiaconstanza_hotel'),
+				'all_items'          => __('Todos los hoteles'),
+				'add_new_item'       => __('Añadir nuevo hotel'),
+				'edit_item'          => __('Editar hotel'),
+				'new_item'           => __('Nuevo hotel'),
+				'view_item'          => __('Ver hotel'),
+				'search_items'       => __('Buscar hoteles'),
+				'not_found'          => __('No se encontraron hoteles'),
+				'not_found_in_trash' => __('No se encontraron hoteles en la papelera')
+			),
+			'public'       => true,
+			'show_in_menu' => true,
+			'menu_icon'    => $template_url . '/images/icon_hotels_small.png',
+			'supports'     => array ('title', 'thumbnail', 'revisions'),
+			'taxonomies'   => array ('category', 'post_tag')
+		)
+	);
+	
+	register_post_type ('gc_bares_y_rests',
+		array (
+			'labels'       => array (
+				'name'               => __('Bares y Restaurantes'),
+				'singular_name'      => __('Bar o Restaurante'),
+				'add_new'            => _x('Añadir nuevo', 'guiaconstanza_bares-y-restaurantes'),
+				'all_items'          => __('Todos los bares y restaurtantes'),
+				'add_new_item'       => __('Añadir nuevo bar o restaurante'),
+				'edit_item'          => __('Editar bar o restaurante'),
+				'new_item'           => __('Nuevo bar o restaurante'),
+				'view_item'          => __('Ver bar o restaurante'),
+				'search_items'       => __('Buscar bares y restaurtantes'),
+				'not_found'          => __('No se encontraron bares y restaurtantes'),
+				'not_found_in_trash' => __('No se encontraron bares y restaurtantes en la papelera')
+			),
+			'public'       => true,
+			'show_in_menu' => true,
+			'menu_icon'    => $template_url . '/images/icon_bars_small.png',
+			'supports'     => array ('title', 'thumbnail', 'revisions'),
+			'taxonomies'   => array ('category', 'post_tag')
+		)
+	);
+	
+	register_post_type ('gc_atractivos',
+		array (
+			'labels'       => array (
+				'name'               => __('Atractivos'),
+				'singular_name'      => __('Atractivo'),
+				'add_new'            => _x('Añadir nuevo', 'guiaconstanza_hotel'),
+				'all_items'          => __('Todos los atractivos'),
+				'add_new_item'       => __('Añadir nuevo atractivo'),
+				'edit_item'          => __('Editar atractivo'),
+				'new_item'           => __('Nuevo atractivo'),
+				'view_item'          => __('Ver atractivo'),
+				'search_items'       => __('Buscar atractivos'),
+				'not_found'          => __('No se encontraron atractivos'),
+				'not_found_in_trash' => __('No se encontraron atractivos en la papelera')
+			),
+			'public'       => true,
+			'show_in_menu' => true,
+			'menu_icon'    => $template_url . '/images/icon_atractivos_small.png',
+			'supports'     => array ('title', 'thumbnail', 'revisions'),
+			'taxonomies'   => array ('category', 'post_tag')
+		)
+	);
+}
+endif;
+
 ?>
