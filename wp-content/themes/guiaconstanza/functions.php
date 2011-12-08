@@ -672,7 +672,7 @@ function hotel_form() {
 
 function my_meta_save($post_id) {
 	// authentication checks
-	if (!wp_verify_nonce ($_REQUEST['my_meta_noncename'], __FILE__))
+	if (!isset ($_REQUEST['my_meta_noncename']) OR !wp_verify_nonce ($_REQUEST['my_meta_noncename'], __FILE__))
 		return $post_id;
 	if (!current_user_can ('edit_post', $post_id))
 		return $post_id;
