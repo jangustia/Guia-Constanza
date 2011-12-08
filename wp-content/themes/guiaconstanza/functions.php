@@ -604,7 +604,7 @@ function guiaconstanza_register_post_types() {
 			'public'       => true,
 			'show_in_menu' => true,
 			'menu_icon'    => $template_url . '/images/icon_atractivos_small.png',
-			'supports'     => array ('title', 'thumbnail', 'revisions'),
+			'supports'     => array ('title', 'editor', 'thumbnail', 'revisions'),
 			'taxonomies'   => array ('category', 'post_tag')
 		)
 	);
@@ -632,6 +632,14 @@ function guiaconstanza_meta_init() {
 		'Información del Bar o Restaurante',
 		'hotel_form',
 		'gc_bares_y_rests',
+		'advanced',
+		'high'
+	);
+	add_meta_box(
+		'atractivos_meta',
+		'Información del Atractivo',
+		'atractivo_form',
+		'gc_atractivos',
 		'advanced',
 		'high'
 	);
@@ -669,6 +677,20 @@ function hotel_form() {
 	echo '<input type="hidden" name="my_meta_noncename" value="' . wp_create_nonce(__FILE__) . '" />';
 }
 
+//----
+
+function atractivo_form() {
+	global $post;
+	
+	$geo_lat  = get_post_meta ($post->ID, 'geo_lat',  TRUE);
+	$geo_long = get_post_meta ($post->ID, 'geo_long', TRUE);
+	
+	include (STYLESHEETPATH . '/views/atractivo_form.php');
+	
+	// create a custom nonce for submit verification later
+	echo '<input type="hidden" name="my_meta_noncename" value="' . wp_create_nonce(__FILE__) . '" />';
+}
+
 
 function my_meta_save($post_id) {
 	// authentication checks
@@ -678,7 +700,7 @@ function my_meta_save($post_id) {
 		return $post_id;
 	
 	// The array of accepted fields for Books
-	$accepted_fields['gc_hoteles']       = 
+	$accepted_fields['gc_hoteles']       =
 	$accepted_fields['gc_bares_y_rests'] = array (
 		'image1',
 		'image2',
@@ -695,6 +717,10 @@ function my_meta_save($post_id) {
 		'fax',
 		'email',
 		'website',
+		'geo_lat',
+		'geo_long'
+	);
+	$accepted_fields['gc_atractivos'] = array (
 		'geo_lat',
 		'geo_long'
 	);
@@ -719,6 +745,9 @@ function my_meta_save($post_id) {
 		break;
 	case 'gc_bares_y_rests':
 		wp_set_object_terms ($post_id, array ('bares-y-restaurantes'), 'category');
+		break;
+	case 'gc_atractivos':
+		wp_set_object_terms ($post_id, array ('atractivos'), 'category');
 		break;
 	}
 	
