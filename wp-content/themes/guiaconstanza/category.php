@@ -42,22 +42,23 @@ get_header(); ?>
 					</form>
 				</div>
 				<div id="content" class="wrap" role="main">
-				<?php if (have_posts()): ?>
+				<?php if ( have_posts() ): ?>
 					<div id="places-list">
 						<h2><?php single_cat_title() ?></h2>
-						<ul>
 						<?php while ( have_posts() ) : the_post(); ?>
-							<li>
+							<article>
 								<!-- Display the Title as a link to the Post's permalink. -->
 								<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+								<img src="<?php bloginfo('template_url') ?>/images/generic_thumb.png" alt="" />
 								<p><?php the_excerpt() ?></p>
-							</li>
+							</article>
 						<?php endwhile ?>
 						</ul>
 					</div>
 				<?php else : ?>
 					<h2>No hay nah, bro</h2>
 				<?php endif ?>
+
 					<?php // Get "Atractivos" section
 					get_sidebar( 'atractivos' ); ?>
 				</div>
