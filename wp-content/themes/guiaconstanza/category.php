@@ -7,7 +7,14 @@
  * @since Boilerplate 1.0
  */
 
-get_header(); ?>
+	get_header();
+	
+	$category = get_category (get_query_var ('cat'));
+	$loop     = new WP_Query (array (
+		'post_type'      => post_type_for_category ($category->slug),
+		'posts_per_page' => 7
+	));
+?>
 
 				<h1 id="subheader" class="wrap"><span><?php
 					printf( __( '%s', 'boilerplate' ), '' . single_cat_title( '', false ) . '' );
@@ -42,23 +49,23 @@ get_header(); ?>
 					</form>
 				</div>
 				<div id="content" class="wrap" role="main">
-				<?php if ( have_posts() ): ?>
-					<div id="places-list">
-						<h2><?php single_cat_title() ?></h2>
-						<?php while ( have_posts() ) : the_post(); ?>
-							<article>
-								<!-- Display the Title as a link to the Post's permalink. -->
-								<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-								<img src="<?php bloginfo('template_url') ?>/images/generic_thumb.png" alt="" />
-								<p><?php the_excerpt() ?></p>
-							</article>
-						<?php endwhile ?>
-						</ul>
-					</div>
-				<?php else : ?>
-					<h2>No hay nah, bro</h2>
-				<?php endif ?>
-
+					<?php if ( !$loop->have_posts() ): ?>
+						<h2>No hay nah, bro</h2>
+					<?php else: ?>
+						<div id="places-list">
+							<h2><?php single_cat_title(); ?></h2>
+							<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+								<article>
+									<!-- Display the Title as a link to the Post's permalink. -->
+									<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+									<img src="<?php bloginfo ('template_url'); ?>/images/generic_thumb.png" alt="" />
+									<p><?php the_excerpt(); ?></p>
+								</article>
+							<?php endwhile; ?>
+							</ul>
+						</div>
+					<?php endif; ?>
+					
 					<?php // Get "Atractivos" section
 					get_sidebar( 'atractivos' ); ?>
 				</div>

@@ -737,19 +737,43 @@ function my_meta_save($post_id) {
 			add_post_meta ($post_id, $key, $custom_field, TRUE);
 	}
 	
-	switch ($post_type_id) {
-	case 'gc_hoteles':
-		wp_set_object_terms ($post_id, array ('hoteles'), 'category');
-		break;
-	case 'gc_bares_y_rests':
-		wp_set_object_terms ($post_id, array ('bares-y-restaurantes'), 'category');
-		break;
-	case 'gc_atractivos':
-		wp_set_object_terms ($post_id, array ('atractivos'), 'category');
-		break;
-	}
+	wp_set_object_terms ($post_id, array (category_for_post_type ($post_type_id)), 'category');
 	
 	return $post_id;
 }
+
+//----
+
+if (!function_exists ('post_type_for_category')):
+function post_type_for_category ($category) {
+	switch ($category) {
+	case 'hoteles':
+		return 'gc_hoteles';
+		break;
+	case 'bares-y-restaurantes':
+		return 'gc_bares_y_rests';
+		break;
+	case 'atractivos':
+		return 'gc_atractivos';
+		break;
+	}
+}
+endif;
+
+if (!function_exists ('category_for_post_type')):
+function category_for_post_type ($post_type) {
+	switch ($post_type) {
+	case 'gc_hoteles':
+		return 'hoteles';
+		break;
+	case 'gc_bares_y_rests':
+		return 'bares-y-restaurantes';
+		break;
+	case 'gc_atractivos':
+		return 'atractivos';
+		break;
+	}
+}
+endif;
 
 ?>
