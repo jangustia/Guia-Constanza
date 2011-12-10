@@ -13,7 +13,7 @@
 						<h2>Bares y Restaurantes</h2>
 						<div class="slide">
 							<h3><a href="#">Aguas Blancas Restaurant</a></h3>
-							<img src="img/generic_thumb.png" alt="" />
+							<img src="<?php bloginfo('template_url') ?>/images/generic_thumb.png" alt="" />
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a tellus ac magna imperdiet molestie vitae sed purus.</p>
 							<ul class="incluye">
 								<li class="tv">Cable</li>
@@ -28,9 +28,8 @@
 						<h2>Blog: La Suiza del Caribe</h2>
 						<div class="slide">
 							<h3><a href="#">Nulla a tellus also magna imperdiet intomarte molestie vitae sed purus</a></h3>
-							<img src="img/generic_thumb.png" alt="" />
+							<img src="<?php bloginfo('template_url') ?>/images/generic_thumb.png" alt="" />
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a tellus ac magna imperdiet molestie vitae sed purus.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 						</div>
 					</section>
 				</div><!-- #featured -->
