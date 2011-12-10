@@ -42,8 +42,10 @@ get_header(); ?>
 					</form>
 				</div>
 				<div id="content" class="wrap" role="main">
-					<ul id="places-list">
+				<?php if (have_posts()): ?>
+					<div id="places-list">
 						<h2><?php single_cat_title() ?></h2>
+						<ul>
 						<?php while ( have_posts() ) : the_post(); ?>
 							<li>
 								<!-- Display the Title as a link to the Post's permalink. -->
@@ -51,7 +53,11 @@ get_header(); ?>
 								<p><?php the_excerpt() ?></p>
 							</li>
 						<?php endwhile ?>
-					</ul>
+						</ul>
+					</div>
+				<?php else : ?>
+					<h2>No hay nah, bro</h2>
+				<?php endif ?>
 					<?php // Get "Atractivos" section
 					get_sidebar( 'atractivos' ); ?>
 				</div>
