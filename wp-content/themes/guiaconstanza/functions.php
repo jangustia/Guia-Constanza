@@ -558,7 +558,7 @@ function guiaconstanza_register_post_types() {
 			'public'       => true,
 			'show_in_menu' => true,
 			'menu_icon'    => $template_url . '/images/icon_hotels_small.png',
-			'supports'     => array ('title', 'thumbnail', 'revisions'),
+			'supports'     => array ('title', 'editor', 'thumbnail', 'revisions'),
 			'taxonomies'   => array ('category', 'post_tag')
 		)
 	);
@@ -581,7 +581,7 @@ function guiaconstanza_register_post_types() {
 			'public'       => true,
 			'show_in_menu' => true,
 			'menu_icon'    => $template_url . '/images/icon_bars_small.png',
-			'supports'     => array ('title', 'thumbnail', 'revisions'),
+			'supports'     => array ('title', 'editor', 'thumbnail', 'revisions'),
 			'taxonomies'   => array ('category', 'post_tag')
 		)
 	);
@@ -653,23 +653,22 @@ function guiaconstanza_meta_init() {
 function hotel_form() {
 	global $post;
 	
-	$image1      = get_post_meta ($post->ID, 'image1',      TRUE);
-	$image2      = get_post_meta ($post->ID, 'image2',      TRUE);
-	$image3      = get_post_meta ($post->ID, 'image3',      TRUE);
-	$image4      = get_post_meta ($post->ID, 'image4',      TRUE);
-	$description = get_post_meta ($post->ID, 'description', TRUE);
-	$tv          = get_post_meta ($post->ID, 'tv',          TRUE);
-	$wifi        = get_post_meta ($post->ID, 'wifi',        TRUE);
-	$delivery    = get_post_meta ($post->ID, 'delivery',    TRUE);
-	$menu        = get_post_meta ($post->ID, 'menu',        TRUE);
-	$tragos      = get_post_meta ($post->ID, 'tragos',      TRUE);
-	$address     = get_post_meta ($post->ID, 'address',     TRUE);
-	$phone       = get_post_meta ($post->ID, 'phone',       TRUE);
-	$fax         = get_post_meta ($post->ID, 'fax',         TRUE);
-	$email       = get_post_meta ($post->ID, 'email',       TRUE);
-	$website     = get_post_meta ($post->ID, 'website',     TRUE);
-	$geo_lat     = get_post_meta ($post->ID, 'geo_lat',     TRUE);
-	$geo_long    = get_post_meta ($post->ID, 'geo_long',    TRUE);
+	$image1   = get_post_meta ($post->ID, 'image1',   TRUE);
+	$image2   = get_post_meta ($post->ID, 'image2',   TRUE);
+	$image3   = get_post_meta ($post->ID, 'image3',   TRUE);
+	$image4   = get_post_meta ($post->ID, 'image4',   TRUE);
+	$tv       = get_post_meta ($post->ID, 'tv',       TRUE);
+	$wifi     = get_post_meta ($post->ID, 'wifi',     TRUE);
+	$delivery = get_post_meta ($post->ID, 'delivery', TRUE);
+	$menu     = get_post_meta ($post->ID, 'menu',     TRUE);
+	$tragos   = get_post_meta ($post->ID, 'tragos',   TRUE);
+	$address  = get_post_meta ($post->ID, 'address',  TRUE);
+	$phone    = get_post_meta ($post->ID, 'phone',    TRUE);
+	$fax      = get_post_meta ($post->ID, 'fax',      TRUE);
+	$email    = get_post_meta ($post->ID, 'email',    TRUE);
+	$website  = get_post_meta ($post->ID, 'website',  TRUE);
+	$geo_lat  = get_post_meta ($post->ID, 'geo_lat',  TRUE);
+	$geo_long = get_post_meta ($post->ID, 'geo_long', TRUE);
 	
 	include (STYLESHEETPATH . '/views/hotel_form.php');
 	
@@ -706,7 +705,6 @@ function my_meta_save($post_id) {
 		'image2',
 		'image3',
 		'image4',
-		'description',
 		'tv',
 		'wifi',
 		'delivery',

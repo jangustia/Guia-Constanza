@@ -22,11 +22,6 @@
 		<input type="text" name="image4" value="<?php if (!empty ($image4)) echo $image4;?>"/>
 	</fieldset>
 	
-	<fieldset>
-		<h4><label>Descripcion</label></h4>
-		<textarea name="description"><?php if(!empty($description)) echo $description; ?></textarea>
-	</fieldset>
-	
 	<h4>Incluye</h4>
 	<ul>
 		<li<?php if (!empty ($tv)) {?> class="selected"<?php }?>>
