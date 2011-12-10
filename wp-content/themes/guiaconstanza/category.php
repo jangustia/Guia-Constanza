@@ -48,6 +48,31 @@ get_header(); ?>
 						</div>
 					</section>
 				</div><!-- #featured -->
+				<div id="adv_search">
+					<form>
+						<h2>Busqueda Avanzada</h2>
+						<input type="text" id="name" />
+						<select id="type">
+							<option selected="selected">Tipo</option>
+							<option>Tipo 1</option>
+							<option>Tipo 2</option>
+							<option>Tipo 3</option>
+							<option>Tipo 4</option>
+							<option>Tipo 5</option>
+						</select>
+						<div>
+							<label><input type="checkbox" />Desayuno</label>
+							<label><input type="checkbox" />Wi-Fi</label>
+							<label><input type="checkbox" />Piscina</label>
+							<label><input type="checkbox" />Chimenea</label>
+							<label><input type="checkbox" />Bar</label>
+							<label><input type="checkbox" />TV</label>
+							<label><input type="checkbox" />Restaurante</label>
+							<label><input type="checkbox" />Area de Juego</label>
+						</div>
+						<input type="submit" value="Buscar" />
+					</form>
+				</div>
 				<div id="content" class="wrap" role="main">
 					<ul id="places-list">
 						<?php while ( have_posts() ) : the_post(); ?>
@@ -59,29 +84,6 @@ get_header(); ?>
 						<?php endwhile ?>
 					</ul>
 					<div id="sidebar">
-						<form id="adv_search">
-							<h2>Busqueda Avanzada</h2>
-							<input type="text" id="name" />
-							<select id="type">
-								<option selected="selected">Tipo</option>
-								<option>Tipo 1</option>
-								<option>Tipo 2</option>
-								<option>Tipo 3</option>
-								<option>Tipo 4</option>
-								<option>Tipo 5</option>
-							</select>
-							<div>
-								<label><input type="checkbox" />Desayuno</label>
-								<label><input type="checkbox" />Wi-Fi</label>
-								<label><input type="checkbox" />Piscina</label>
-								<label><input type="checkbox" />Chimenea</label>
-								<label><input type="checkbox" />Bar</label>
-								<label><input type="checkbox" />TV</label>
-								<label><input type="checkbox" />Restaurante</label>
-								<label><input type="checkbox" />Area de Juego</label>
-							</div>
-							<input type="submit" value="Buscar" />
-						</form>
 						<section>
 							<h2>Atractivos</h2>
 							<?php for ($i=0;$i<4;$i++): ?>

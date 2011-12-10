@@ -567,11 +567,21 @@ body > header, #subheader {
     color: #FFFFFF;
     float: left;
     height: auto;
-    margin-right: 1em;
+    margin: 1em 0.35em 0 0;
     padding: 60px 0 5px;
     text-align: center;
     width: 83px;
 }
+.slide .incluye li {
+	background-image: url('images/servicios-icons.png');
+	margin-right: .2em;
+	padding: 0;
+	height: 46px;
+	text-indent: -9999em;
+	width: 46px;
+}
+
+
 .tv {background-position: 0 0;}
 .wifi {background-position: 25% 0;}
 .delivery {background-position: 50% 0;}
@@ -726,20 +736,30 @@ li.not-inc {color: #AAA; padding-top: 59px;}
 	width: 30em;
 	}
 	#adv_search {
-		background: #e5e696 url('images/bg_advsearch.png') repeat-x;
-		background: -moz-linear-gradient(top, #e5e696 0%, #c8ca56 100%);
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e696), color-stop(100%,#c8ca56));
-		background: -webkit-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
-		background: -o-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
-		background: -ms-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
-		background: linear-gradient(top, #e5e696 0%,#c8ca56 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e696', endColorstr='#c8ca56',GradientType=0 );
-		border: 1px solid #bec04b;
-		box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
-		overflow: hidden;
-		margin-bottom: 2em;
-		overflow: hidden;
 		position: relative;
+		margin: 0 auto;
+		width: 965px;
+		z-index: 9999;
+		}
+		#adv_search form {
+			background: #e5e696 url('images/bg_advsearch.png') repeat-x;
+			background: -moz-linear-gradient(top, #e5e696 0%, #c8ca56 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e696), color-stop(100%,#c8ca56));
+			background: -webkit-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
+			background: -o-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
+			background: -ms-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
+			background: linear-gradient(top, #e5e696 0%,#c8ca56 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e696', endColorstr='#c8ca56',GradientType=0 );
+			border: 1px solid #bec04b;
+			box-shadow: 0 1px 3px 0 rgba(0,0,0,.35);
+			position: absolute;
+			top: 2em;
+			right: 0;
+			padding: 0 1em;
+			width: 32em;
+		}
+		#adv_search form h2 {
+			color: #a0410d;
 		}
 		#adv_search input[type=text] {
 			border: 1px solid #CCC;
@@ -755,20 +775,19 @@ li.not-inc {color: #AAA; padding-top: 59px;}
 		#adv_search form > div {
 			float: right;
 			position: relative;
-			top: -7em;
-			right: -3em;
-			width: 25em;
+			top: -5em;
+			right: -4em;
+			width: 23em;
 			}
 		#adv_search label {
 			display: block;
 			float: left;
 			font-size: 0.8em;
 			padding: 0 0 1em 0;
-			width: 8em;
+			width: 9em;
 			}
 			#adv_search label input[type=checkbox] {
-				position: relative;
-				top: .2em;
+				margin-right: .3em;
 			}
 		#hoteles #adv_search label:last-child {width: 10em;}
 		#baresrest #adv_search label {margin-bottom: 1em;}
