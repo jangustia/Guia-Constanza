@@ -1,3 +1,5 @@
+<!-- guiaconstanza/views/hotel_form.php -->
+
 <div class="hotel_form">
 	<h4>Imágenes</h4>
 	<fieldset>
