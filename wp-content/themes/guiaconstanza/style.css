@@ -245,6 +245,7 @@ body {
 	border-radius: 0 0 1em 1em;
 	box-shadow: 0 2px 15px rgba(0,0,0,0.25);
 	margin: 0 auto 2em;
+	min-height: 60em;
 	overflow: hidden;
 	z-index: 1; /* Behind flowers */
 	}
@@ -732,8 +733,8 @@ li.not-inc {color: #AAA; padding-top: 59px;}
 #sidebar {
 	position: absolute;
 	right: 0;
-	top: 2em;
-	width: 30em;
+	top: 20em;
+	width: 32.7em;
 	}
 	#adv_search {
 		position: relative;
@@ -793,11 +794,15 @@ li.not-inc {color: #AAA; padding-top: 59px;}
 		#baresrest #adv_search label {margin-bottom: 1em;}
 		#adv_search input[type=submit] {
 			position: absolute;
-			bottom: 2em;
+			bottom: 1em;
 			right: 1em;
 			}
 		#adv_search section {clear: both; padding-right: 17em; height: 60em; position: relative;}
 			#adv_search section .skyscraper {position: absolute; right: 2em; bottom: 0}
+
+	#sidebar section {
+		width: 15em;
+	}
 
 /* Recomendaciones
  ****************************/
