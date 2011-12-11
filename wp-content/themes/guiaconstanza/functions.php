@@ -723,6 +723,14 @@ function my_meta_save($post_id) {
 		'geo_long'
 	);
 	
+	$post_title = get_the_title ($post_id);
+	
+	if (empty ($post_title))
+		delete_post_meta ($post_id, 'nombre');
+	else
+		update_post_meta ($post_id, 'nombre', $post_title);
+	
+	
 	$post_type_id = $_REQUEST['post_type'];
 	
 	foreach($accepted_fields[$post_type_id] as $key)
