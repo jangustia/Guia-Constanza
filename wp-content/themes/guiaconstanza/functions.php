@@ -653,15 +653,19 @@ function guiaconstanza_meta_init() {
 function hotel_form() {
 	global $post;
 	
+	$tipo     = get_post_meta ($post->ID, 'tipo',     TRUE);
 	$image1   = get_post_meta ($post->ID, 'image1',   TRUE);
 	$image2   = get_post_meta ($post->ID, 'image2',   TRUE);
 	$image3   = get_post_meta ($post->ID, 'image3',   TRUE);
 	$image4   = get_post_meta ($post->ID, 'image4',   TRUE);
-	$tv       = get_post_meta ($post->ID, 'tv',       TRUE);
-	$wifi     = get_post_meta ($post->ID, 'wifi',     TRUE);
-	$delivery = get_post_meta ($post->ID, 'delivery', TRUE);
+	$chim     = get_post_meta ($post->ID, 'chim',     TRUE);
+	$pool     = get_post_meta ($post->ID, 'pool',     TRUE);
+	$james    = get_post_meta ($post->ID, 'james',    TRUE);
+	$heat     = get_post_meta ($post->ID, 'heat',     TRUE);
 	$menu     = get_post_meta ($post->ID, 'menu',     TRUE);
 	$tragos   = get_post_meta ($post->ID, 'tragos',   TRUE);
+	$tv       = get_post_meta ($post->ID, 'tv',       TRUE);
+	$wifi     = get_post_meta ($post->ID, 'wifi',     TRUE);
 	$address  = get_post_meta ($post->ID, 'address',  TRUE);
 	$phone    = get_post_meta ($post->ID, 'phone',    TRUE);
 	$fax      = get_post_meta ($post->ID, 'fax',      TRUE);
@@ -701,15 +705,19 @@ function my_meta_save($post_id) {
 	// The array of accepted fields for Books
 	$accepted_fields['gc_hoteles']       =
 	$accepted_fields['gc_bares_y_rests'] = array (
+		'tipo',
 		'image1',
 		'image2',
 		'image3',
 		'image4',
-		'tv',
-		'wifi',
-		'delivery',
+		'chim',
+		'pool',
+		'james',
+		'heat',
 		'menu',
 		'tragos',
+		'tv',
+		'wifi',
 		'address',
 		'phone',
 		'fax',
