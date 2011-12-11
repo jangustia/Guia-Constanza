@@ -344,7 +344,7 @@ input[type=submit], input[type=button], .button {
 .breadcrumbs {
 	border-bottom: 2px solid #335900;
 	color: #999;
-	margin-bottom: 2em;
+	margin: 2em 0;
 	padding: 0 0 .7em;
 	}
 	.breadcrumbs li {display: inline;}
@@ -567,33 +567,38 @@ body > header, #subheader {
     background-image: url("images/icons_services.png");
     color: #FFFFFF;
     float: left;
+    font-size: 0.7em;
     height: auto;
-    margin: 1em 0.35em 0 0;
-    padding: 60px 0 5px;
+    margin: 1em 1em 0 0;
+    padding: 50px 0 5px;
     text-align: center;
-    width: 83px;
+    width: 69px;
 }
 .slide .incluye li {
 	background-image: url('images/servicios-icons.png');
-	margin-right: .2em;
+	margin-right: 4px;
 	padding: 0;
 	height: 46px;
 	text-indent: -9999em;
 	width: 46px;
 }
+.chim {background-position: 0 0;}
+.pool {background-position: 486px 0;}
+.juegos {background-position: 416px 0;}
+.agua {background-position: 347px 0;}
+.rest {background-position: 278px 0;}
+.bar {background-position: 209px 0;}
+.tv {background-position: 138px 0;}
+.wifi {background-position: 69px 0;}
 
-
-.tv {background-position: 0 0;}
-.wifi {background-position: 25% 0;}
-.delivery {background-position: 50% 0;}
-.menu {background-position: 75.1% 0;}
-.drink {background-position: 100% 0;}
-
-li.not-inc {color: #AAA; padding-top: 59px;}
-.wifi.not-inc {background-position: 25% 100%;}
-.delivery.not-inc {background-position: 50% 100%;}
-.menu.not-inc {background-position: 75% 100%;}
-.drink.not-inc {background-position: 100% 100%;}
+.slide .chim {background-position: 0 0;}
+.slide .pool {background-position: 324px 0;}
+.slide .juegos {background-position: 277px 0;}
+.slide .agua {background-position: 230px 0;}
+.slide .rest {background-position: 183px 0;}
+.slide .bar {background-position: 138px 0;}
+.slide .tv {background-position: 92px 0;}
+.slide .wifi {background-position: 46px 0;}
 
 
 /* Side Information */
@@ -626,11 +631,7 @@ li.not-inc {color: #AAA; padding-top: 59px;}
 		.sideinfo .box p {line-height: 1.2;}
 	.sideinfo section:last-child {padding-right: 15em; position: relative;}
 	.sideinfo section:last-child .skyscraper {position: absolute; right: 0; top: 1em;}
-	.sideinfo section article {
-		padding-bottom: 1em;
-		margin-bottom: 1em;
-		border-bottom: 1px dotted #CCC !important;
-		}
+	.sideinfo section article {border-bottom: 1px dotted #CCC !important;}
 
 
 /* Donde Ir
@@ -703,10 +704,10 @@ li.not-inc {color: #AAA; padding-top: 59px;}
 	padding-left: 2em;
 	width: 15em;
 }
-	#tel {background-position: 0 0;}
-	#fax {background-position: 0 -3.1em;}
-	#web {background-position: 0 -9.6em;}
-	#place-email {background-position: 0 -6.3em;}
+	#tel {background-position: 0 3px;}
+	#fax {background-position: 0 -1.7em;}
+	#place-email {background-position: 0 -3.5em;}
+	#web {background-position: 0 -5.4em;}
 
 .ratings {}
 	.ratings form {
@@ -714,11 +715,50 @@ li.not-inc {color: #AAA; padding-top: 59px;}
 		border: .1em solid #C3DE7B;
 		border-radius: .5em;
 		font-size: 1em;
-		min-height: 10em;
+		overflow: hidden;
+		min-height: 110px;
 		padding: 1em;
 		position: relative;
 		}
-	.ratings form h4 {font-size: 1.2em; margin: 0;}
+	.ratings form h4 {font-size: 1em; margin: 0;}
+	.ratings label {
+		display: block;
+		float: left;
+		margin: 0.5em 0;
+		width: 225px;
+	}
+	.ratings span {
+	    display: inline-block;
+	    font-size: 0.9em;
+	    width: 75px;
+	}
+	.rating_bar {
+		background: #bfbfbf;
+		background: -moz-linear-gradient(top, #bfbfbf 1%, #ffffff 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#bfbfbf), color-stop(100%,#ffffff));
+		background: -webkit-linear-gradient(top, #bfbfbf 1%,#ffffff 100%);
+		background: -o-linear-gradient(top, #bfbfbf 1%,#ffffff 100%);
+		background: -ms-linear-gradient(top, #bfbfbf 1%,#ffffff 100%);
+		background: linear-gradient(top, #bfbfbf 1%,#ffffff 100%);
+		border: 1px solid #CCC;
+		display: inline-block;
+		position: relative;
+		top: 3px;
+		width: 75px;
+		height: 15px;
+	}
+	.rating_bar div {
+		background: #a90329;
+		background: -moz-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(44%,#8f0222), color-stop(100%,#6d0019));
+		background: -webkit-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%);
+		background: -o-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%);
+		background: -ms-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%);
+		background: linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%);
+		display: block;
+		height: 100%;
+	}
+	.ratings strong {font-size: 0.7em;}
 	.ratings form a:link {
 		clear: both;
 		font-weight: bold;

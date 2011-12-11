@@ -16,11 +16,11 @@
 							<img src="<?php bloginfo('template_url') ?>/images/generic_thumb.png" alt="" />
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a tellus ac magna imperdiet molestie vitae sed purus.</p>
 							<ul class="incluye">
-								<li class="tv">Cable</li>
-								<li class="wifi not-inc">Wi-Fi</li>
-								<li class="delivery">Transporte</li>
-								<li class="menu not-inc">Menu</li>
-								<li class="drink">Tragos</li>
+								<li class="chim">Chimenea</li>
+								<li class="pool">Piscina</li>
+								<li class="juegos">Juegos</li>
+								<li class="agua">Agua Caliente</li>
+								<li class="rest">Restaurante</li>
 							</ul>
 						</div>
 					</section>

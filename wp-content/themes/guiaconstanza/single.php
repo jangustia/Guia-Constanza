@@ -9,11 +9,11 @@
 
 get_header(); ?>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+				<h1 id="subheader" class="wrap"><span><?php
+					$category = get_the_category();
+					echo $category[0]->cat_name;
+				?></span></h1>
 				<div id="content" class="wrap" role="main">
-					<h1 id="subheader" class="wrap"><span><?php
-						$category = get_the_category();
-						echo $category[0]->cat_name;
-					?></span></h1>
 					<div id="details">
 						<ul class="breadcrumbs">
 							<li><a href="index.php">Inicio</a></li>
@@ -31,11 +31,14 @@ get_header(); ?>
 			
 						<h3>Facilidades</h3>
 						<ul class="incluye">
+							<li class="chim">Chimenea</li>
+							<li class="pool">Piscina</li>
+							<li class="juegos">Juegos</li>
+							<li class="agua">Agua Caliente</li>
+							<li class="rest">Restaurante</li>
+							<li class="bar">Bar</li>
 							<li class="tv">Televisión</li>
-							<li class="wifi not-inc">Wireless</li>
-							<li class="delivery not-inc">Delivery</li>
-							<li class="menu">Menu</li>
-							<li class="drink">Tragos</li>
+							<li class="wifi">Wireless</li>
 						</ul>
 			
 						<h3>Contacto</h3>
@@ -64,10 +67,30 @@ get_header(); ?>
 						<h3>Calificar Hotel</h3>
 						<form>
 							<h4>Calificación:</h4>
-							<label for="excelente"><input name ="rating" id="excelente" type="radio" /> Excelente</label>
-							<label for="masomenos"><input name="rating" id="masomenos" type="radio" /> Más o Menos</label>
-							<label for="muybueno"><input name="rating" id="muybueno" type="radio" /> Muy Bueno</label>
-							<label for="terrible"><input name="rating" id="terrible" type="radio" /> Terrible</label>
+							<label for="excelente">
+								<input name ="rating" id="excelente" type="radio" />
+								<span>Excelente</span>
+								<div class="rating_bar"><div style="width: 35%">&nbsp;</div></div>
+								<strong>0 votos</strong>
+							</label>
+							<label for="masomenos">
+								<input name="rating" id="masomenos" type="radio" />
+								<span>Más o Menos</span>
+								<div class="rating_bar"><div style="width: 35%">&nbsp;</div></div>
+								<strong>0 votos</strong>
+							</label>
+							<label for="muybueno">
+								<input name="rating" id="muybueno" type="radio" />
+								<span>Muy Bueno</span>
+								<div class="rating_bar"><div style="width: 35%">&nbsp;</div></div>
+								<strong>0 votos</strong>
+							</label>
+							<label for="terrible">
+								<input name="rating" id="terrible" type="radio" />
+								<span>Terrible</span>
+								<div class="rating_bar"><div style="width: 35%">&nbsp;</div></div>
+								<strong>0 votos</strong>
+							</label>
 							<a href="#">Deja tu opinión</a>
 						</form>
 					</section>
