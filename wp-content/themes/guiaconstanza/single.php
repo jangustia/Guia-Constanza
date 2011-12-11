@@ -25,10 +25,11 @@ get_header(); ?>
 							<span>Cabañas Palofino</span>
 							<img src="<?php bloginfo('template_url') ?>/images/rancho.jpg" alt="Fotografia de unos locales en Rancho Guaraguao" />
 						</figure>
+
 						<h3>Descripción</h3>
 						<p>Sed ut perspiciatis unde omnis iste natus error sit volupatetem accusantium doloremquede laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vita dicta sunt explicabo.</p>
 			
-						<h3>Incluye</h3>
+						<h3>Facilidades</h3>
 						<ul class="incluye">
 							<li class="tv">Televisión</li>
 							<li class="wifi not-inc">Wireless</li>
@@ -38,33 +39,26 @@ get_header(); ?>
 						</ul>
 			
 						<h3>Contacto</h3>
-						<div class="adr">
-							<div class="street-address">Calle Guarocuya No. 461</div>
-							<span class="locality">El Millon</span>, <span class="region">Santo Domingo</span>
-							<div class="country-name">Republica Dominicana</div>
+						<div id="adr">
+							Santo Domingo: Calle Guarocuya No. 461, El Millón, República Dominicana
 						</div>
-						<div class="tel">
-							<span class="type">Work</span> +1-809-530-6192
-						</div>
-						<div class="tel">
-							<span class="type">Fax</span> +1-809-530-6192
-						</div>
-						<div class="tel">
-							<span class="type">Constanza</span> +1-809-539-1553
-						</div>
-						<div>Email:
-							<span class="email">reservas@altocerro.com</span>
-						</div>
-						<div>Web:
-							<a rel="external" class="url" href="http://www.altocerro.com">Altocerro.com</a>
-						</div>
+						<ul class="clearfix">
+							<li id="tel" class="info">
+								(809) 530-6192
+							</li>
+							<li id="fax" class="info">
+								(809) 539-1553 / 1429
+							</li>
+							<li id="place-email" class="info">
+								reservas@altocerro.com
+							</li>
+							<li id="web" class="info">
+								<a rel="external" class="url" href="http://www.altocerro.com">www.altocerro.com</a>
+							</li>
+						</ul>
 			
-					<section class="map">
-						<h3>Ubicación</h3>
-						<figure>
-							<img src="img/Hotel_Mapa.png" alt="" />
-						</figure>
-					</section>
+					<h3>Ubicación</h3>
+					<div id="details_map"></div>
 			
 					<section class="ratings">
 						<h3>Calificar Hotel</h3>
