@@ -569,14 +569,14 @@ function guiaconstanza_register_post_types() {
 				'name'               => __('Bares y Restaurantes'),
 				'singular_name'      => __('Bar o Restaurante'),
 				'add_new'            => _x('Añadir nuevo', 'guiaconstanza_bares-y-restaurantes'),
-				'all_items'          => __('Todos los bares y restaurtantes'),
+				'all_items'          => __('Todos los bares y restaurantes'),
 				'add_new_item'       => __('Añadir nuevo bar o restaurante'),
 				'edit_item'          => __('Editar bar o restaurante'),
 				'new_item'           => __('Nuevo bar o restaurante'),
 				'view_item'          => __('Ver bar o restaurante'),
-				'search_items'       => __('Buscar bares y restaurtantes'),
-				'not_found'          => __('No se encontraron bares y restaurtantes'),
-				'not_found_in_trash' => __('No se encontraron bares y restaurtantes en la papelera')
+				'search_items'       => __('Buscar bares y restaurantes'),
+				'not_found'          => __('No se encontraron bares y restaurantes'),
+				'not_found_in_trash' => __('No se encontraron bares y restaurantes en la papelera')
 			),
 			'public'       => true,
 			'show_in_menu' => true,
