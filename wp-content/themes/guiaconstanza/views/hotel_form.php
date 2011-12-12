@@ -28,7 +28,7 @@
 		<input type="text" name="image4" value="<?php if (!empty ($image4)) echo $image4;?>"/>
 	</fieldset>
 	
-	<h4>Incluye</h4>
+	<h4>Facilidades</h4>
 	<ul>
 		<li<?php if (!empty ($chim)) {?> class="selected"<?php }?>>
 			<label>
