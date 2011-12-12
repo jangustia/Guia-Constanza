@@ -25,7 +25,7 @@
 		$james  = isset ($_REQUEST['james'])  ? $_REQUEST['james']  : FALSE;
 		$heat   = isset ($_REQUEST['heat'])   ? $_REQUEST['heat']   : FALSE;
 		$menu   = isset ($_REQUEST['menu'])   ? $_REQUEST['menu']   : FALSE;
-		$tragos = isset ($_REQUEST['tragos']) ? $_REQUEST['tragos'] : FALSE;
+		$bar    = isset ($_REQUEST['bar'])    ? $_REQUEST['bar'] : FALSE;
 		$tv     = isset ($_REQUEST['tv'])     ? $_REQUEST['tv']     : FALSE;
 		$wifi   = isset ($_REQUEST['wifi'])   ? $_REQUEST['wifi']   : FALSE;
 		
@@ -43,8 +43,8 @@
 			$query_args['meta_query'][] = array ('key' => 'heat',   'value' => $heat,   'compare' => 'LIKE');
 		if (!empty ($menu)   && $category->slug == 'hoteles')
 			$query_args['meta_query'][] = array ('key' => 'menu',   'value' => $menu,   'compare' => 'LIKE');
-		if (!empty ($tragos) && $category->slug == 'hoteles')
-			$query_args['meta_query'][] = array ('key' => 'tragos', 'value' => $tragos, 'compare' => 'LIKE');
+		if (!empty ($bar) && $category->slug == 'hoteles')
+			$query_args['meta_query'][] = array ('key' => 'bar',    'value' => $bar,    'compare' => 'LIKE');
 		if (!empty ($tv))
 			$query_args['meta_query'][] = array ('key' => 'tv',     'value' => $tv,     'compare' => 'LIKE');
 		if (!empty ($wifi))

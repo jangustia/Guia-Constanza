@@ -663,7 +663,7 @@ function hotel_form() {
 	$james    = get_post_meta ($post->ID, 'james',    TRUE);
 	$heat     = get_post_meta ($post->ID, 'heat',     TRUE);
 	$menu     = get_post_meta ($post->ID, 'menu',     TRUE);
-	$tragos   = get_post_meta ($post->ID, 'tragos',   TRUE);
+	$bar      = get_post_meta ($post->ID, 'bar',      TRUE);
 	$tv       = get_post_meta ($post->ID, 'tv',       TRUE);
 	$wifi     = get_post_meta ($post->ID, 'wifi',     TRUE);
 	$address  = get_post_meta ($post->ID, 'address',  TRUE);
@@ -693,7 +693,7 @@ function restaurant_form() {
 	$tv       = get_post_meta ($post->ID, 'tv',       TRUE);
 	$wifi     = get_post_meta ($post->ID, 'wifi',     TRUE);
 	$delivery = get_post_meta ($post->ID, 'delivery', TRUE);
-	$tragos   = get_post_meta ($post->ID, 'tragos',   TRUE);
+	$bar      = get_post_meta ($post->ID, 'bar',      TRUE);
 	$address  = get_post_meta ($post->ID, 'address',  TRUE);
 	$phone    = get_post_meta ($post->ID, 'phone',    TRUE);
 	$fax      = get_post_meta ($post->ID, 'fax',      TRUE);
@@ -738,7 +738,7 @@ function my_meta_save($post_id) {
 		'image2',
 		'image3',
 		'image4',
-		'tragos',
+		'bar',
 		'tv',
 		'wifi',
 		'address',

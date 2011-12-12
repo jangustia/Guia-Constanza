@@ -60,9 +60,9 @@
 				Restaurante
 			</label>
 		</li>
-		<li<?php if (!empty ($tragos)) {?> class="selected"<?php }?>>
+		<li<?php if (!empty ($bar)) {?> class="selected"<?php }?>>
 			<label>
-				<input type="checkbox" name="tragos"<?php if (!empty ($tragos)) {?> checked<?php }?>/>
+				<input type="checkbox" name="bar"<?php if (!empty ($bar)) {?> checked<?php }?>/>
 				Bar
 			</label>
 		</li>
