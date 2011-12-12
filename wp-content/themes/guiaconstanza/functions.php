@@ -569,14 +569,14 @@ function guiaconstanza_register_post_types() {
 				'name'               => __('Bares y Restaurantes'),
 				'singular_name'      => __('Bar o Restaurante'),
 				'add_new'            => _x('Añadir nuevo', 'guiaconstanza_bares-y-restaurantes'),
-				'all_items'          => __('Todos los bares y restaurtantes'),
+				'all_items'          => __('Todos los bares y restaurantes'),
 				'add_new_item'       => __('Añadir nuevo bar o restaurante'),
 				'edit_item'          => __('Editar bar o restaurante'),
 				'new_item'           => __('Nuevo bar o restaurante'),
 				'view_item'          => __('Ver bar o restaurante'),
-				'search_items'       => __('Buscar bares y restaurtantes'),
-				'not_found'          => __('No se encontraron bares y restaurtantes'),
-				'not_found_in_trash' => __('No se encontraron bares y restaurtantes en la papelera')
+				'search_items'       => __('Buscar bares y restaurantes'),
+				'not_found'          => __('No se encontraron bares y restaurantes'),
+				'not_found_in_trash' => __('No se encontraron bares y restaurantes en la papelera')
 			),
 			'public'       => true,
 			'show_in_menu' => true,
@@ -628,9 +628,9 @@ function guiaconstanza_meta_init() {
 		'high'                   // Priority
 	);
 	add_meta_box(
-		'bares_meta',
+		'restaurant_meta',
 		'Información del Bar o Restaurante',
-		'hotel_form',
+		'restaurant_form',
 		'gc_bares_y_rests',
 		'advanced',
 		'high'
@@ -653,15 +653,19 @@ function guiaconstanza_meta_init() {
 function hotel_form() {
 	global $post;
 	
+	$tipo     = get_post_meta ($post->ID, 'tipo',     TRUE);
 	$image1   = get_post_meta ($post->ID, 'image1',   TRUE);
 	$image2   = get_post_meta ($post->ID, 'image2',   TRUE);
 	$image3   = get_post_meta ($post->ID, 'image3',   TRUE);
 	$image4   = get_post_meta ($post->ID, 'image4',   TRUE);
-	$tv       = get_post_meta ($post->ID, 'tv',       TRUE);
-	$wifi     = get_post_meta ($post->ID, 'wifi',     TRUE);
-	$delivery = get_post_meta ($post->ID, 'delivery', TRUE);
+	$chim     = get_post_meta ($post->ID, 'chim',     TRUE);
+	$pool     = get_post_meta ($post->ID, 'pool',     TRUE);
+	$james    = get_post_meta ($post->ID, 'james',    TRUE);
+	$heat     = get_post_meta ($post->ID, 'heat',     TRUE);
 	$menu     = get_post_meta ($post->ID, 'menu',     TRUE);
 	$tragos   = get_post_meta ($post->ID, 'tragos',   TRUE);
+	$tv       = get_post_meta ($post->ID, 'tv',       TRUE);
+	$wifi     = get_post_meta ($post->ID, 'wifi',     TRUE);
 	$address  = get_post_meta ($post->ID, 'address',  TRUE);
 	$phone    = get_post_meta ($post->ID, 'phone',    TRUE);
 	$fax      = get_post_meta ($post->ID, 'fax',      TRUE);
@@ -671,6 +675,34 @@ function hotel_form() {
 	$geo_long = get_post_meta ($post->ID, 'geo_long', TRUE);
 	
 	include (STYLESHEETPATH . '/views/hotel_form.php');
+	
+	// create a custom nonce for submit verification later
+	echo '<input type="hidden" name="my_meta_noncename" value="' . wp_create_nonce(__FILE__) . '" />';
+}
+
+function restaurant_form() {
+	global $post;
+	
+	$tipo     = get_post_meta ($post->ID, 'tipo',     TRUE);
+	$image1   = get_post_meta ($post->ID, 'image1',   TRUE);
+	$image2   = get_post_meta ($post->ID, 'image2',   TRUE);
+	$image3   = get_post_meta ($post->ID, 'image3',   TRUE);
+	$image4   = get_post_meta ($post->ID, 'image4',   TRUE);
+	$crio     = get_post_meta ($post->ID, 'crio',     TRUE);
+	$inter    = get_post_meta ($post->ID, 'inter',    TRUE);
+	$tv       = get_post_meta ($post->ID, 'tv',       TRUE);
+	$wifi     = get_post_meta ($post->ID, 'wifi',     TRUE);
+	$delivery = get_post_meta ($post->ID, 'delivery', TRUE);
+	$tragos   = get_post_meta ($post->ID, 'tragos',   TRUE);
+	$address  = get_post_meta ($post->ID, 'address',  TRUE);
+	$phone    = get_post_meta ($post->ID, 'phone',    TRUE);
+	$fax      = get_post_meta ($post->ID, 'fax',      TRUE);
+	$email    = get_post_meta ($post->ID, 'email',    TRUE);
+	$website  = get_post_meta ($post->ID, 'website',  TRUE);
+	$geo_lat  = get_post_meta ($post->ID, 'geo_lat',  TRUE);
+	$geo_long = get_post_meta ($post->ID, 'geo_long', TRUE);
+	
+	include (STYLESHEETPATH . '/views/restaurant_form.php');
 	
 	// create a custom nonce for submit verification later
 	echo '<input type="hidden" name="my_meta_noncename" value="' . wp_create_nonce(__FILE__) . '" />';
@@ -701,27 +733,50 @@ function my_meta_save($post_id) {
 	// The array of accepted fields for Books
 	$accepted_fields['gc_hoteles']       =
 	$accepted_fields['gc_bares_y_rests'] = array (
+		'tipo',
 		'image1',
 		'image2',
 		'image3',
 		'image4',
+		'tragos',
 		'tv',
 		'wifi',
-		'delivery',
-		'menu',
-		'tragos',
 		'address',
 		'phone',
 		'fax',
 		'email',
-		'website',
-		'geo_lat',
-		'geo_long'
+		'website'
 	);
-	$accepted_fields['gc_atractivos'] = array (
-		'geo_lat',
-		'geo_long'
+	
+	array_push ($accepted_fields['gc_hoteles'],
+		'chim',
+		'pool',
+		'james',
+		'heat',
+		'menu'
 	);
+	
+	array_push ($accepted_fields['gc_bares_y_rests'],
+		'crio',
+		'inter',
+		'delivery'
+	);
+	
+	$accepted_fields['gc_hoteles'][]       =
+	$accepted_fields['gc_bares_y_rests'][] =
+	$accepted_fields['gc_atractivos'][]    = 'geo_lat';
+	
+	$accepted_fields['gc_hoteles'][]       =
+	$accepted_fields['gc_bares_y_rests'][] =
+	$accepted_fields['gc_atractivos'][]    = 'geo_long';
+	
+	$post_title = get_the_title ($post_id);
+	
+	if (empty ($post_title))
+		delete_post_meta ($post_id, 'nombre');
+	else
+		update_post_meta ($post_id, 'nombre', $post_title);
+	
 	
 	$post_type_id = $_REQUEST['post_type'];
 	

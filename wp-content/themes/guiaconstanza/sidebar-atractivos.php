@@ -1,12 +1,19 @@
+<?php
+	$atractivos = new WP_Query (array (
+		'post_type'      => 'gc_atractivos',
+		'posts_per_page' => 5,
+		'orderby'        => 'rand'
+	));
+?>
 					<div id="sidebar">
 						<section>
 							<h2>Atractivos</h2>
-							<?php for ($i=0;$i<4;$i++): ?>
+							<?php while ( $atractivos->have_posts() ) : $atractivos->the_post(); ?>
 							<article>
-								<img src="img/generic_thumb.png" alt="" />
-								<h3><a href="#">Nunc convallis lectus elementum diam sodales in suscipit</a></h3>
+								<img src="<?php bloginfo ('template_url'); ?>/images/constanza-agricultura.png" alt="" />
+								<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
 							</article>
-							<?php endfor; ?>
+							<?php endwhile; ?>
 							<div class="skyscraper"></div>
 						</section>
 					</div>

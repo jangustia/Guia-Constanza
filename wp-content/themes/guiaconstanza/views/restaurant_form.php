@@ -1,12 +1,11 @@
-<!-- guiaconstanza/views/hotel_form.php -->
+<!-- guiaconstanza/views/restaurant_form.php -->
 
 <select id="type" name="tipo">
-	<option value="hot" <?php if ($tipo == 'hot') {?>selected<?php }?>>Hotel</option>
-	<option value="cab" <?php if ($tipo == 'cab') {?>selected<?php }?>>Cabaña</option>
-	<option value="ap"  <?php if ($tipo == 'ap')  {?>selected<?php }?>>Apartamento</option>
+	<option value="rest" <?php if ($tipo == 'rest') {?>selected<?php }?>>Restaurante</option>
+	<option value="bar"  <?php if ($tipo == 'bar')  {?>selected<?php }?>>Bar</option>
 </select>
 
-<div class="hotel_form">
+<div class="restaurant_form">
 	<h4>Imágenes</h4>
 	<fieldset>
 		<label>Imagen #1</label>
@@ -30,40 +29,16 @@
 	
 	<h4>Facilidades</h4>
 	<ul>
-		<li<?php if (!empty ($chim)) {?> class="selected"<?php }?>>
+		<li<?php if (!empty ($crio)) {?> class="selected"<?php }?>>
 			<label>
-				<input type="checkbox" name="chim"<?php if (!empty ($chim)) {?> checked<?php }?>/>
-				Chimenea
+				<input type="checkbox"  name="crio"<?php if (!empty ($crio)) {?> checked<?php }?>/>
+				Comida criolla
 			</label>
 		</li>
-		<li<?php if (!empty ($pool)) {?> class="selected"<?php }?>>
+		<li<?php if (!empty ($inter)) {?> class="selected"<?php }?>>
 			<label>
-				<input type="checkbox" name="pool"<?php if (!empty ($pool)) {?> checked<?php }?>/>
-				Piscina
-			</label>
-		</li>
-		<li<?php if (!empty ($james)) {?> class="selected"<?php }?>>
-			<label>
-				<input type="checkbox" name="james"<?php if (!empty ($james)) {?> checked<?php }?>/>
-				Juegos
-			</label>
-		</li>
-		<li<?php if (!empty ($heat)) {?> class="selected"<?php }?>>
-			<label>
-				<input type="checkbox" name="heat"<?php if (!empty ($heat)) {?> checked<?php }?>/>
-				Agua Caliente
-			</label>
-		</li>
-		<li<?php if (!empty ($menu)) {?> class="selected"<?php }?>>
-			<label>
-				<input type="checkbox" name="menu"<?php if (!empty ($menu)) {?> checked<?php }?>/>
-				Restaurante
-			</label>
-		</li>
-		<li<?php if (!empty ($tragos)) {?> class="selected"<?php }?>>
-			<label>
-				<input type="checkbox" name="tragos"<?php if (!empty ($tragos)) {?> checked<?php }?>/>
-				Bar
+				<input type="checkbox" name="inter"<?php if (!empty ($inter)) {?> checked<?php }?>/>
+				Comida internacional
 			</label>
 		</li>
 		<li<?php if (!empty ($tv)) {?> class="selected"<?php }?>>
@@ -72,10 +47,22 @@
 				Televisión
 			</label>
 		</li>
-<li<?php if (!empty ($wifi)) {?> class="selected"<?php }?>>
+		<li<?php if (!empty ($wifi)) {?> class="selected"<?php }?>>
 			<label>
 				<input type="checkbox" name="wifi"<?php if (!empty ($wifi)) {?> checked<?php }?>/>
 				Wireless
+			</label>
+		</li>
+		<li<?php if (!empty ($delivery)) {?> class="selected"<?php }?>>
+			<label>
+				<input type="checkbox" name="delivery"<?php if (!empty ($delivery)) {?> checked<?php }?>/>
+				Delivery
+			</label>
+		</li>
+		<li<?php if (!empty ($bar)) {?> class="selected"<?php }?>>
+			<label>
+				<input type="checkbox" name="bar"<?php if (!empty ($bar)) {?> checked<?php }?>/>
+				Tragos
 			</label>
 		</li>
 	</ul>
