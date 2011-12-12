@@ -628,9 +628,9 @@ function guiaconstanza_meta_init() {
 		'high'                   // Priority
 	);
 	add_meta_box(
-		'bares_meta',
+		'restaurant_meta',
 		'Información del Bar o Restaurante',
-		'hotel_form',
+		'restaurant_form',
 		'gc_bares_y_rests',
 		'advanced',
 		'high'
@@ -680,6 +680,34 @@ function hotel_form() {
 	echo '<input type="hidden" name="my_meta_noncename" value="' . wp_create_nonce(__FILE__) . '" />';
 }
 
+function restaurant_form() {
+	global $post;
+	
+	$tipo     = get_post_meta ($post->ID, 'tipo',     TRUE);
+	$image1   = get_post_meta ($post->ID, 'image1',   TRUE);
+	$image2   = get_post_meta ($post->ID, 'image2',   TRUE);
+	$image3   = get_post_meta ($post->ID, 'image3',   TRUE);
+	$image4   = get_post_meta ($post->ID, 'image4',   TRUE);
+	$crio     = get_post_meta ($post->ID, 'crio',     TRUE);
+	$inter    = get_post_meta ($post->ID, 'inter',    TRUE);
+	$tv       = get_post_meta ($post->ID, 'tv',       TRUE);
+	$wifi     = get_post_meta ($post->ID, 'wifi',     TRUE);
+	$delivery = get_post_meta ($post->ID, 'delivery', TRUE);
+	$tragos   = get_post_meta ($post->ID, 'tragos',   TRUE);
+	$address  = get_post_meta ($post->ID, 'address',  TRUE);
+	$phone    = get_post_meta ($post->ID, 'phone',    TRUE);
+	$fax      = get_post_meta ($post->ID, 'fax',      TRUE);
+	$email    = get_post_meta ($post->ID, 'email',    TRUE);
+	$website  = get_post_meta ($post->ID, 'website',  TRUE);
+	$geo_lat  = get_post_meta ($post->ID, 'geo_lat',  TRUE);
+	$geo_long = get_post_meta ($post->ID, 'geo_long', TRUE);
+	
+	include (STYLESHEETPATH . '/views/restaurant_form.php');
+	
+	// create a custom nonce for submit verification later
+	echo '<input type="hidden" name="my_meta_noncename" value="' . wp_create_nonce(__FILE__) . '" />';
+}
+
 //----
 
 function atractivo_form() {
@@ -710,11 +738,6 @@ function my_meta_save($post_id) {
 		'image2',
 		'image3',
 		'image4',
-		'chim',
-		'pool',
-		'james',
-		'heat',
-		'menu',
 		'tragos',
 		'tv',
 		'wifi',
@@ -722,14 +745,30 @@ function my_meta_save($post_id) {
 		'phone',
 		'fax',
 		'email',
-		'website',
-		'geo_lat',
-		'geo_long'
+		'website'
 	);
-	$accepted_fields['gc_atractivos'] = array (
-		'geo_lat',
-		'geo_long'
+	
+	array_push ($accepted_fields['gc_hoteles'],
+		'chim',
+		'pool',
+		'james',
+		'heat',
+		'menu'
 	);
+	
+	array_push ($accepted_fields['gc_bares_y_rests'],
+		'crio',
+		'inter',
+		'delivery'
+	);
+	
+	$accepted_fields['gc_hoteles'][]       =
+	$accepted_fields['gc_bares_y_rests'][] =
+	$accepted_fields['gc_atractivos'][]    = 'geo_lat';
+	
+	$accepted_fields['gc_hoteles'][]       =
+	$accepted_fields['gc_bares_y_rests'][] =
+	$accepted_fields['gc_atractivos'][]    = 'geo_long';
 	
 	$post_title = get_the_title ($post_id);
 	
