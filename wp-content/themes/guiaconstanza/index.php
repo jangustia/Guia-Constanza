@@ -13,15 +13,31 @@
  * @since Boilerplate 1.0
  */
 
-get_header(); ?>
+get_header();
+get_sidebar( 'featured' ); ?>
 
-			<?php
-			/* Run the loop to output the posts.
-			 * If you want to overload this in a child theme then include a file
-			 * called loop-index.php and that will be used instead.
-			 */
-			 get_template_part( 'loop', 'index' );
-			?>
+				<div id="content" class="wrap" role="main">
+					<section id="atractivos">
+						<?php if (have_posts()): ?>
+						<h2>Atractivos</h2>
+							<?php while(have_posts()): the_post(); ?>
+						<article>
+							<img src="<?php bloginfo('template_url') ?>/images/constanza-agricultura.png" alt="" />
+							<h3><a href="#"><?php the_title() ?></a></h3>
+							<?php the_excerpt() ?>
+						</article>
+							<?php endwhile; ?>
+						<?php else: ?>
+							<h2>No hay nah, bro</h2>
+						<?php endif; ?>
+						<div class="fullbanner"></div>
+					</section><!-- #atractivos -->
 
-<?php get_sidebar(); ?>
+					<section id="dondeir-widget">
+						<h2>Donde ir</h2>
+						<img src="<?php bloginfo('template_url') ?>/images/map_placeholder.png" alt="Mapa" />
+						<div class="verticalbanner"></div>
+						<div class="squarepopup"></div>
+					</section>
+
 <?php get_footer(); ?>
