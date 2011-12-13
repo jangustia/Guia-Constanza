@@ -7,64 +7,112 @@
  * @since Boilerplate 1.0
  */
 
-get_header(); ?>
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-				<h1 id="subheader" class="wrap"><span><?php
-					$category = get_the_category();
-					echo $category[0]->cat_name;
-				?></span></h1>
+get_header();
+
+if ( have_posts() ) while ( have_posts() ) : the_post();
+
+	$post_id   = get_the_ID();
+	$post_type = get_post_type ($post_id);
+	$category  = get_the_category();
+	
+	// Hoteles only
+	if ('gc_hoteles' == $post_type) {
+		$facilidades = (object) array (
+			'chim'  => get_post_meta ($post_id, 'chim',  TRUE) ? 'Chimenea'      : '',
+			'pool'  => get_post_meta ($post_id, 'pool',  TRUE) ? 'Piscina'       : '',
+			'james' => get_post_meta ($post_id, 'james', TRUE) ? 'Juegos'        : '',
+			'heat'  => get_post_meta ($post_id, 'heat',  TRUE) ? 'Agua Caliente' : '',
+			'menu'  => get_post_meta ($post_id, 'menu',  TRUE) ? 'Restaurante'   : '',
+			'bar'   => get_post_meta ($post_id, 'bar',   TRUE) ? 'Bar'           : '',
+			'tv'    => get_post_meta ($post_id, 'tv',    TRUE) ? 'Televisión'    : '',
+			'wifi'  => get_post_meta ($post_id, 'tv',    TRUE) ? 'Wirless'       : ''
+		);
+		
+		$rate_title = 'Hotel';
+	}
+	
+	// Bares y Restauratnes only
+	if ('gc_bares_y_rests' == $post_type) {
+		$facilidades = (object) array (
+			//'crio'     => get_post_meta ($post_id, 'crio',     TRUE) ? 'Comida Criolla'       : '',
+			//'inter'    => get_post_meta ($post_id, 'inter',    TRUE) ? 'Comida Internacional' : '',
+			'tv'       => get_post_meta ($post_id, 'tv',       TRUE) ? 'Televisión'           : '',
+			'wifi'     => get_post_meta ($post_id, 'wifi',     TRUE) ? 'Wireless'             : '',
+			'delivery' => get_post_meta ($post_id, 'delivery', TRUE) ? 'Delivery'             : '',
+			'bar'      => get_post_meta ($post_id, 'bar',      TRUE) ? 'Tragos'               : ''
+		);
+		
+		$rate_title = 'Bar o Restaurante';
+	}
+	
+	$address  = get_post_meta ($post_id, 'address',  TRUE);
+	$phone    = get_post_meta ($post_id, 'phone',    TRUE);
+	$fax      = get_post_meta ($post_id, 'fax',      TRUE);
+	$email    = get_post_meta ($post_id, 'email',    TRUE);
+	$website  = get_post_meta ($post_id, 'website',  TRUE);
+	$geo_lat  = get_post_meta ($post_id, 'geo_lat',  TRUE);
+	$geo_long = get_post_meta ($post_id, 'geo_long', TRUE);
+	
+?>
+				<h1 id="subheader" class="wrap">
+					<span><?php echo $category[0]->cat_name;?></span>
+				</h1>
+				
 				<div id="content" class="wrap" role="main">
 					<div id="details">
 						<ul class="breadcrumbs">
-							<li><a href="index.php">Inicio</a></li>
-							<li><a href="hoteles.php">Hoteles</a></li>
-							<li>Rancho Guaraguao</li>
+							<li><a href="<?php echo home_url( '/' ); ?>">Inicio</a></li>
+							<li><?php the_category(' '); ?></li>
+							<li><?php the_title(); ?></li>
 						</ul>
-						<h2 class="fn org">Rancho Guaraguao</h2>
+						<h2 class="fn org"><?php the_title(); ?></h2>
 						<figure>
 							<span>Cabañas Palofino</span>
-							<img src="<?php bloginfo('template_url') ?>/images/rancho.jpg" alt="Fotografia de unos locales en Rancho Guaraguao" />
+							<img src="<?php bloginfo('template_url'); ?>/images/rancho.jpg" alt="Fotografia de unos locales en <?php echo the_title(); ?>" />
 						</figure>
 
 						<h3>Descripción</h3>
-						<p>Sed ut perspiciatis unde omnis iste natus error sit volupatetem accusantium doloremquede laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vita dicta sunt explicabo.</p>
+						<p><?php the_content(); ?></p>
 			
 						<h3>Facilidades</h3>
 						<ul class="incluye">
-							<li class="chim">Chimenea</li>
-							<li class="pool">Piscina</li>
-							<li class="juegos">Juegos</li>
-							<li class="agua">Agua Caliente</li>
-							<li class="rest">Restaurante</li>
-							<li class="bar">Bar</li>
-							<li class="tv">Televisión</li>
-							<li class="wifi">Wireless</li>
+						<?php foreach ($facilidades as $item => $text): ?>	
+							<?php if (!empty ($text)): ?>
+								<li class="<?php echo $item ?>"><?php echo $text ?></li>
+							<?php endif; ?>
+						<?php endforeach; ?>
 						</ul>
 			
 						<h3>Contacto</h3>
-						<div id="adr">
-							Santo Domingo: Calle Guarocuya No. 461, El Millón, República Dominicana
-						</div>
+						<?php if (!empty ($address)): ?>
+							<div id="adr"><?php echo $address; ?></div>
+						<?php endif; ?>
+						
 						<ul class="clearfix">
-							<li id="tel" class="info">
-								(809) 530-6192
-							</li>
-							<li id="fax" class="info">
-								(809) 539-1553 / 1429
-							</li>
-							<li id="place-email" class="info">
-								reservas@altocerro.com
-							</li>
-							<li id="web" class="info">
-								<a rel="external" class="url" href="http://www.altocerro.com">www.altocerro.com</a>
-							</li>
+							<?php if (!empty ($phone)): ?>
+								<li id="tel" class="info"><?php echo $phone; ?></li>
+							<?php endif; ?>
+							
+							<?php if (!empty ($fax)): ?>
+								<li id="fax" class="info"><?php echo $fax; ?></li>
+							<?php endif; ?>
+							
+							<?php if (!empty ($email)): ?>
+								<li id="place-email" class="info"><?php echo $email; ?></li>
+							<?php endif; ?>
+							
+							<?php if (!empty ($address)): ?>
+								<li id="web" class="info">
+									<a rel="external" class="url" href="<?php echo $website; ?>"><?php echo $website; ?></a>
+								</li>
+							<?php endif; ?>
 						</ul>
 			
 					<h3>Ubicación</h3>
 					<div id="details_map"></div>
 			
 					<section class="ratings">
-						<h3>Calificar Hotel</h3>
+						<h3>Calificar <?php echo $rate_title; ?></h3>
 						<form>
 							<h4>Calificación:</h4>
 							<label for="excelente">
@@ -118,18 +166,9 @@ get_header(); ?>
 						<?php endfor; ?>
 					</section>
 		
-					<section>
-						<h2>Atractivos</h2>
-						<?php for ($i=0;$i<6;$i++): ?>
-						<article>
-							<img src="img/smaller_thumb.png" alt="" />
-							<h4><a href="#">Nunc convallis lectus elementum diam sodales in suscipit</a></h4>
-						</article>
-						<?php endfor; ?>
-						<div class="skyscraper"></div>
-					</section>
+					<?php // Get "Atractivos" section
+					get_sidebar( 'atractivos' ); ?>
 				</aside>
-
-<?php endwhile; // end of the loop. ?>
 			</div><!-- #content -->
+	<?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>
