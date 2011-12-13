@@ -108,8 +108,10 @@
 						</div>
 					<?php endif; ?>
 					
-					<?php // Get "Atractivos" section
-					get_sidebar( 'atractivos' ); ?>
+					<div id="sidebar">
+						<?php // Get "Atractivos" section
+						get_sidebar( 'atractivos' ); ?>
+					</div>
 				</div>
 
 <?php get_footer(); ?>
