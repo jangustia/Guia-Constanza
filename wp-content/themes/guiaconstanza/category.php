@@ -72,7 +72,8 @@
 				?></span></h1>
 
 				<?php // Get "Featured" section
-				get_sidebar( 'featured' ); ?>
+				if ($has_search)
+					get_sidebar( 'featured' ); ?>
 				
 				<?php if ($has_search): ?>
 					<div id="adv_search">
