@@ -20,35 +20,48 @@
 	{
 		$nombre = isset ($_REQUEST['nombre']) ? $_REQUEST['nombre'] : '';
 		$tipo   = isset ($_REQUEST['tipo'])   ? $_REQUEST['tipo']   : '';
-		$chim   = isset ($_REQUEST['chim'])   ? $_REQUEST['chim']   : FALSE;
-		$pool   = isset ($_REQUEST['pool'])   ? $_REQUEST['pool']   : FALSE;
-		$james  = isset ($_REQUEST['james'])  ? $_REQUEST['james']  : FALSE;
-		$heat   = isset ($_REQUEST['heat'])   ? $_REQUEST['heat']   : FALSE;
-		$menu   = isset ($_REQUEST['menu'])   ? $_REQUEST['menu']   : FALSE;
-		$bar    = isset ($_REQUEST['bar'])    ? $_REQUEST['bar'] : FALSE;
+		$bar    = isset ($_REQUEST['bar'])    ? $_REQUEST['bar']    : FALSE;
 		$tv     = isset ($_REQUEST['tv'])     ? $_REQUEST['tv']     : FALSE;
 		$wifi   = isset ($_REQUEST['wifi'])   ? $_REQUEST['wifi']   : FALSE;
+		
+		$chim   = isset ($_REQUEST['chim'])  ? $_REQUEST['chim']  : FALSE;
+		$pool   = isset ($_REQUEST['pool'])  ? $_REQUEST['pool']  : FALSE;
+		$james  = isset ($_REQUEST['james']) ? $_REQUEST['james'] : FALSE;
+		$heat   = isset ($_REQUEST['heat'])  ? $_REQUEST['heat']  : FALSE;
+		$menu   = isset ($_REQUEST['menu'])  ? $_REQUEST['menu']  : FALSE;
+		
+		$crio     = isset ($_REQUEST['crio'])     ? $_REQUEST['crio']     : FALSE;
+		$inter    = isset ($_REQUEST['inter'])    ? $_REQUEST['inter']    : FALSE;
+		$delivery = isset ($_REQUEST['delivery']) ? $_REQUEST['delivery'] : FALSE;
 		
 		if (!empty ($nombre))
 			$query_args['meta_query'][] = array ('key' => 'nombre', 'value' => $nombre, 'compare' => 'LIKE');
 		if (!empty ($tipo))
-			$query_args['meta_query'][] = array ('key' => 'tipo',   'value' => $tipo,   'compare' => 'LIKE');
-		if (!empty ($chim)   && $category->slug == 'hoteles')
-			$query_args['meta_query'][] = array ('key' => 'chim',   'value' => $chim,   'compare' => 'LIKE');
-		if (!empty ($pool)   && $category->slug == 'hoteles')
-			$query_args['meta_query'][] = array ('key' => 'pool',   'value' => $pool,   'compare' => 'LIKE');
-		if (!empty ($james)  && $category->slug == 'hoteles')
-			$query_args['meta_query'][] = array ('key' => 'james',  'value' => $james,  'compare' => 'LIKE');
-		if (!empty ($heat)   && $category->slug == 'hoteles')
-			$query_args['meta_query'][] = array ('key' => 'heat',   'value' => $heat,   'compare' => 'LIKE');
-		if (!empty ($menu)   && $category->slug == 'hoteles')
-			$query_args['meta_query'][] = array ('key' => 'menu',   'value' => $menu,   'compare' => 'LIKE');
-		if (!empty ($bar) && $category->slug == 'hoteles')
-			$query_args['meta_query'][] = array ('key' => 'bar',    'value' => $bar,    'compare' => 'LIKE');
+			$query_args['meta_query'][] = array ('key' => 'tipo',   'value' => $tipo);
+		if (!empty ($bar))
+			$query_args['meta_query'][] = array ('key' => 'bar',    'value' => $bar);
 		if (!empty ($tv))
-			$query_args['meta_query'][] = array ('key' => 'tv',     'value' => $tv,     'compare' => 'LIKE');
+			$query_args['meta_query'][] = array ('key' => 'tv',     'value' => $tv);
 		if (!empty ($wifi))
-			$query_args['meta_query'][] = array ('key' => 'wifi',   'value' => $wifi,   'compare' => 'LIKE');
+			$query_args['meta_query'][] = array ('key' => 'wifi',   'value' => $wifi);
+		
+		if (!empty ($chim)  && $category->slug == 'hoteles')
+			$query_args['meta_query'][] = array ('key' => 'chim',  'value' => $chim);
+		if (!empty ($pool)  && $category->slug == 'hoteles')
+			$query_args['meta_query'][] = array ('key' => 'pool',  'value' => $pool);
+		if (!empty ($james) && $category->slug == 'hoteles')
+			$query_args['meta_query'][] = array ('key' => 'james', 'value' => $james);
+		if (!empty ($heat)  && $category->slug == 'hoteles')
+			$query_args['meta_query'][] = array ('key' => 'heat',  'value' => $heat);
+		if (!empty ($menu)  && $category->slug == 'hoteles')
+			$query_args['meta_query'][] = array ('key' => 'menu',  'value' => $menu);
+		
+		if (!empty ($crio)     && $category->slug == 'bares-y-restaurantes')
+			$query_args['meta_query'][] = array ('key' => 'crio',     'value' => $crio);
+		if (!empty ($inter)    && $category->slug == 'bares-y-restaurantes')
+			$query_args['meta_query'][] = array ('key' => 'inter',    'value' => $inter);
+		if (!empty ($delivery) && $category->slug == 'bares-y-restaurantes')
+			$query_args['meta_query'][] = array ('key' => 'delivery', 'value' => $delivery);
 	}
 	
 	$loop = new WP_Query ($query_args);
@@ -59,7 +72,8 @@
 				?></span></h1>
 
 				<?php // Get "Featured" section
-				get_sidebar( 'featured' ); ?>
+				if ($has_search)
+					get_sidebar( 'featured' ); ?>
 				
 				<?php if ($has_search): ?>
 					<div id="adv_search">
@@ -94,8 +108,10 @@
 						</div>
 					<?php endif; ?>
 					
-					<?php // Get "Atractivos" section
-					get_sidebar( 'atractivos' ); ?>
+					<div id="sidebar">
+						<?php // Get "Atractivos" section
+						get_sidebar( 'atractivos' ); ?>
+					</div>
 				</div>
 
 <?php get_footer(); ?>

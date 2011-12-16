@@ -5,7 +5,6 @@
 		'orderby'        => 'rand'
 	));
 ?>
-					<div id="sidebar">
 						<section>
 							<h2>Atractivos</h2>
 							<?php while ( $atractivos->have_posts() ) : $atractivos->the_post(); ?>
@@ -16,4 +15,3 @@
 							<?php endwhile; ?>
 							<div class="skyscraper"></div>
 						</section>
-					</div>
