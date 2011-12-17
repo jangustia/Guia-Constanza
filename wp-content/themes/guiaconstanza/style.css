@@ -239,8 +239,6 @@ body {
 /* Advertising Banners Classes
  ********************************/
 .fullbanner, .verticalbanner, .squarepopup, .skyscraper {
-	background-color: #A9A9A9;
-	color: #FFF;
 	display: block;
 	}
 .fullbanner {width: 468px; height: 60px;}
@@ -260,10 +258,13 @@ body {
 	overflow: hidden;
 	z-index: 1; /* Behind flowers */
 	}
-	#content > section { float: left; margin: 0 2em; width:50%; }
 	#content h2 { color: #A1420F; font-size: 1.4em; margin-bottom: .5em; }
 
-	#places-list { padding: 1em; margin-right: 35em; }
+	#places-list {
+		padding: 1em;
+		width: 34em;
+		float: left;
+		}
 		#places-list article {border-bottom: 1px dashed #CCC; margin-bottom: 1em; overflow: auto; padding-bottom: 1em;}
 		#places-list article h3 a:link {font-size: 1.2em; margin: 0;}
 		#places-list article img {float: left; margin-right: 1em;}
@@ -611,15 +612,30 @@ body > header, #subheader {
 /* Home */
 .home #atractivos {
 	float: left;
+	margin-left:2em;
+	width: 45%;
 }
 .home #atractivos article {
 	border-bottom: 1px dotted #CCC;
 	margin-bottom: 2em;
 	padding-bottom: 2em;
 }
-.home #atractivos h3 {margin: 0;}
+.home #atractivos h3 {
+	margin: 0 0 .3em 0;
+	font-size: 1.4em;
+	font-weight: normal;
+	}
 .home #atractivos img {float: left; margin-right: 1em;}
 .home #atractivos p {margin: 0;}
+.home .verticalbanner, .home .squarepopup {float:left;}
+.home .squarepopup {margin-left: 3em}
+
+
+
+#dondeir-widget {
+	float: right;
+	width: 46%;
+}
 
 /* Side Information */
 .sideinfo {
@@ -652,6 +668,44 @@ body > header, #subheader {
 	.sideinfo section:last-child {padding-right: 15em; position: relative;}
 	.sideinfo section:last-child .skyscraper {position: absolute; right: 0; top: 1em;}
 	.sideinfo section article {border-bottom: 1px dotted #CCC !important;}
+
+/* Atractivos Sidebar */
+#sidebar {
+	float: right;
+	position: relative;
+	width: 32em;
+}
+#sidebar .skyscraper {
+	position: absolute;
+	top: 1em;
+	right: 1.5em;
+}
+.category #sidebar {
+	margin-top: 17em;
+}
+
+#sidebar-atractivos {
+	margin-right: 12em;
+}
+	#sidebar-atractivos article {
+		border-bottom: 1px dotted #CCC;
+		clear: both;
+		margin-bottom: 1em;
+		padding-bottom: 1em;
+		overflow: hidden;
+		width: 100%;
+	}
+	#sidebar-atractivos article:last-child {
+		border: none !important;
+	}
+	#sidebar-atractivos h3 {
+		margin: 0 0 1em 0;
+	}
+	#sidebar-atractivos img {
+		float: left;
+		margin-right: 1em;
+	}
+
 
 
 /* Donde Ir
@@ -822,66 +876,60 @@ body > header, #subheader {
 			#checkins .name { color: #666; font-size: 1.1	em; font-weight: bold; }
 			#checkins .origin {color: #666;}
 
-#sidebar {
+#adv_search {
+	position: relative;
+	margin: 0 auto;
+	width: 965px;
+	z-index: 9999;
+}
+#adv_search form {
+	background: #e5e696 url('images/bg_advsearch.png') repeat-x;
+	background: -moz-linear-gradient(top, #e5e696 0%, #c8ca56 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e696), color-stop(100%,#c8ca56));
+	background: -webkit-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
+	background: -o-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
+	background: -ms-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
+	background: linear-gradient(top, #e5e696 0%,#c8ca56 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e696', endColorstr='#c8ca56',GradientType=0 );
+	border: 1px solid #bec04b;
+	box-shadow: 0 1px 5px 0 rgba(0,0,0,.35), 0 15px 15px 0 rgba(0,0,0,.10);
 	position: absolute;
+	top: 2em;
 	right: 0;
-	top: 20em;
-	width: 32.7em;
+	padding: 0 1em;
+	width: 32em;
+}
+#adv_search form h2 {
+	color: #a0410d;
+}
+#adv_search input[type=text] {
+	border: 1px solid #CCC;
+	padding: .3em .5em;
+	width: 10em;
 	}
-	#adv_search {
-		position: relative;
-		margin: 0 auto;
-		width: 965px;
-		z-index: 9999;
-		}
-		#adv_search form {
-			background: #e5e696 url('images/bg_advsearch.png') repeat-x;
-			background: -moz-linear-gradient(top, #e5e696 0%, #c8ca56 100%);
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e696), color-stop(100%,#c8ca56));
-			background: -webkit-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
-			background: -o-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
-			background: -ms-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
-			background: linear-gradient(top, #e5e696 0%,#c8ca56 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e696', endColorstr='#c8ca56',GradientType=0 );
-			border: 1px solid #bec04b;
-			box-shadow: 0 1px 3px 0 rgba(0,0,0,.35);
-			position: absolute;
-			top: 2em;
-			right: 0;
-			padding: 0 1em;
-			width: 32em;
-		}
-		#adv_search form h2 {
-			color: #a0410d;
-		}
-		#adv_search input[type=text] {
-			border: 1px solid #CCC;
-			padding: .3em .5em;
-			width: 10em;
-			}
-		#adv_search select {
-			display: block;
-			margin-top: 1em;
-			padding: .3em;
-			width: 11em;
-		}
-		#adv_search form > div {
-			float: right;
-			position: relative;
-			top: -5em;
-			right: -4em;
-			width: 23em;
-			}
-		#adv_search label {
-			display: block;
-			float: left;
-			font-size: 0.8em;
-			padding: 0 0 1em 0;
-			width: 9em;
-			}
-			#adv_search label input[type=checkbox] {
-				margin-right: .3em;
-			}
+#adv_search select {
+	display: block;
+	margin-top: 1em;
+	padding: .3em;
+	width: 11em;
+}
+#adv_search form > div {
+	float: right;
+	position: relative;
+	top: -5em;
+	right: -4em;
+	width: 23em;
+	}
+#adv_search label {
+	display: block;
+	float: left;
+	font-size: 0.8em;
+	padding: 0 0 1em 0;
+	width: 9em;
+	}
+	#adv_search label input[type=checkbox] {
+		margin-right: .3em;
+	}
 		#hoteles #adv_search label:last-child {width: 10em;}
 		#baresrest #adv_search label {margin-bottom: 1em;}
 		#adv_search input[type=submit] {
@@ -891,10 +939,6 @@ body > header, #subheader {
 			}
 		#adv_search section {clear: both; padding-right: 17em; height: 60em; position: relative;}
 			#adv_search section .skyscraper {position: absolute; right: 2em; bottom: 0}
-
-	#sidebar section {
-		width: 15em;
-	}
 
 /* Recomendaciones
  ****************************/

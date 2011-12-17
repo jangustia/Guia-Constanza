@@ -30,7 +30,16 @@ get_sidebar( 'featured' ); ?>
 						<?php else: ?>
 							<h2>No hay nah, bro</h2>
 						<?php endif; ?>
-						<div class="fullbanner"></div>
+						<div class="fullbanner">
+							<script type="text/javascript"><!--
+								google_ad_client = "ca-pub-8397939586383038";
+								/* GuiaConstanza 468x60 */
+								google_ad_slot = "6293014751";
+								google_ad_width = 468;
+								google_ad_height = 60;
+								//-->
+							</script>
+						</div>
 					</section><!-- #atractivos -->
 
 					<section id="dondeir-widget">
