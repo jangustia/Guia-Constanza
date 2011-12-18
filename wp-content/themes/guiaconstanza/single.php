@@ -107,9 +107,11 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 								</li>
 							<?php endif; ?>
 						</ul>
-			
-					<h3>Ubicación</h3>
-					<div id="details_map"></div>
+					
+					<?php if (!empty ($geo_lat) && !empty ($geo_long)): ?>
+						<h3>Ubicación</h3>
+						<div id="details_map" data-geo_lat="<?php echo $geo_lat; ?>" data-geo_long="<?php echo $geo_long; ?>"></div>
+					<?php endif; ?>
 			
 					<section class="ratings">
 						<h3>Calificar <?php echo $rate_title; ?></h3>

@@ -782,6 +782,11 @@ body > header, #subheader {
 	#fax {background-position: 0 -1.7em;}
 	#place-email {background-position: 0 -3.5em;}
 	#web {background-position: 0 -5.4em;}
+	
+	#details_map {
+		width: 464px;
+		height: 212px;
+	}
 
 .ratings {}
 	.ratings form {

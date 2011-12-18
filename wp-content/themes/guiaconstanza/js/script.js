@@ -46,8 +46,38 @@ GUIACONSTANZA = {
 	
 	// !Single
 	single: {
-		init  : function() {
-		}	
+		single_marker_map : function (map_contain_id) {
+			var map_container = $('#' + map_contain_id),
+				marker_pos    = new google.maps.LatLng (map_container.data ('geo_lat'), map_container.data ('geo_long')),
+			    gmap          = new google.maps.Map (document.getElementById (map_contain_id), {
+					zoom               : 10,
+					mapTypeControl     : false,
+					streetViewControl  : false,
+					overviewMapControl : true,
+					zoomControlOptions : {
+	  					style: google.maps.ZoomControlStyle.SMALL
+	  				},			    
+					center             : marker_pos,
+					mapTypeId          : google.maps.MapTypeId.ROADMAP
+				}),
+				marker        = new google.maps.Marker({
+			      position  : marker_pos,
+			      map       : gmap,
+			      title     : $('#details .org').text(),
+			      animation : google.maps.Animation.DROP
+			  });
+		},
+		
+		init : function() {
+		},
+		
+		category_hoteles : function() {
+			this.single_marker_map ('details_map');
+		},
+		
+		category_bares_y_restaurantes : function() {
+			this.single_marker_map ('details_map');
+		}
 	} // end single object
 };
 

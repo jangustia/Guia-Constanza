@@ -22,14 +22,16 @@
 
 	<!-- JavaScript at the bottom for fast page loading -->
 
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="<?php bloginfo ('template_url'); ?>/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="<?php bloginfo ('template_url'); ?>/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 	
-  <!-- scripts concatenated and minified via build script -->
-  <script defer src="<?php bloginfo ('template_url'); ?>/js/plugins.js"></script>
-  <script defer src="<?php bloginfo ('template_url'); ?>/js/script.js"></script>
-  <!-- end scripts -->
+	<script src="//maps.googleapis.com/maps/api/js?v=3&sensor=false"></script>
+	
+	<!-- scripts concatenated and minified via build script -->
+	<script defer src="<?php bloginfo ('template_url'); ?>/js/plugins.js"></script>
+	<script defer src="<?php bloginfo ('template_url'); ?>/js/script.js"></script>
+	<!-- end scripts -->
 
 	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
 	mathiasbynens.be/notes/async-analytics-snippet -->
