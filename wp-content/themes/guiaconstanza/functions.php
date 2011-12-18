@@ -508,7 +508,7 @@ endif;
 	    
 	    if (isset ($post->ID))
 		    foreach((get_the_category($post->ID)) as $category)
-		        $classes[] = $category->category_nicename;
+		        $classes[] = 'category-' . $category->category_nicename;
 		        return $classes;
 	}
 	add_filter('post_class', 'boilerplate_category_id_class');
