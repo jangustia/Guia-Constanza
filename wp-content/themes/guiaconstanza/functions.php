@@ -505,9 +505,11 @@ endif;
 // add category nicenames in body and post class
 	function boilerplate_category_id_class($classes) {
 	    global $post;
-	    foreach((get_the_category($post->ID)) as $category)
-	        $classes[] = $category->category_nicename;
-	        return $classes;
+	    
+	    if (isset ($post->ID))
+		    foreach((get_the_category($post->ID)) as $category)
+		        $classes[] = $category->category_nicename;
+		        return $classes;
 	}
 	add_filter('post_class', 'boilerplate_category_id_class');
 	add_filter('body_class', 'boilerplate_category_id_class');
@@ -830,5 +832,66 @@ function category_for_post_type ($post_type) {
 	}
 }
 endif;
+
+
+/*
+if (!function_exists ('gc_js_body_data')):
+function gc_js_body_data() {
+	if ( is_front_page() )
+		$template = 'home';
+	else if ( is_home() )
+		$template = 'blog';
+	
+	else if ( is_page() ) {
+		$page_id   = $wp_query->get_queried_object_id();
+		$post      = get_page($page_id);
+		
+		$template   = 'page';
+		$slug       = $post->post_name;
+		$individual = sanitize_html_class( str_replace( '.', '-', get_post_meta( $page_id, '_wp_page_template', true ) ) );
+	}
+	
+	else if ( is_category() ) {
+		$cat        = $wp_query->get_queried_object();
+		$template   = 'category';
+		$slug       = sanitize_html_class( $cat->slug, $cat->term_id );
+	} 
+	
+	else if ( is_single() ) {
+		$post_id = $wp_query->get_queried_object_id();
+		$post    = $wp_query->get_queried_object();
+
+		$template   = 'single';
+		$slug       = sanitize_html_class ( $post->post_type, $post_id );
+		$individual = 'single-' . $post_id;
+	}
+	
+	else if ( is_archive() ) {
+		$template = 'archive';
+	}
+	
+	else if ( is_search() ) {
+		$template = 'search';
+		$slug     = !empty( $wp_query->posts ) ? 'results' : 'no-results';
+	}
+	
+	else if ( is_attachment() )
+		$template = 'attachment';
+	else if ( is_404() )
+		$template = 'error404';
+	$template = 'boom';
+	if (isset ($template))
+		$attr[] = 'data-template="'. $template .'"';
+	if (isset ($slug))
+		$attr[] = 'data-slug="'. $slug .'"';
+	if (isset ($individual))
+		$attr[] = 'data-individual="'. $individual .'"';
+	
+	return implode(' ', $attr);
+}
+
+add_filter('body_class', 'gc_js_body_data');
+endif;
+*/
 
 ?>
