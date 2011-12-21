@@ -721,7 +721,6 @@ body > header, #subheader {
 #dondeir section h2 {font-size: 2.2em; margin: 0;}
 #dondeir section p {font-size: 1.2em;}
 #dondeir_map {
-	background: url('images/placeholder_mapa.jpg') no-repeat center;
 	margin: 1em auto;
 	width: 857px;
 	height: 454px;

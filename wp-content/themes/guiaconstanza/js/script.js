@@ -6,6 +6,10 @@
 GUIACONSTANZA = {
 	// !Common
 	common: {
+		constanza_lat      : 18.912133,
+		constanza_long     : -70.74337,
+		current_infowindow : null,
+		
 		init : function() {
 		}
 	}, // end common object
@@ -26,7 +30,46 @@ GUIACONSTANZA = {
 	
 	// !Page
 	page: {
+		current_infowindow : null,
+		
 		init : function() {
+		},
+		
+		// !Donde Ir
+		page_id_113 : function() {
+			var constanza_pos = new google.maps.LatLng (GUIACONSTANZA.common.constanza_lat, GUIACONSTANZA.common.constanza_long),
+			    gmap          = new google.maps.Map (document.getElementById ('dondeir_map'), {
+					zoom               : 11,
+					mapTypeControl     : false,
+					streetViewControl  : false,
+					overviewMapControl : true,
+					zoomControlOptions : {
+	  					style: google.maps.ZoomControlStyle.DEFAULT
+	  				},			    
+					center             : constanza_pos,
+					mapTypeId          : google.maps.MapTypeId.ROADMAP
+				});
+			
+			$('#marker_list li').each (function()
+			{
+				var marker_element = $(this),
+				    marker         = new google.maps.Marker ({
+						position  : new google.maps.LatLng (marker_element.data ('geo_lat'), marker_element.data ('geo_long')),
+						map       : gmap,
+						title     : marker_element.find ('h3').text(),
+						animation : google.maps.Animation.DROP
+					}),
+					info_window    = new google.maps.InfoWindow({
+						content : marker_element.html()
+					});
+				
+				google.maps.event.addListener (marker, 'click', function() {
+					info_window.open (gmap, marker);
+					if (GUIACONSTANZA.common.current_infowindow)
+						GUIACONSTANZA.common.current_infowindow.close();
+					GUIACONSTANZA.common.current_infowindow = info_window;
+				});
+			});
 		}
 	}, // end page object
 	
@@ -61,10 +104,10 @@ GUIACONSTANZA = {
 					mapTypeId          : google.maps.MapTypeId.ROADMAP
 				}),
 				marker        = new google.maps.Marker({
-			      position  : marker_pos,
-			      map       : gmap,
-			      title     : $('#details .org').text(),
-			      animation : google.maps.Animation.DROP
+					position  : marker_pos,
+					map       : gmap,
+					title     : $('#details .org').text(),
+					animation : google.maps.Animation.DROP
 			  });
 		},
 		
@@ -99,7 +142,7 @@ UTIL = {
 	action_from_body: function() {
 		var body        = $(document.body),
 		    con_classes = new Array ('home', 'page', 'category', 'single', 'search', 'archive'),
-		    act_classes = new Array ('category-hoteles', 'category-bares-y-restaurantes', 'category-atractivos'),
+		    act_classes = new Array ('category-hoteles', 'category-bares-y-restaurantes', 'category-atractivos', 'page-id-113'),
 		    con_length  = con_classes.length,
 		    act_length  = act_classes.length,
 		    i         = 0,
