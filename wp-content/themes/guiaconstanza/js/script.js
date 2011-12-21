@@ -110,14 +110,14 @@ UTIL = {
 		
 		for (i = 0; i < con_length; i++) {
 			if (body.hasClass (con_classes[i])) {
-				exec.controller = con_classes[i].replace ('-', '_');
+				exec.controller = con_classes[i].replace (/-/g, '_');
 				break;
 			}
 		}
 		
 		for (i = 0; i < act_length; i++) {
 			if (body.hasClass (act_classes[i])) {
-				exec.action = act_classes[i].replace ('-', '_');
+				exec.action = act_classes[i].replace (/-/g, '_');
 				break;
 			}
 		}
