@@ -10,33 +10,7 @@ GUIACONSTANZA = {
 		constanza_long     : -70.74337,
 		current_infowindow : null,
 		
-		init : function() {
-		}
-	}, // end common object
-	
-	
-	//----
-	
-	
-	// !Home
-	home: {
-		init : function() {
-		}
-	}, // end home object
-	
-	
-	//----
-	
-	
-	// !Page
-	page: {
-		current_infowindow : null,
-		
-		init : function() {
-		},
-		
-		// !Donde Ir
-		page_id_113 : function() {
+		dondeir_map : function (type) {
 			var constanza_pos = new google.maps.LatLng (GUIACONSTANZA.common.constanza_lat, GUIACONSTANZA.common.constanza_long),
 			    gmap          = new google.maps.Map (document.getElementById ('dondeir_map'), {
 					zoom               : 11,
@@ -53,15 +27,19 @@ GUIACONSTANZA = {
 			$('#marker_list li').each (function()
 			{
 				var marker_element = $(this),
+				    title          = marker_element.find ('h3').text(),
+					url            = marker_element.find ('a').prop ('href'),
 				    marker         = new google.maps.Marker ({
-						position  : new google.maps.LatLng (marker_element.data ('geo_lat'), marker_element.data ('geo_long')),
-						map       : gmap,
-						title     : marker_element.find ('h3').text(),
-						animation : google.maps.Animation.DROP
-					}),
-					info_window    = new google.maps.InfoWindow({
-						content : marker_element.html()
-					});
+				    	position  : new google.maps.LatLng (marker_element.data ('geo_lat'), marker_element.data ('geo_long')),
+				    	map       : gmap,
+				    	title     : title,
+				    	animation : google.maps.Animation.DROP
+				    }),
+				    info_window    = new google.maps.InfoWindow({
+				    	content : (type == 'home' ?
+				    		'<a class="infobox_home" href="'+ url +'">'+ title +'</a>' :
+				    		marker_element.html())
+				    });
 				
 				google.maps.event.addListener (marker, 'click', function() {
 					info_window.open (gmap, marker);
@@ -70,6 +48,37 @@ GUIACONSTANZA = {
 					GUIACONSTANZA.common.current_infowindow = info_window;
 				});
 			});
+		},
+		
+		init : function() {
+		}
+	}, // end common object
+	
+	
+	//----
+	
+	
+	// !Home
+	home: {
+		init : function() {
+			GUIACONSTANZA.common.dondeir_map ('home');
+		}
+	}, // end home object
+	
+	
+	//----
+	
+	
+	// !Page
+	page: {
+		current_infowindow : null,
+		
+		init : function() {
+		},
+		
+		// !Donde Ir
+		page_id_113 : function() {
+			GUIACONSTANZA.common.dondeir_map ('dondeir');
 		}
 	}, // end page object
 	

@@ -13,38 +13,59 @@
  * @since Boilerplate 1.0
  */
 
-get_header();
-get_sidebar( 'featured' ); ?>
+	get_header();
+	get_sidebar( 'featured' );
+	
+	$query_args = array (
+		'post_type' => 'gc_atractivos'
+	);
+	
+	$atractivos = new WP_Query ($query_args);
+?>
 
 				<div id="content" class="wrap" role="main">
 					<section id="atractivos">
-						<?php if (have_posts()): ?>
-						<h2>Atractivos</h2>
-							<?php while(have_posts()): the_post(); ?>
-						<article>
-							<img src="<?php bloginfo('template_url') ?>/images/constanza-agricultura.png" alt="" />
-							<h3><a href="#"><?php the_title() ?></a></h3>
-							<?php the_excerpt() ?>
-						</article>
-							<?php endwhile; ?>
+						<?php if (!$atractivos->have_posts()): ?>
 						<?php else: ?>
-							<h2>No hay nah, bro</h2>
+							<h2>Atractivos</h2>
+							
+							<?php while ( $atractivos->have_posts() ) : $atractivos->the_post(); ?>
+								<article>
+									<img src="<?php bloginfo ('template_url'); ?>/images/constanza-agricultura.png" alt="" />
+									<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+									<?php the_excerpt(); ?>
+								</article>
+							<?php endwhile; ?>
+							
+							<div class="fullbanner">
+								<script type="text/javascript"><!--
+									google_ad_client = "ca-pub-8397939586383038";
+									/* GuiaConstanza 468x60 */
+									google_ad_slot = "6293014751";
+									google_ad_width = 468;
+									google_ad_height = 60;
+									//-->
+								</script>
+							</div>
 						<?php endif; ?>
-						<div class="fullbanner">
-							<script type="text/javascript"><!--
-								google_ad_client = "ca-pub-8397939586383038";
-								/* GuiaConstanza 468x60 */
-								google_ad_slot = "6293014751";
-								google_ad_width = 468;
-								google_ad_height = 60;
-								//-->
-							</script>
-						</div>
 					</section><!-- #atractivos -->
-
+					
+					<?php $atractivos->rewind_posts(); ?>
+					
 					<section id="dondeir-widget">
 						<h2>Donde ir</h2>
-						<img src="<?php bloginfo('template_url') ?>/images/map_placeholder.png" alt="Mapa" />
+						<div id="dondeir_map"></div>
+						<ul id="marker_list" class="visuallyhidden">
+						<?php while ( $atractivos->have_posts() ) : $atractivos->the_post(); ?>
+							<?php if (($geo_lat = get_post_meta (get_the_ID(), 'geo_lat', TRUE)) && ($geo_long = get_post_meta (get_the_ID(), 'geo_long', TRUE))): ?>
+								<li data-geo_lat="<?php echo $geo_lat; ?>" data-geo_long="<?php echo $geo_long; ?>">
+									<h3><?php the_title(); ?></h3>
+									<p><?php the_excerpt(); ?></p>
+									<a href="<?php the_permalink(); ?>">Ver más</a>
+								</li>
+							<?php endif; ?>
+						<?php endwhile; ?>
+						</ul>
 						<div class="verticalbanner"></div>
 						<div class="squarepopup"></div>
 					</section>
