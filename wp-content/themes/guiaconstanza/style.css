@@ -976,17 +976,29 @@ body > header, #subheader {
 
 /* Somos
  ****************************/
-#somos .breadcrumbs {margin: 0 2em 2em; clear: both;}
-	#somos #content div {margin: 0 2em;}
-	#somos p {font-size: 1.2em; margin: 0 24em 1em 0;}
+#somos {margin:25px}
+#somos .breadcrumbs {margin: 0 0 20px; clear: both;}
+	#somos .content div {margin: 0 2em;}
+	#somos p {
+		font-size: 1.1em;
+		margin: 0 270px 10px 0;
+	}
+	#somos .more_pages {
+		position: absolute;
+		top: 70px;
+		right: 20px;
+	}
 	#somos .button {
 		display: block;
 		float: none;
-		border-radius: .5em;
-		width: 20em;
+		font-size: 1em;
+		border-radius: 35px;
+		width: 240px;
+		padding: 10px;
+		margin-bottom: 10px;
 		}
-		#somos #content li {margin-bottom: 1em;}
-		#somos #content ul {position: absolute; top: 7em; right: 2em;}
+		#somos .content div li {margin-bottom: 1em;}
+		#somos .content div ul {position: absolute; top: 7em; right: 2em;}
 
 /* Blog
  ****************************/
