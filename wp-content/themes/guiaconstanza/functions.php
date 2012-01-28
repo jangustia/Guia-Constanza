@@ -833,6 +833,27 @@ function category_for_post_type ($post_type) {
 }
 endif;
 
+if (!function_exists ('bares_y_rests_icons')):
+function bares_y_rests_icons() {
+	$icons         = array();
+	$custom_fields = get_post_custom();
+	$facilidades   = array (
+		//'crio'     => 'Comida Criolla',
+		//'inter'    => 'Comida Internacional',
+		'tv'       => 'Televisión',
+		'wifi'     => 'Wireless',
+		'delivery' => 'Delivery',
+		'bar'      => 'Tragos'
+	);
+	
+	foreach ($custom_fields as $i => $entry)
+		if (array_key_exists ($i, $facilidades) && current ($entry))
+			$icons[$i] = $facilidades[$i];
+	
+	return $icons;
+}
+endif;
+
 function custom_excerpt_more( $more ) {
 	return ' [...]';
 }

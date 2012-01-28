@@ -10,7 +10,7 @@ GUIACONSTANZA = {
 		constanza_long     : -70.74337,
 		current_infowindow : null,
 		
-		dondeir_map : function (type) {
+		dondeir_map: function (type) {
 			var constanza_pos = new google.maps.LatLng (GUIACONSTANZA.common.constanza_lat, GUIACONSTANZA.common.constanza_long),
 			    gmap          = new google.maps.Map (document.getElementById ('dondeir_map'), {
 					zoom               : 11,
@@ -50,6 +50,36 @@ GUIACONSTANZA = {
 			});
 		},
 		
+		slide_nav: function (container_selector, nav_selector, content_selector) {
+			var $nav = $(container_selector +' '+ nav_selector),
+			    $nav_buttons = $nav.find ('a');
+			
+			$nav_buttons.click (function() {
+				var $button    = $(this),
+				    $container = $button.closest (container_selector),
+				    $current   = $container.find (content_selector + '.active'),
+				    $new;
+				
+				$current.hide();
+				$current.removeClass ('active');
+				
+				if ($button.hasClass ('prev')) {
+					$new = $current.prev (content_selector);
+					if (!$new.length)
+						$new = $container.find (content_selector).last();
+				}
+				else if ($button.hasClass ('next')) {
+					$new = $current.next (content_selector);
+					if (!$new.length)
+						$new = $container.find (content_selector).first();
+				}
+				
+				$new.fadeIn (400, function() {
+					$(this).addClass ('active');
+				});
+			});
+		},
+		
 		init : function() {
 		}
 	}, // end common object
@@ -62,6 +92,7 @@ GUIACONSTANZA = {
 	home: {
 		init : function() {
 			GUIACONSTANZA.common.dondeir_map ('home');
+			GUIACONSTANZA.common.slide_nav ('#featured_bars', '.featured_arrows', '.slide');
 		}
 	}, // end home object
 	
