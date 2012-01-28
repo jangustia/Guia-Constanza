@@ -833,6 +833,11 @@ function category_for_post_type ($post_type) {
 }
 endif;
 
+function custom_excerpt_more( $more ) {
+	return ' [...]';
+}
+add_filter( 'excerpt_more', 'custom_excerpt_more' );
+
 
 /*
 if (!function_exists ('gc_js_body_data')):
