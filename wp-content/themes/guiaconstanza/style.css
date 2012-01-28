@@ -593,18 +593,18 @@ body > header, #subheader {
 }
 .chim {background-position: 0 0;}
 .pool {background-position: 486px 0;}
-.juegos {background-position: 416px 0;}
-.agua {background-position: 347px 0;}
-.rest {background-position: 278px 0;}
+.juegos, .james {background-position: 416px 0;}
+.agua, .heat {background-position: 347px 0;}
+.rest, .menu {background-position: 278px 0;}
 .bar {background-position: 209px 0;}
 .tv {background-position: 138px 0;}
 .wifi {background-position: 69px 0;}
 
 .slide .chim {background-position: 0 0;}
 .slide .pool {background-position: 324px 0;}
-.slide .juegos {background-position: 277px 0;}
-.slide .agua {background-position: 230px 0;}
-.slide .rest {background-position: 183px 0;}
+.slide .juegos, .slide .james {background-position: 277px 0;}
+.slide .agua, .slide .heat {background-position: 230px 0;}
+.slide .rest, .slide .menu {background-position: 183px 0;}
 .slide .bar {background-position: 138px 0;}
 .slide .tv {background-position: 92px 0;}
 .slide .wifi {background-position: 46px 0;}
