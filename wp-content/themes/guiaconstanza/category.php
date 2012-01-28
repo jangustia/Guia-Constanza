@@ -98,7 +98,6 @@
 							<h2><?php single_cat_title(); ?></h2>
 							<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 								<article>
-									<!-- Display the Title as a link to the Post's permalink. -->
 									<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 									<img src="<?php bloginfo ('template_url'); ?>/images/generic_thumb.png" alt="" />
 									<p><?php the_excerpt(); ?></p>
