@@ -839,6 +839,26 @@ function custom_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'custom_excerpt_more' );
 
 
+// From http://www.intenseblog.com/wordpress/multiple-post-excerpt-lengths-wordpress.html
+function new_excerpt ($charlength) {
+   $excerpt = get_the_excerpt();
+   $charlength++;
+   if(strlen($excerpt)>$charlength) {
+       $subex = substr($excerpt,0,$charlength-5);
+       $exwords = explode(" ",$subex);
+       $excut = -(strlen($exwords[count($exwords)-1]));
+       if($excut<0) {
+            echo substr($subex,0,$excut);
+       } else {
+       	    echo $subex;
+       }
+       echo "[...]";
+   } else {
+	   echo $excerpt;
+   }
+}
+
+
 /*
 if (!function_exists ('gc_js_body_data')):
 function gc_js_body_data() {
