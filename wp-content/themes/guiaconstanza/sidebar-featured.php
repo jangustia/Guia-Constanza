@@ -1,4 +1,10 @@
 <?php
+	$hoteles = new WP_Query (array (
+		'post_type'      => 'gc_hoteles',
+		'posts_per_page' => 5,
+		'orderby'        => 'rand'
+	));
+	
 	$bares_y_rests = new WP_Query (array (
 		'post_type'      => 'gc_bares_y_rests',
 		'posts_per_page' => 5,
@@ -10,14 +16,23 @@
 				<div id="featured" class="wrap">
 					<section id="featured_hotel">
 						<h2>Hoteles Destacados</h2>
-						<figure class="hotel_slide">
-							<img src="<?php bloginfo('template_url') ?>/images/img_hoteles.jpg" alt="Rancho Guaraguao" />
-							<figcaption>
-								<h3>Rancho Guaraguao</h3>
-								<p>El encanto y la magia del clima de montaña combinan armónicamente con un complejo turístico.</p>
-							</figcaption>
-						</figure>
+						
+						<div id="hotel_slide" class="niveSlider">
+						<?php while ($hoteles->have_posts()): $hoteles->the_post(); ?>
+							<img src="<?php bloginfo ('template_url'); ?>/images/img_hoteles.jpg" alt="<?php the_title(); ?>" title="#hotel_caption_<?php the_ID(); ?>" />
+						<?php endwhile; $hoteles->rewind_posts(); ?>
+						</div>
+						
+						<ul class="visuallyhidden">
+						<?php while ($hoteles->have_posts()): $hoteles->the_post(); ?>
+							<li id="hotel_caption_<?php the_ID(); ?>" class="nivo-html-caption">
+								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+								<p class="caption_excerpt"><?php echo new_excerpt (100); ?></p>
+							</li>
+						<?php endwhile; ?>
+						</ul>
 					</section>
+					
 					<section id="featured_bars">
 						<h2>Bares y Restaurantes</h2>
 						

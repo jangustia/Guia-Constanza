@@ -567,7 +567,7 @@ body > header, #subheader {
 		#featured_hotel {width: 30.769em;}
 			.hotel_slide {position: relative;}
 				.hotel_slide img {width: 100%;}
-				.hotel_slide figcaption {
+				#featured_hotel .nivo-caption {
 					background: #333;
 					background: rgba(0,0,0,0.65);
 					color: #FFF;
@@ -577,8 +577,12 @@ body > header, #subheader {
 					bottom: .7em;
 					max-width: 20em;
 					}
-					.hotel_slide h3 {font-size: 1.2em; margin: 0 !important;}
-					.hotel_slide p {font-size: 0.8em !important; margin: .5em;}
+					#featured_hotel .nivo-caption h3 {font-size: 1.2em; margin: 0 !important;}
+					#featured_hotel .nivo-caption a:link,
+					#featured_hotel .nivo-caption a:visited {
+						color: #fff;
+					}
+					#featured_hotel .nivo-caption .caption_excerpt {font-size: 0.8em !important; margin: .5em;}
 		#featured_bars, #featured_posts {border-left: 1px solid #CCC; width: 21.46em;}
 			.slide {
 				padding: 1em;

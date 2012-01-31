@@ -50,6 +50,15 @@ GUIACONSTANZA = {
 			});
 		},
 		
+		main_feature: function () {
+			$('#hotel_slide').nivoSlider ({
+				effect         : 'fade',
+				pauseTime      : 5000,
+				directionNav   : false,
+				captionOpacity : 1.0
+			});
+		},
+		
 		slide_nav: function (container_selector, nav_selector, content_selector) {
 			var $nav = $(container_selector +' '+ nav_selector),
 			    $nav_buttons = $nav.find ('a');
@@ -93,6 +102,7 @@ GUIACONSTANZA = {
 		init : function() {
 			GUIACONSTANZA.common.dondeir_map ('home');
 			GUIACONSTANZA.common.slide_nav ('#featured_bars', '.featured_arrows', '.slide');
+			GUIACONSTANZA.common.main_feature ('#featured_bars', '.featured_arrows', '.slide');
 		}
 	}, // end home object
 	
