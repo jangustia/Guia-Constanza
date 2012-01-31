@@ -29,11 +29,7 @@
 						</nav>
 						
 						<?php while ($bares_y_rests->have_posts()): $bares_y_rests->the_post(); ?>
-						<?php if ($first_post): $first_post = FALSE; ?>
-							<div class="slide active">
-						<?php else: ?>
-							<div class="slide">
-						<?php endif; ?>
+							<div class="slide<?php if ($first_post) { $first_post = FALSE; ?> active<?php }?>">
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 								<img src="<?php bloginfo('template_url') ?>/images/generic_thumb.png" alt="" />
 								<p><?php echo new_excerpt (120); ?></p>
