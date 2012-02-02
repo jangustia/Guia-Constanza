@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
 
-<section id="recomend">
+<section id="recommend">
 	<h1 class="subheader wrap"><span>Recomendaciones</span></h1>
 
 	<div class="wrap content">
@@ -12,7 +12,7 @@
 			<h2>Conozca las recomendaciones de quienes ya han visitado Constanza. <strong>Animate a compartir tu experiencia!</strong></h2>
 			<?php for($i=0;$i<8;$i++): ?>
 			<article>
-				<img src="img/recomend_thumb.png" alt="" />
+				<img src="<?php bloginfo('template_url') ?>/images/recomend_thumb.png" alt="" />
 				<div class="box">
 					<h3><a href="#">Julio Rodríguez</a></h3>
 					<p>Nam sed erat. Nunc lorem risus, elementum mollis, suscipit quis, tempor ac, ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
