@@ -19,7 +19,7 @@
 
 						<div id="hotel_slide" class="niveSlider">
 						<?php while ($hoteles->have_posts()): $hoteles->the_post(); ?>
-							<?php the_post_thumbnail ('medium', array ('title'=>get_the_title())); ?>
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail ('medium', array ('title'=>get_the_title())); ?></a>
 						<?php endwhile; ?>
 						</div>
 					</section>
