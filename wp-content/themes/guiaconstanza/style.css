@@ -571,18 +571,34 @@ body > header, #subheader {
 					background: #333;
 					background: rgba(0,0,0,0.65);
 					color: #FFF;
-					margin: 0 0 .5em .5em;
-					padding: .7em;
+					margin: 5px;
+					padding: 5px;
 					position: absolute;
-					bottom: .7em;
-					max-width: 20em;
+					bottom: 10px;
+					max-width: 250px;
 					}
 					#featured_hotel .nivo-caption h3 {font-size: 1.2em; margin: 0 !important;}
 					#featured_hotel .nivo-caption a:link,
 					#featured_hotel .nivo-caption a:visited {
 						color: #fff;
 					}
-					#featured_hotel .nivo-caption .caption_excerpt {font-size: 0.8em !important; margin: .5em;}
+					#featured_hotel .nivo-caption .caption_excerpt {font-size: 0.8em !important; margin: 0;}
+					#featured_hotel .nivo-controlNav {
+						position: absolute;
+						bottom: 25px;
+						right: 25px;
+					}
+					#featured_hotel .nivo-control {
+						background: url('images/rotator.png') no-repeat center;
+						float: left;
+						display: block;
+						text-indent: -9999em;
+						width: 12px;
+						height: 12px;
+					}
+					#featured_hotel .active {
+						background-image: url('images/hover_rotator.png');
+					}
 		#featured_bars, #featured_posts {border-left: 1px solid #CCC; width: 21.46em;}
 			.slide {
 				padding: 1em;
@@ -1289,11 +1305,11 @@ Image Slider Plugin
  * Copyright 2011, Gilbert Pellegrom
  * Free to use and abuse under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * March 2010
  */
- 
- 
+
+
 /* The Nivo Slider styles */
 .nivoSlider {
 	position:relative;
@@ -1361,13 +1377,4 @@ Image Slider Plugin
 }
 .nivo-nextNav {
 	right:0px;
-}
-/* Control nav styles (e.g. 1,2,3…) */
-.nivo-controlNav a {
-	position:relative;
-	z-index:9;
-	cursor:pointer;
-}
-.nivo-controlNav a.active {
-	font-weight:bold;
 }
