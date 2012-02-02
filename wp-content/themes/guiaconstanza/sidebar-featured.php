@@ -19,18 +19,9 @@
 
 						<div id="hotel_slide" class="niveSlider">
 						<?php while ($hoteles->have_posts()): $hoteles->the_post(); ?>
-							<?php the_post_thumbnail ('medium', array ('title'=>'#hotel_caption_' . get_the_ID())); ?>
-						<?php endwhile; $hoteles->rewind_posts(); ?>
-						</div>
-
-						<ul class="visuallyhidden">
-						<?php while ($hoteles->have_posts()): $hoteles->the_post(); ?>
-							<li id="hotel_caption_<?php the_ID(); ?>" class="nivo-html-caption">
-								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-								<p class="caption_excerpt"><?php echo new_excerpt (100); ?></p>
-							</li>
+							<?php the_post_thumbnail ('medium', array ('title'=>get_the_title())); ?>
 						<?php endwhile; ?>
-						</ul>
+						</div>
 					</section>
 
 					<section id="featured_bars">
