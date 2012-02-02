@@ -90,6 +90,12 @@ GUIACONSTANZA = {
 		},
 		
 		init : function() {
+			var $featured = $('#featured');
+			
+			if ($featured.length) {
+				GUIACONSTANZA.common.slide_nav ('#featured_bars', '.featured_arrows', '.slide');
+				GUIACONSTANZA.common.main_feature();
+			}
 		}
 	}, // end common object
 	
@@ -101,8 +107,6 @@ GUIACONSTANZA = {
 	home: {
 		init : function() {
 			GUIACONSTANZA.common.dondeir_map ('home');
-			GUIACONSTANZA.common.slide_nav ('#featured_bars', '.featured_arrows', '.slide');
-			GUIACONSTANZA.common.main_feature ('#featured_bars', '.featured_arrows', '.slide');
 		}
 	}, // end home object
 	
