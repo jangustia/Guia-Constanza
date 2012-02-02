@@ -31,7 +31,7 @@
 							
 							<?php while ( $atractivos->have_posts() ) : $atractivos->the_post(); ?>
 								<article>
-									<img src="<?php bloginfo ('template_url'); ?>/images/constanza-agricultura.png" alt="" />
+									<?php the_post_thumbnail ('list-thumb'); ?>
 									<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 									<?php the_excerpt(); ?>
 								</article>

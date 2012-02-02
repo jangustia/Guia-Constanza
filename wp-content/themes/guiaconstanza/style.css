@@ -608,7 +608,12 @@ body > header, #subheader {
 				display: block;
 			}
 				.slide h3 {font-size: 1.2em; line-height: 1.3; margin: 0 0 1em;}
-				.slide img {float: left; margin-right: 1em; width: 35%;}
+				.slide img {
+					float: left;
+					margin-right: 1em;
+					width: 96px;
+					height: 65px;
+				}
 				.slide p {font-size: 1em; margin-bottom: 1em;}
 				.slide ul {list-style: none; margin-top: 0; padding: 0;}
 

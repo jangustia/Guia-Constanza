@@ -879,6 +879,16 @@ function new_excerpt ($charlength) {
    }
 }
 
+// !Image hooks
+
+// Enable post thumbnail
+add_theme_support ('post-thumbnails');
+
+// Create new custom image sizes
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size ('list-thumb', 110, 85, true);  // Small rectangular thumbnail for showing in lists (Home for example) 
+}
+
 
 /*
 if (!function_exists ('gc_js_body_data')):
