@@ -569,19 +569,28 @@ body > header, #subheader {
 					margin: 5px;
 					padding: 5px;
 					position: absolute;
-					bottom: 10px;
+					left: 5px;
+					bottom: 15px;
 					max-width: 250px;
 					}
-					#featured_hotel .nivo-caption h3 {font-size: 1.2em; margin: 0 !important;}
+					#featured_hotel .nivo-caption h3 {
+						font-size: 1.2em;
+						margin: 0 !important;
+						text-overflow: ellipsis;
+					}
 					#featured_hotel .nivo-caption a:link,
 					#featured_hotel .nivo-caption a:visited {
 						color: #fff;
+					}
+					#featured_hotel .nivo-caption p {
+						padding: 5px 0;
 					}
 					#featured_hotel .nivo-caption .caption_excerpt {font-size: 0.8em !important; margin: 0;}
 					#featured_hotel .nivo-controlNav {
 						position: absolute;
 						bottom: 25px;
 						right: 25px;
+						z-index: 999;
 					}
 					#featured_hotel .nivo-control {
 						background: url('images/rotator.png') no-repeat center;
