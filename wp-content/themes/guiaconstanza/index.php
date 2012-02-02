@@ -31,7 +31,7 @@
 							
 							<?php while ( $atractivos->have_posts() ) : $atractivos->the_post(); ?>
 								<article>
-									<?php the_post_thumbnail ('list-thumb'); ?>
+									<?php the_post_thumbnail ('thumbnail'); ?>
 									<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 									<?php the_excerpt(); ?>
 								</article>

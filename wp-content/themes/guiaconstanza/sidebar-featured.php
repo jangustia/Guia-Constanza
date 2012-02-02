@@ -46,7 +46,7 @@
 						<?php while ($bares_y_rests->have_posts()): $bares_y_rests->the_post(); ?>
 							<div class="slide<?php if ($first_post) { $first_post = FALSE; ?> active<?php }?>">
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-								<?php the_post_thumbnail ('list-thumb'); ?>
+								<?php the_post_thumbnail ('thumbnail'); ?>
 								<p><?php echo new_excerpt (120); ?></p>
 
 								<ul class="incluye">

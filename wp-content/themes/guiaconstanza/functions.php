@@ -886,7 +886,7 @@ add_theme_support ('post-thumbnails');
 
 // Create new custom image sizes
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size ('list-thumb', 110, 85, true);  // Small rectangular thumbnail for showing in lists (Home for example) 
+	add_image_size ('thumbnail', 110, 85,  true);  // Small rectangular thumbnail for showing in lists (Home for example)
 }
 
 
