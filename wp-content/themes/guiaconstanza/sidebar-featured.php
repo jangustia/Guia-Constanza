@@ -19,7 +19,7 @@
 
 						<div id="hotel_slide" class="niveSlider">
 						<?php while ($hoteles->have_posts()): $hoteles->the_post(); ?>
-							<img src="<?php bloginfo ('template_url'); ?>/images/img_hoteles.jpg" alt="<?php the_title(); ?>" title="#hotel_caption_<?php the_ID(); ?>" />
+							<?php the_post_thumbnail ('medium', array ('title'=>'#hotel_caption_' . get_the_ID())); ?>
 						<?php endwhile; $hoteles->rewind_posts(); ?>
 						</div>
 
