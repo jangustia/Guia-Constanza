@@ -526,7 +526,7 @@ body > header, #subheader {
 		background: linear-gradient(top, #ffffff 51%,#f0f0f0 100%);
 		float: left;
 		margin-bottom: -.5em;
-		height: 20em;
+		height: 270px;
 		overflow: hidden;
 		position: relative;
 		}
@@ -561,31 +561,21 @@ body > header, #subheader {
 		}
 		#featured_hotel {width: 30.769em;}
 			.hotel_slide {position: relative;}
-				.hotel_slide img {width: 100%;}
+				#hotel_slide img {
+					width: 400px;
+					height: 240px;
+				}
 				#featured_hotel .nivo-caption {
 					background: #333;
 					background: rgba(0,0,0,0.65);
+					font-size: 17px;
+					font-weight: bold;
 					color: #FFF;
-					margin: 5px;
-					padding: 5px;
-					position: absolute;
-					left: 5px;
-					bottom: 15px;
-					max-width: 250px;
-					}
-					#featured_hotel .nivo-caption h3 {
-						font-size: 1.2em;
-						margin: 0 !important;
-						text-overflow: ellipsis;
-					}
-					#featured_hotel .nivo-caption a:link,
-					#featured_hotel .nivo-caption a:visited {
-						color: #fff;
-					}
-					#featured_hotel .nivo-caption p {
-						padding: 5px 0;
-					}
-					#featured_hotel .nivo-caption .caption_excerpt {font-size: 0.8em !important; margin: 0;}
+					text-overflow: ellipsis;
+					margin: 15px;
+					padding: 8px;
+					width: auto;
+				}
 					#featured_hotel .nivo-controlNav {
 						position: absolute;
 						bottom: 25px;
