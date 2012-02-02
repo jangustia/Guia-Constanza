@@ -550,11 +550,6 @@ body > header, #subheader {
 			top: 5px;
 			right: 5px;
 		}
-		#featured .featured_arrows li {
-			display: block;
-			float: right;
-			margin: 0 6px;
-		}
 		#featured .featured_arrows a:link,
 		#featured .featured_arrows a:visited  {
 			color: #fff;
@@ -611,6 +606,25 @@ body > header, #subheader {
 				.slide img {float: left; margin-right: 1em; width: 35%;}
 				.slide p {font-size: 1em; margin-bottom: 1em;}
 				.slide ul {list-style: none; margin-top: 0; padding: 0;}
+
+/* Slideshow arrows */
+.featured_arrows li {
+	display: block;
+	float: right;
+}
+
+.featured_arrows a {
+	width: 22px;
+	height: 20px;
+}
+.featured_arrows .prev {
+	background-image: url('images/sideleft.png');
+}
+.featured_arrows .next {
+	background-image: url('images/sideright.png');
+}
+
+
 
 .incluye {
 	list-style: none;
