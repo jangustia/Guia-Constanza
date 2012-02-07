@@ -267,7 +267,12 @@ body {
 		}
 		#places-list article {border-bottom: 1px dashed #CCC; margin-bottom: 1em; overflow: auto; padding-bottom: 1em;}
 		#places-list article h3 a:link {font-size: 1.2em; margin: 0;}
-		#places-list article img {float: left; margin-right: 1em;}
+		#places-list article img {
+			float: left;
+			margin-right: 1em;
+			width: 110px;
+			height: 85px;
+		}
 
 /* White/Gray Gradient Boxes */
 .box {

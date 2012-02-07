@@ -99,7 +99,7 @@
 							<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 								<article>
 									<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-									<img src="<?php bloginfo ('template_url'); ?>/images/generic_thumb.png" alt="" />
+									<?php the_post_thumbnail ('thumbnail'); ?>
 									<p><?php the_excerpt(); ?></p>
 								</article>
 							<?php endwhile; ?>
