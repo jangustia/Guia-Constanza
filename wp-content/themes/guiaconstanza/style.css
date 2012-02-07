@@ -777,6 +777,8 @@ body > header, #subheader {
 	#sidebar-atractivos img {
 		float: left;
 		margin-right: 1em;
+		width: 75px;
+		height: 75px;
 	}
 
 
