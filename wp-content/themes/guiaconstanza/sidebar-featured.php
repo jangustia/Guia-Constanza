@@ -19,18 +19,9 @@
 
 						<div id="hotel_slide" class="niveSlider">
 						<?php while ($hoteles->have_posts()): $hoteles->the_post(); ?>
-							<img src="<?php bloginfo ('template_url'); ?>/images/img_hoteles.jpg" alt="<?php the_title(); ?>" title="#hotel_caption_<?php the_ID(); ?>" />
-						<?php endwhile; $hoteles->rewind_posts(); ?>
-						</div>
-
-						<ul class="visuallyhidden">
-						<?php while ($hoteles->have_posts()): $hoteles->the_post(); ?>
-							<li id="hotel_caption_<?php the_ID(); ?>" class="nivo-html-caption">
-								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-								<p class="caption_excerpt"><?php echo new_excerpt (100); ?></p>
-							</li>
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail ('medium', array ('title'=>get_the_title())); ?></a>
 						<?php endwhile; ?>
-						</ul>
+						</div>
 					</section>
 
 					<section id="featured_bars">
@@ -46,7 +37,7 @@
 						<?php while ($bares_y_rests->have_posts()): $bares_y_rests->the_post(); ?>
 							<div class="slide<?php if ($first_post) { $first_post = FALSE; ?> active<?php }?>">
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-								<?php the_post_thumbnail ('list-thumb'); ?>
+								<?php the_post_thumbnail ('thumbnail'); ?>
 								<p><?php echo new_excerpt (120); ?></p>
 
 								<ul class="incluye">
