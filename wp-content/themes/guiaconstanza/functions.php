@@ -505,7 +505,7 @@ endif;
 // add category nicenames in body and post class
 	function boilerplate_category_id_class($classes) {
 	    global $post;
-	    
+
 	    if (isset ($post->ID))
 		    foreach((get_the_category($post->ID)) as $category)
 		        $classes[] = 'category-' . $category->category_nicename;
@@ -537,11 +537,21 @@ if ( function_exists( 'add_theme_support' ) ) {
 // !Guia Constanza Code
 //------------------------------------------
 
+// Remove unnecessary widgets from front page
+add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
+function remove_dashboard_widgets() {
+    global $wp_meta_boxes;
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+}
+
 if ( ! function_exists( 'guiaconstanza_register_post_types' ) ) :
 add_action( 'init', 'guiaconstanza_register_post_types' );
 function guiaconstanza_register_post_types() {
 	$template_url = get_bloginfo ('template_url');
-	
+
 	register_post_type ('gc_hoteles',
 		array (
 			'labels'       => array (
@@ -564,7 +574,7 @@ function guiaconstanza_register_post_types() {
 			'taxonomies'   => array ('category', 'post_tag')
 		)
 	);
-	
+
 	register_post_type ('gc_bares_y_rests',
 		array (
 			'labels'       => array (
@@ -587,7 +597,7 @@ function guiaconstanza_register_post_types() {
 			'taxonomies'   => array ('category', 'post_tag')
 		)
 	);
-	
+
 	register_post_type ('gc_atractivos',
 		array (
 			'labels'       => array (
@@ -610,20 +620,46 @@ function guiaconstanza_register_post_types() {
 			'taxonomies'   => array ('category', 'post_tag')
 		)
 	);
+
+	register_post_type ('gc_galerias',
+		array (
+			'labels'       => array (
+				'name'               => __('Galerías'),
+				'singular_name'      => __('Galería'),
+				'add_new'            => __('Añadir Nueva'),
+				'all_items'          => __('Todas las galerías'),
+				'add_new_item'       => __('Añadir nueva galería'),
+				'edit_item'          => __('Editar galería'),
+				'new_item'           => __('Nueva galeria'),
+				'view_item'          => __('Ver galería'),
+				'search_items'       => __('Buscar galerías'),
+				'not_found'          => __('No se encontraron galerías'),
+				'not_found_in_trash' => __('No se encontraron galerías en la papelera')
+			),
+			'public'       => true,
+			'show_in_menu' => true,
+			'has_archive'  => true,
+			'menu_icon'    => $template_url . '/images/icon_atractivos_small.png',
+			'supports'     => array ('title', 'editor', 'thumbnail'),
+			'taxonomies'   => array ('albums')
+		)
+	);
+
+
 }
 endif;
 
-//This initializes the write panel.
+// This initializes the write panel.
 add_action('admin_init','guiaconstanza_meta_init');
 function guiaconstanza_meta_init() {
 	wp_enqueue_style(
 		'hotel_css',
 		STYLESHEETPATH . '/css/hotel_form.css'
 	);
-	
+
 	add_meta_box(
 		'hotel_meta',            // HTML Element ID
-		'Información del Hotel', // Title 
+		'Información del Hotel', // Title
 		'hotel_form',            // Callback display function
 		'gc_hoteles',            // Page in which to display this
 		'advanced',              // Part of the page in which to display
@@ -645,7 +681,7 @@ function guiaconstanza_meta_init() {
 		'advanced',
 		'high'
 	);
-	
+
 	// add a callback function to save any data a user enters in
 	add_action('save_post', 'my_meta_save');
 }
@@ -654,7 +690,7 @@ function guiaconstanza_meta_init() {
 
 function hotel_form() {
 	global $post;
-	
+
 	$tipo     = get_post_meta ($post->ID, 'tipo',     TRUE);
 	$image1   = get_post_meta ($post->ID, 'image1',   TRUE);
 	$image2   = get_post_meta ($post->ID, 'image2',   TRUE);
@@ -675,16 +711,16 @@ function hotel_form() {
 	$website  = get_post_meta ($post->ID, 'website',  TRUE);
 	$geo_lat  = get_post_meta ($post->ID, 'geo_lat',  TRUE);
 	$geo_long = get_post_meta ($post->ID, 'geo_long', TRUE);
-	
+
 	include (STYLESHEETPATH . '/views/hotel_form.php');
-	
+
 	// create a custom nonce for submit verification later
 	echo '<input type="hidden" name="my_meta_noncename" value="' . wp_create_nonce(__FILE__) . '" />';
 }
 
 function restaurant_form() {
 	global $post;
-	
+
 	$tipo     = get_post_meta ($post->ID, 'tipo',     TRUE);
 	$image1   = get_post_meta ($post->ID, 'image1',   TRUE);
 	$image2   = get_post_meta ($post->ID, 'image2',   TRUE);
@@ -703,9 +739,9 @@ function restaurant_form() {
 	$website  = get_post_meta ($post->ID, 'website',  TRUE);
 	$geo_lat  = get_post_meta ($post->ID, 'geo_lat',  TRUE);
 	$geo_long = get_post_meta ($post->ID, 'geo_long', TRUE);
-	
+
 	include (STYLESHEETPATH . '/views/restaurant_form.php');
-	
+
 	// create a custom nonce for submit verification later
 	echo '<input type="hidden" name="my_meta_noncename" value="' . wp_create_nonce(__FILE__) . '" />';
 }
@@ -714,12 +750,12 @@ function restaurant_form() {
 
 function atractivo_form() {
 	global $post;
-	
+
 	$geo_lat  = get_post_meta ($post->ID, 'geo_lat',  TRUE);
 	$geo_long = get_post_meta ($post->ID, 'geo_long', TRUE);
-	
+
 	include (STYLESHEETPATH . '/views/atractivo_form.php');
-	
+
 	// create a custom nonce for submit verification later
 	echo '<input type="hidden" name="my_meta_noncename" value="' . wp_create_nonce(__FILE__) . '" />';
 }
@@ -731,7 +767,7 @@ function my_meta_save($post_id) {
 		return $post_id;
 	if (!current_user_can ('edit_post', $post_id))
 		return $post_id;
-	
+
 	// The array of accepted fields for Books
 	$accepted_fields['gc_hoteles']       =
 	$accepted_fields['gc_bares_y_rests'] = array (
@@ -749,7 +785,7 @@ function my_meta_save($post_id) {
 		'email',
 		'website'
 	);
-	
+
 	array_push ($accepted_fields['gc_hoteles'],
 		'chim',
 		'pool',
@@ -757,35 +793,35 @@ function my_meta_save($post_id) {
 		'heat',
 		'menu'
 	);
-	
+
 	array_push ($accepted_fields['gc_bares_y_rests'],
 		'crio',
 		'inter',
 		'delivery'
 	);
-	
+
 	$accepted_fields['gc_hoteles'][]       =
 	$accepted_fields['gc_bares_y_rests'][] =
 	$accepted_fields['gc_atractivos'][]    = 'geo_lat';
-	
+
 	$accepted_fields['gc_hoteles'][]       =
 	$accepted_fields['gc_bares_y_rests'][] =
 	$accepted_fields['gc_atractivos'][]    = 'geo_long';
-	
+
 	$post_title = get_the_title ($post_id);
-	
+
 	if (empty ($post_title))
 		delete_post_meta ($post_id, 'nombre');
 	else
 		update_post_meta ($post_id, 'nombre', $post_title);
-	
-	
+
+
 	$post_type_id = $_REQUEST['post_type'];
-	
+
 	foreach($accepted_fields[$post_type_id] as $key)
 	{
 		$custom_field = $_REQUEST[$key];
-		
+
 		if (is_null ($custom_field))
 			delete_post_meta ($post_id, $key);
 		elseif (isset ($custom_field) && !is_null ($custom_field))
@@ -793,9 +829,9 @@ function my_meta_save($post_id) {
 		else
 			add_post_meta ($post_id, $key, $custom_field, TRUE);
 	}
-	
+
 	wp_set_object_terms ($post_id, array (category_for_post_type ($post_type_id)), 'category');
-	
+
 	return $post_id;
 }
 
@@ -845,11 +881,11 @@ function bares_y_rests_icons() {
 		'delivery' => 'Delivery',
 		'bar'      => 'Tragos'
 	);
-	
+
 	foreach ($custom_fields as $i => $entry)
 		if (array_key_exists ($i, $facilidades) && current ($entry))
 			$icons[$i] = $facilidades[$i];
-	
+
 	return $icons;
 }
 endif;
@@ -899,22 +935,22 @@ function gc_js_body_data() {
 		$template = 'home';
 	else if ( is_home() )
 		$template = 'blog';
-	
+
 	else if ( is_page() ) {
 		$page_id   = $wp_query->get_queried_object_id();
 		$post      = get_page($page_id);
-		
+
 		$template   = 'page';
 		$slug       = $post->post_name;
 		$individual = sanitize_html_class( str_replace( '.', '-', get_post_meta( $page_id, '_wp_page_template', true ) ) );
 	}
-	
+
 	else if ( is_category() ) {
 		$cat        = $wp_query->get_queried_object();
 		$template   = 'category';
 		$slug       = sanitize_html_class( $cat->slug, $cat->term_id );
-	} 
-	
+	}
+
 	else if ( is_single() ) {
 		$post_id = $wp_query->get_queried_object_id();
 		$post    = $wp_query->get_queried_object();
@@ -923,16 +959,16 @@ function gc_js_body_data() {
 		$slug       = sanitize_html_class ( $post->post_type, $post_id );
 		$individual = 'single-' . $post_id;
 	}
-	
+
 	else if ( is_archive() ) {
 		$template = 'archive';
 	}
-	
+
 	else if ( is_search() ) {
 		$template = 'search';
 		$slug     = !empty( $wp_query->posts ) ? 'results' : 'no-results';
 	}
-	
+
 	else if ( is_attachment() )
 		$template = 'attachment';
 	else if ( is_404() )
@@ -944,7 +980,7 @@ function gc_js_body_data() {
 		$attr[] = 'data-slug="'. $slug .'"';
 	if (isset ($individual))
 		$attr[] = 'data-individual="'. $individual .'"';
-	
+
 	return implode(' ', $attr);
 }
 
