@@ -265,6 +265,7 @@ body {
 		width: 34em;
 		float: left;
 		}
+		#places-list .breadcrumbs {margin: 15px 0;}
 		#places-list article {border-bottom: 1px dashed #CCC; overflow: auto;}
 		#places-list article h3 a:link {font-size: 1.2em; margin: 0;}
 		#places-list article img {
