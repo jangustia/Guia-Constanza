@@ -33,7 +33,7 @@
 								<article>
 									<?php the_post_thumbnail ('thumbnail'); ?>
 									<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-									<?php the_excerpt(); ?>
+									<?php echo get_the_excerpt(); ?>
 								</article>
 							<?php endwhile; ?>
 							
@@ -60,7 +60,7 @@
 							<?php if (($geo_lat = get_post_meta (get_the_ID(), 'geo_lat', TRUE)) && ($geo_long = get_post_meta (get_the_ID(), 'geo_long', TRUE))): ?>
 								<li data-geo_lat="<?php echo $geo_lat; ?>" data-geo_long="<?php echo $geo_long; ?>">
 									<h3><?php the_title(); ?></h3>
-									<p><?php the_excerpt(); ?></p>
+									<p><?php echo get_the_excerpt(); ?></p>
 									<a href="<?php the_permalink(); ?>">Ver más</a>
 								</li>
 							<?php endif; ?>

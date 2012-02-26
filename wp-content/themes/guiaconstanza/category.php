@@ -100,7 +100,7 @@
 								<article>
 									<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 									<?php the_post_thumbnail ('thumbnail'); ?>
-									<p><?php the_excerpt(); ?></p>
+									<p><?php echo get_the_excerpt(); ?></p>
 								</article>
 							<?php endwhile; ?>
 							</ul>
