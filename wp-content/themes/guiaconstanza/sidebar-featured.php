@@ -17,7 +17,7 @@
 					<section id="featured_hotel">
 						<h2>Hoteles Destacados</h2>
 
-						<div id="hotel_slide" class="niveSlider">
+						<div id="hotel_slide" class="nivoSlider">
 						<?php while ($hoteles->have_posts()): $hoteles->the_post(); ?>
 							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail ('medium', array ('title'=>get_the_title())); ?></a>
 						<?php endwhile; ?>
