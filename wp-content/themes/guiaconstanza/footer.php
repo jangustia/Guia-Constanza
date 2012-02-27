@@ -10,15 +10,18 @@
  * @since Boilerplate 1.0
  */
 ?>
-	</section><!-- #main -->
-	<footer id="footer" role="contentinfo">
-<?php
-	/* A sidebar in the footer? Yep. You can can customize
-	 * your footer with four columns of widgets.
-	 */
-	get_sidebar( 'footer' );
-?>
-	</footer><!-- footer -->
+		<footer id="footer" role="contentinfo">
+		<?php
+		/* A sidebar in the footer? Yep. You can can customize
+		 * your footer with four columns of widgets.
+		 */
+		get_sidebar( 'footer' );
+		?>
+		</footer><!-- footer -->
+	</div><!-- #container -->
+
+	<!-- Vines container -->
+	<div id="vines"></div>
 
 	<!-- JavaScript at the bottom for fast page loading -->
 
