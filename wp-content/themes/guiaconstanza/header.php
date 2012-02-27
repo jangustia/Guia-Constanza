@@ -44,7 +44,9 @@
 ?>
 </head>
 <body <?php body_class(); ?>>
-	<header role="banner">
+	<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
+	<a class="visuallyhidden" id="skip" href="#content" title="<?php esc_attr_e( 'Skip to content', 'boilerplate' ); ?>"><?php _e( 'Skip to content', 'boilerplate' ); ?></a>
+	<header id="header" role="banner">
 		<div class="wrap">
 			<h1><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<div id="header_info">
@@ -54,22 +56,23 @@
 					<a href="#">12 &deg;</a>
 				</div>
 				<form id="search">
-					<input type="text" value="Buscar atractivos..." />
+					<input type="search" placeholder="Buscar atractivos..." />
 					<input type="submit" value="Buscar" />
 				</form>
 			</div><!-- #header_info -->
 		</div><!-- .wrapper -->
 	</header><!-- close header -->
-	<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
-	<a class="visuallyhidden" id="skip" href="#content" title="<?php esc_attr_e( 'Skip to content', 'boilerplate' ); ?>"><?php _e( 'Skip to content', 'boilerplate' ); ?></a>
-	<nav class="wrap" role="navigation">
-		<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
-		<?php
-			wp_nav_menu( array( 
-				'menu' => 'main',
-				'menu_class' => '',
-				'container' => false,
-				)
-			);
-		?>
+	<nav id="navigation" class="wrap" role="navigation">
+		<ul id="main-menu">
+			<li><a href="<?php home_url() ?>">Inicio</a></li>
+			<?php
+				wp_nav_menu( array(
+					'menu' => 'main',
+					'menu_class' => '',
+					'container' => false,
+					'items_wrap' => '%3$s'
+					)
+				);
+			?>
+		</ul>
 	</nav><!-- #access -->
