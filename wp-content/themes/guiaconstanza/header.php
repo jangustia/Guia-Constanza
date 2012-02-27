@@ -64,7 +64,7 @@
 	</header><!-- close header -->
 	<nav id="navigation" class="wrap" role="navigation">
 		<ul id="main-menu" class="clearfix">
-			<li><a href="<?php home_url() ?>">Inicio</a></li>
+			<li><a href="<?php bloginfo('url') ?>">Inicio</a></li>
 			<?php
 				wp_nav_menu( array(
 					'menu' => 'main',
