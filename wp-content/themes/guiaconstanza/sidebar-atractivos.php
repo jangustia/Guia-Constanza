@@ -5,12 +5,12 @@
 		'orderby'        => 'rand'
 	));
 ?>
-						<section id="sidebar-atractivos">
-							<h2>Atractivos</h2>
+						<section class="places-list">
+							<h3>Atractivos</h3>
 							<?php while ( $atractivos->have_posts() ) : $atractivos->the_post(); ?>
 							<article>
 								<?php the_post_thumbnail ('square-thumb'); ?>
-								<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+								<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
 							</article>
 							<?php endwhile; ?>
 							<div class="skyscraper">
@@ -23,4 +23,4 @@
 									//-->
 								</script>
 							</div>
-						</section>
+						</section><!-- .places-list -->
