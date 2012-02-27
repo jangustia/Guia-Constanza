@@ -46,7 +46,7 @@
 <body <?php body_class(); ?>>
 	<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 	<a class="visuallyhidden" id="skip" href="#content" title="<?php esc_attr_e( 'Skip to content', 'boilerplate' ); ?>"><?php _e( 'Skip to content', 'boilerplate' ); ?></a>
-	<header id="header" role="banner">
+	<header id="header" role="banner" class="clearfix">
 		<div class="wrap">
 			<h1><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<div id="header_info">
@@ -63,7 +63,7 @@
 		</div><!-- .wrapper -->
 	</header><!-- close header -->
 	<nav id="navigation" class="wrap" role="navigation">
-		<ul id="main-menu">
+		<ul id="main-menu" class="clearfix">
 			<li><a href="<?php home_url() ?>">Inicio</a></li>
 			<?php
 				wp_nav_menu( array(
