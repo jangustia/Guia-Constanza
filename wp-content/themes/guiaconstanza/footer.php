@@ -11,7 +11,7 @@
  */
 ?>
 	</section><!-- #main -->
-	<footer role="contentinfo">
+	<footer id="footer" role="contentinfo">
 <?php
 	/* A sidebar in the footer? Yep. You can can customize
 	 * your footer with four columns of widgets.
@@ -25,9 +25,9 @@
 	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="<?php bloginfo ('template_url'); ?>/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-	
+
 	<script src="//maps.googleapis.com/maps/api/js?v=3&sensor=false"></script>
-	
+
 	<!-- scripts concatenated and minified via build script -->
 	<script defer src="<?php bloginfo ('template_url'); ?>/js/plugins.js"></script>
 	<script defer src="<?php bloginfo ('template_url'); ?>/js/script.js"></script>
@@ -49,9 +49,6 @@
 	<script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 	<![endif]-->
 
-	<script type="text/javascript"
-	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-	</script>
 
 <?php
 	/* Always have wp_footer() just before the closing </body>
