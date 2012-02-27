@@ -556,13 +556,13 @@ input[type="text"], textarea {
     .featured_arrows a:focus {
       text-decoration: none;
       }
-    #featured_hotel {width: 400px;}
-      #hotel_slide {position: relative;}
-        #hotel_slide a {
+    #featured_hotel, #featured_atractivos {width: 400px;}
+      #hotel_slide, #atractivo_slider {position: relative; height: 240px}
+        #hotel_slide img, #atractivo_slider img {
           width: 400px;
           height: 240px;
           }
-        #featured_hotel .nivo-caption {
+        #featured_hotel .nivo-caption, #featured_atractivos .nivo-caption {
           background: #333;
           background: rgba(0,0,0,0.65);
           font-size: 17px;
@@ -576,14 +576,14 @@ input[type="text"], textarea {
           bottom: 0;
           width: auto;
           }
-          #featured_hotel .nivo-caption p {margin: 0;}
-          #featured_hotel .nivo-controlNav {
+          #featured_hotel .nivo-caption p, #featured_atractivos .nivo-caption p {margin: 0;}
+          #featured_hotel .nivo-controlNav, #featured_atractivos .nivo-controlNav {
             position: absolute;
             bottom: 25px;
             right: 25px;
             z-index: 999;
             }
-          #featured_hotel .nivo-control {
+          #featured_hotel .nivo-control, #featured_atractivos .nivo-control {
             background: url('images/rotator.png') no-repeat center;
             float: left;
             display: block;
@@ -591,7 +591,7 @@ input[type="text"], textarea {
             width: 12px;
             height: 12px;
             }
-          #featured_hotel .active {
+          #featured_hotel .active, #featured_atractivos .active {
             background-image: url('images/hover_rotator.png');
             }
     #featured_bars, #featured_posts {border-left: 1px solid #CCC; width: 280px;}

@@ -134,6 +134,14 @@ GUIACONSTANZA = {
 	// !Category
 	category: {
 		init : function() {
+		},
+		category_atractivos: function() {
+			$('#atractivo_slider').nivoSlider ({
+				effect         : 'fade',
+				pauseTime      : 5000,
+				directionNav   : false,
+				captionOpacity : 1.0
+			});
 		}
 	}, // end category object
 	
