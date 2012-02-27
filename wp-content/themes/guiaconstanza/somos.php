@@ -5,29 +5,40 @@
 
 get_header(); ?>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-	<h1 id="subheader"><span><?php the_title(); ?></span></h1>
-	<div id="content" class="wrap" role="main">
-		<div id="somos">
+	<h1 id="subheader" class="wrap"><span><?php the_title(); ?></span></h1>
+	<div id="container" class="wrap" role="main">
+		<div id="somos" class="fullpage">
 			<ul class="breadcrumbs">
 				<li><a href="<?php echo bloginfo('url') ?>">Inicio</a></li>
 				<li>Somos</li>
 			</ul>
+			<img src="<?php bloginfo('template_url') ?>/images/img_somos_headline.jpg" alt="Paisaje de Constanza" />
 
-			<img src="<?php bloginfo('template_url') ?>/images/somos_img.jpg" alt="" />
-			<h2>Qué Somos?</h2>
-			<p>Guía Constanza es una guía ecoturística completa sobre Constanza, considerada la ciudad con el clima más frío de la República Dominicana y de todo el Caribe.</p>
-			<p>GuiaConstanza.com busca mostrar las maravillas que hacen de una estadía en el hermoso valle de Constanza una experiencia inolvidable.</p>
+			<div id="main_content">
+				<?php the_content() ?>
+			</div><!-- #main_content -->
 
-			<h2>Misión</h2>
-			<p>Orientar e informar sobre los atractivos y servicios de ecoturismo del valle de Constanza, de manera que nuestros usuarios se conviertan en futuros visitantes de la ciudad.</p>
-
-			<h2>Visión</h2>
-			<p>Dar a conocer las bellezas de Constanza a nivel mundial, y ser el promotor número uno del valle.</p>
-
-			<ul class="more_pages">
-				<li><a class="button" href="#">Publicidad</a></li>
-				<li><a class="button" href="#">Contacto</a></li>
-			</ul>
+			<div id="side_content">
+				<?php if (282 == get_the_ID()): ?>
+				<form id="contact_form">
+					<fieldset>
+						<label for="name">Nombre</label>
+						<input type="text" id="name" name="name" />
+						<label for="email">Correo</label>
+						<input type="text" id="email" name="email" />
+						<label for="message">Mensaje</label>
+						<textarea id="message"></textarea>
+						<input type="submit" class="button" name="submit" value="Enviar">
+					</fieldset>
+				</form>
+				<?php else: ?>
+				<h3 class="visuallyhidden">Enlaces</h3>
+				<ul class="button_menu clearfix">
+					<li><a class="button" href="<?php bloginfo('url') ?>/somos/publicidad/">Publicidad</a></li>
+					<li><a class="button" href="<?php bloginfo('url') ?>/somos/contacto/">Contacto</a></li>
+				</ul>
+				<?php endif; ?>
+			</div>
 	</div><!-- #somos -->
 
 <?php endwhile; ?>
