@@ -13,7 +13,7 @@
 
 	$first_post = TRUE;
 ?>
-				<div id="featured" class="wrap">
+				<div id="featured" class="wrap clearfix">
 					<section id="featured_hotel">
 						<h2>Hoteles Destacados</h2>
 
@@ -40,7 +40,7 @@
 								<?php the_post_thumbnail ('thumbnail'); ?>
 								<p><?php echo new_excerpt (120); ?></p>
 
-								<ul class="incluye">
+								<ul class="includes">
 								<?php foreach (bares_y_rests_icons() as $slug => $name): ?>
 									<li class="<?php echo $slug; ?>"><?php echo $name;?></li>
 								<?php endforeach; ?>
