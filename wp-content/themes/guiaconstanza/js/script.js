@@ -94,6 +94,7 @@ GUIACONSTANZA = {
 			
 			if ($featured.length) {
 				GUIACONSTANZA.common.slide_nav ('#featured_bars', '.featured_arrows', '.slide');
+				GUIACONSTANZA.common.slide_nav ('#featured_posts', '.featured_arrows', '.slide');
 				GUIACONSTANZA.common.main_feature();
 			}
 		}

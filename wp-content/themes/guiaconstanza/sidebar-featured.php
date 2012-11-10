@@ -10,8 +10,15 @@
 		'posts_per_page' => 5,
 		'orderby'        => 'rand'
 	));
+	
+	$blogs = new WP_Query (array (
+		'category_name'      => 'blog',
+		'posts_per_page' => 5,
+		'orderby'        => 'rand'
+	));
 
-	$first_post = TRUE;
+	$bares_first_post = TRUE;
+	$blogs_first_post = TRUE;
 ?>
 				<div id="featured" class="wrap clearfix">
 					<section id="featured_hotel">
@@ -19,7 +26,9 @@
 
 						<div id="hotel_slide" class="nivoSlider">
 						<?php while ($hoteles->have_posts()): $hoteles->the_post(); ?>
-							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail ('medium', array ('title'=>get_the_title())); ?></a>
+							<a href="<?php the_permalink(); ?>">
+								<?php the_post_thumbnail ('medium', array ('title'=>get_the_title())); ?>
+							</a>
 						<?php endwhile; ?>
 						</div>
 					</section>
@@ -35,7 +44,7 @@
 						</nav>
 
 						<?php while ($bares_y_rests->have_posts()): $bares_y_rests->the_post(); ?>
-							<div class="slide<?php if ($first_post) { $first_post = FALSE; ?> active<?php }?>">
+							<div class="slide<?php if ($bares_first_post) { $bares_first_post = FALSE; ?> active<?php }?>">
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 								<?php the_post_thumbnail ('thumbnail'); ?>
 								<p><?php echo new_excerpt (120); ?></p>
@@ -50,10 +59,21 @@
 					</section>
 					<section id="featured_posts">
 						<h2>Blog: La Suiza del Caribe</h2>
-						<div class="slide">
-							<h3><a href="#">Nulla a tellus also magna imperdiet intomarte molestie vitae sed purus</a></h3>
-							<img src="<?php bloginfo('template_url') ?>/images/generic_thumb.png" alt="" />
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a tellus ac magna imperdiet molestie vitae sed purus.</p>
+						
+						<nav class="featured_arrows">
+							<ul>
+								<li><a class="next ir" href="javascript:;">Siguiente</a></li>
+								<li><a class="prev ir" href="javascript:;">Anterior</a></li>
+							</ul>
+						</nav>
+						
+						<?php while ($blogs->have_posts()): $blogs->the_post(); ?>
+							<div class="slide<?php if ($blogs_first_post) { $blogs_first_post = FALSE; ?> active<?php }?>">
+								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+								<?php the_post_thumbnail ('thumbnail'); ?>
+								<p><?php echo new_excerpt (500); ?></p>
 						</div>
+						<?php endwhile; ?>
+						
 					</section>
 				</div><!-- #featured -->
