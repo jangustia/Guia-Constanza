@@ -358,13 +358,19 @@ body {
 
 /* Weather and Search widgets */
 #header_info {
-  color: #FFF;
-  margin-top: 20px;
-  position: absolute;
-  right: 0;
+	  color: #FFF;
+	  margin-top: 20px;
+	  position: absolute;
+	  right: 0;
   }
-  #weather {display: none;}
-  #search {position: relative; top: 10px;}
+  #weather {
+	float: left;
+	position: relative;
+	display: block;
+	right: 30px;
+	top: 7px;
+  }
+  #search { position: relative; top: 10px; float: right; }
     #search input[type=search], #search input[type=submit] {
       border: 1px solid #333;
       border-radius: 20px;
@@ -398,19 +404,23 @@ body {
  * Main Navigation
  */
 #navigation {
-  background: #b90000 url('images/bg_navigation.png') repeat-x bottom;
-  background: -moz-linear-gradient(top, #b90000 0%, #6f1a1a 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b90000), color-stop(100%,#6f1a1a));
-  background: -webkit-linear-gradient(top, #b90000 0%,#6f1a1a 100%);
-  background: -o-linear-gradient(top, #b90000 0%,#6f1a1a 100%);
-  background: -ms-linear-gradient(top, #b90000 0%,#6f1a1a 100%);
-  background: linear-gradient(top, #b90000 0%,#6f1a1a 100%);
-  border: 1px solid #333;
-  border-bottom: none;
-  border-radius: 5px 5px 0 0;
-  margin-top: -15px !important;
-  position: relative;
-  z-index: 700;
+	/* margin-top: -15px !important; */
+	position: relative;
+	z-index: 700;
+	margin-bottom: -10px;
+	top: -10px;
+	height: 40px;
+	overflow: hidden;
+	background: #b90000 url('images/bg_navigation.png') repeat-x bottom;
+	background: -moz-linear-gradient(top, #b90000 0%, #6f1a1a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b90000), color-stop(100%,#6f1a1a));
+	background: -webkit-linear-gradient(top, #b90000 0%,#6f1a1a 100%);
+	background: -o-linear-gradient(top, #b90000 0%,#6f1a1a 100%);
+	background: -ms-linear-gradient(top, #b90000 0%,#6f1a1a 100%);
+	background: linear-gradient(top, #b90000 0%,#6f1a1a 100%);
+	border: 1px solid #333;
+	border-bottom: none;
+	border-radius: 5px 5px 0 0;
   }
   #navigation h2 {float: left; text-indent: -9999px}
   #navigation ul {padding-right: 10px; list-style: none;}
@@ -433,6 +443,7 @@ body {
       }
     /* First link doesnt' have border */
     #navigation li:first-child a {border-left: none}
+    #navigation li:last-child a {border-right: none}
     #navigation a:hover, #navigation .current-menu-item a {
       background: rgba(0,0,0,0.15);
       }

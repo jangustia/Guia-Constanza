@@ -52,8 +52,8 @@
 			<div id="header_info">
 				<div id="weather">
 					<span>Temperatura</span>
-					<img src="../img/wi-rain.png" alt="Clima Lluvioso" />
-					<a href="#">12 &deg;</a>
+					<img src="<?php bloginfo('template_url') ?>/images/wi-rain.png" alt="Clima Lluvioso" />
+					<a href="#">12 &deg;C</a>
 				</div>
 				<form id="search">
 					<input type="search" placeholder="Buscar atractivos..." />
