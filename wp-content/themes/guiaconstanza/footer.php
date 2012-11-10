@@ -10,12 +10,36 @@
  * @since Boilerplate 1.0
  */
 ?>
-		<footer id="footer" role="contentinfo">
+		<footer id="footer" role="contentinfo" class="wrap">
+			<nav>
+				<ul>
+					<li><a href="<?php echo get_page_link(76); ?>">Contacto</a></li>
+					<li><a href="<?php echo get_category_link(10); ?>">Blog</a></li>
+					<li><a href="<?php echo get_page_link(28); ?>">Somos</a></li>
+				</ul>
+				<ul>
+					<li><a href="<?php echo get_category_link(3); ?>">Hoteles</a></li>
+					<li><a href="<?php echo get_category_link(4); ?>">Bares &amp; Restaurantes</a></li>
+					<li><a href="<?php echo get_page_link(24); ?>">Donde ir</a></li>
+				</ul>
+				<ul>
+					<li><a href="<?php echo get_category_link(6); ?>">Atractivos</a></li>
+					<li><a href="<?php echo get_category_link(8); ?>">Fotografia</a></li>
+					<li><a href="<?php echo get_page_link(26); ?>">Recomendaciones</a></li>
+				</ul>
+			</nav>
+			<aside>
+				<ul>
+					<li><a href="http://www.twitter.com">Siguenos en Twitter</a></li>
+					<li><a href="http://www.facebook.com">Conviertete en fan en Facebook</a></li>
+					<li><a href="http://www.twitter.com">Subscribete a nuestro Feed</a></li>
+				</ul>
+			</aside>
 		<?php
 		/* A sidebar in the footer? Yep. You can can customize
 		 * your footer with four columns of widgets.
 		 */
-		get_sidebar( 'footer' );
+		//get_sidebar( 'footer' );
 		?>
 		</footer><!-- footer -->
 	</div><!-- #container -->

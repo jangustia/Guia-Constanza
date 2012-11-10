@@ -881,11 +881,11 @@ input[type="text"], textarea {
   background: -o-linear-gradient(top, #6b960d 0%,#2d5100 100%);
   background: -ms-linear-gradient(top, #6b960d 0%,#2d5100 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b960d', endColorstr='#2d5100',GradientType=0 );
-  background: linear-gradient(top, #6b960d 0%,#2d5100 100%);  border-radius: 0 0 1em 1em;
+  background: linear-gradient(top, #6b960d 0%,#2d5100 100%);  border-radius: 0 0 0.7em 0.7em;
   clear: both;
   margin-top: 3em;
   overflow: hidden;
-  padding: 3em 0 3em 1em;
+  padding: 3em 0 3em 0;
 }
   #footer ul {
     list-style-type: none;
@@ -916,6 +916,10 @@ input[type="text"], textarea {
     padding-right: 0 !important;
     border: 0 !important;
     }
+    #footer nav ul:first-child { padding-left: 2em; }
+    #footer ul, #footer aside {float: left;}
+	#footer ul { border-right: 1px dotted #999; margin-right: 2.3em; padding-right: 3.3em;}
+	#footer aside ul {margin-right: 0; border:0;}
 
 /**
  * Home
