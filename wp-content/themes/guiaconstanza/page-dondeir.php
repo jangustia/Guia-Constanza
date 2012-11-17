@@ -17,6 +17,13 @@
 				?></span></h1>
 
 				<div id="container" class="wrap" role="main">
+					<div class="fullpage">
+						<ul class="breadcrumbs">
+							<li><a href="<?php echo bloginfo('url') ?>">Inicio</a></li>
+							<li>Donde ir</li>
+						</ul>
+					</div>
+						
 					<div id="dondeir">
 						<section>
 							<?php the_content() ?>

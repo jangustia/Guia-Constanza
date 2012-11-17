@@ -1064,7 +1064,7 @@ input[type="text"], textarea {
 .page-id-24 #subheader span {background-image: url('images/headericon_dondeir.png');}
 #dondeir {
   background: url('images/bg_dondeir.jpg') no-repeat top;
-  margin: 10px 0;
+  margin: -15px 0px 0px 0px;
   padding: 10px 30px;
   min-height: 751px;
   }
