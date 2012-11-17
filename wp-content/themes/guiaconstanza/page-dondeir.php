@@ -1,4 +1,8 @@
 <?php
+/**
+ * Template Name: Donde ir
+ */
+     
 	get_header();
 
 	$query_args = array (
