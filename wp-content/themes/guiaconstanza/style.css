@@ -762,6 +762,7 @@ input[type="text"], textarea {
   text-align: center;
   text-shadow: 0 1px 1px rgba(0,0,0,.75);
   }
+  
 
 /**
  * General 'Atractivos' list styling
@@ -928,6 +929,44 @@ input[type="text"], textarea {
     #footer ul, #footer aside {float: left;}
 	#footer ul { border-right: 1px dotted #999; margin-right: 2.3em; padding-right: 3.3em;}
 	#footer aside ul {margin-right: 0; border:0;}
+	
+	/* Side Information */
+.sideinfo {
+	margin-right: 2em;
+	position: absolute;
+	top: 2em;
+	right: 0;
+	width: 41em;
+	}
+	.sideinfo h3, .sideinfo h4 {color: #A1420F;}
+	.sideinfo h3 {font-size: 1.8em; margin: 0 0 .5em 0; padding: 0;}
+	.sideinfo section.box {
+		margin-bottom: 2em;
+		overflow: hidden;
+		}
+		.sideinfo .box img {
+		float: left;
+		margin-right: 1em;
+		}
+		.sideinfo .incluye {
+			clear: both;
+			margin: 0;
+			padding-top: 2em;
+			}
+			.sideinfo .incluye li {
+			background-size: cover;
+			width: 3.5em;
+			height: 3.5em;
+			}
+		.sideinfo .box p {font-size: 1.2em; line-height: 1.2;}
+	.sideinfo h4 a:link {font-size: 1.4em;}
+	.sideinfo section:last-child {padding-right: 15em; position: relative;}
+	.sideinfo section:last-child .skyscraper {position: absolute; right: 0; top: 1em;}
+	.sideinfo section article {
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+		border-bottom: 1px dotted #CCC !important;
+		}
 
 /**
  * Home
@@ -1057,6 +1096,37 @@ input[type="text"], textarea {
     bottom: 1em;
     right: 1em;
     }
+    
+    
+    /* Recomendaciones
+ ****************************/
+#recomend .subheader span {background-image: url('/img/recomendaciones_icon.png');}
+	#recomend h2 {
+		border-bottom: 1px dashed #CCC;
+		color: #666;
+		font-size: 1.4em;
+		font-weight: normal;
+		margin-bottom: 1em;
+		padding-bottom: .7em;
+		text-transform: none;
+		}
+	#recomend article {border: 0; margin-bottom: 1em;}
+		#recomend article img {border: 1px solid #CCC;}
+		#recomend article .box {margin-left: 6em;}
+		#recomend article .box span {color: #345901;}
+	#recomend .pagination {float: left; padding:0 0 2em 0;}
+	#recomend .button {
+		font-size: 1.2em;
+		padding: .5em 1em;
+		position: relative;
+		top: -.5em;
+		}
+		#recomend .button span {
+			background: url('../img/fb_icon.png') no-repeat center left;
+			display: block;
+			padding: 0 1em;
+			width: 15em;
+			}
 
 /**
  * Donde Ir

@@ -5,18 +5,20 @@
 
 get_header(); ?>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-	<h1 id="subheader"><span><?php the_title(); ?></span></h1>
-	<div id="content" class="wrap" role="main">
-		<div id="recommend">
+	<h1 id="subheader" class="wrap"><span><?php the_title(); ?></span></h1>
+	<div id="container" class="wrap" role="main">
+		<div class="fullpage">
+			<ul class="breadcrumbs">
+				<li><a href="<?php echo bloginfo('url') ?>">Inicio</a></li>
+				<li>Donde ir</li>
+			</ul>
+		</div>
+		<div id="recommend" class="fullpage">
 			<section>
-				<ul class="breadcrumbs">
-					<li><a href="index.php">Inicio</a></li>
-					<li>Recomendaciones</li>
-				</ul>
 				<h2>Conozca las recomendaciones de quienes ya han visitado Constanza. <strong>Animate a compartir tu experiencia!</strong></h2>
 				<?php for($i=0;$i<8;$i++): ?>
 				<article>
-					<img src="img/recomend_thumb.png" alt="" />
+					<img src="<?php bloginfo('template_url') ?>/images/recomend_thumb.png" alt="" />
 					<div class="box">
 						<h3><a href="#">Julio Rodríguez</a></h3>
 						<p>Nam sed erat. Nunc lorem risus, elementum mollis, suscipit quis, tempor ac, ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
@@ -44,7 +46,7 @@ get_header(); ?>
 				<section class="box">
 					<h3>Hoteles Recomendados</h3>
 
-					<img src="img/generic_thumb.png" alt="" />
+					<img src="<?php bloginfo('template_url') ?>/images/generic_thumb.png" alt="" />
 					<h4><a href="#">Villa Pajon</a></h4>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a tellus ac magnanmui perdiet molestie vitae sed purus.</p>
 					<ul class="incluye">
@@ -59,7 +61,7 @@ get_header(); ?>
 					<h3>Atractivos</h3>
 					<?php for ($i=0;$i<6;$i++): ?>
 					<article>
-						<img src="img/smaller_thumb.png" alt="" />
+						<img src="<?php bloginfo('template_url') ?>/images/smaller_thumb.png" alt="" />
 						<h4><a href="#">Nunc convallis lectus elementum diam sodales in suscipit</a></h4>
 					</article>
 					<?php endfor; ?>
