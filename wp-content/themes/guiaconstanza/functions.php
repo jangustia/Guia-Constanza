@@ -891,7 +891,7 @@ function bares_y_rests_icons() {
 endif;
 
 function custom_excerpt_more( $more ) {
-	return ' [...]';
+	return ' ...';
 }
 add_filter( 'excerpt_more', 'custom_excerpt_more' );
 
@@ -909,7 +909,7 @@ function new_excerpt ($charlength) {
        } else {
        	    echo $subex;
        }
-       echo "[...]";
+       echo "...";
    } else {
 	   echo $excerpt;
    }
@@ -923,7 +923,7 @@ add_theme_support ('post-thumbnails');
 // Create new custom image sizes
 if ( function_exists( 'add_image_size' ) ) {
 	add_image_size ('square-thumb', 75,  75,  true);  // Small square thumbnail for showing in sidebar lists
-	add_image_size ('thumbnail',    110, 85,  true);  // Small rectangular thumbnail for showing in lists (Home for example)
+	add_image_size ('thumbnail',    115, 91,  true);  // Small rectangular thumbnail for showing in lists (Home for example)
 	add_image_size ('medium',       400, 240, true);  // Medium image for showing in featured home rotator
 }
 
