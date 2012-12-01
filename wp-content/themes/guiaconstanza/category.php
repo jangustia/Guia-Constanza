@@ -67,9 +67,9 @@
 	$loop = new WP_Query ($query_args);
 ?>
 
-				<h1 id="subheader" class="wrap"><span><?php
-					printf( __( '%s', 'boilerplate' ), '' . single_cat_title( '', false ) . '' );
-				?></span></h1>
+				<h1 id="subheader" class="wrap">
+					<span><?php printf( __( '%s', 'boilerplate' ), '' . single_cat_title( '', false ) . '' );?></span>
+				</h1>
 
 				<?php // Get "Featured" section
 				if ($has_search)
@@ -92,6 +92,7 @@
 
 				<div id="container" class="wrap" role="main">
 					<div id="main_content">
+					<h2><?php printf( __( '%s', 'boilerplate' ), '' . single_cat_title( '', false ) . '' );?></h2>
 					<?php if ( !$loop->have_posts() ): ?>
 						<h2>No hay nah, bro</h2>
 					<?php else: ?>

@@ -252,13 +252,10 @@ body {
 }
 
 /* Generic full page style (Somos, Contacto, others) */
-.fullpage {
-  padding: 15px 20px;
-}
+.fullpage { padding: 15px 20px;}
 .fullpage h2 {font-size: 182%}
 .fullpage #main_content {margin: 15px 0}
 .fullpage #side_content {margin: 15px 0}
-
 .fullpage .button_menu { float: right; width: 260px; }
 .fullpage .button { margin-bottom: 15px; }
 
@@ -269,8 +266,6 @@ body {
 .fullbanner, .verticalbanner, .squarepopup, .skyscraper { background-color: darkGray; color: white; display: block; }
 #dondeir-widget .squarepopup { margin-left: 2.7em; }
 #dondeir-widget .verticalbanner, #dondeir-widget .squarepopup { float: left; margin-top: 1em; }
-
-
 
 /**
  * Header and Subheaders
@@ -504,9 +499,6 @@ input[type="text"], textarea {
   padding: 3px;
 }
 
-
-
-
 /**
  * Featured section
  */
@@ -535,11 +527,6 @@ input[type="text"], textarea {
     border-left-color: #6D6D6D;
     right: 0;
   }
-
-
-
-
-
   #featured section {
     background: #e7e7e7;
     box-sizing: border-box;
@@ -646,7 +633,6 @@ input[type="text"], textarea {
   .featured_arrows .prev { background-image: url('images/sideleft.png'); }
   .featured_arrows .next { background-image: url('images/sideright.png'); }
 
-
 /* Included features widget (in pages and in featured slideshows) */
 .includes {
   clear: both;
@@ -733,7 +719,6 @@ input[type="text"], textarea {
 /* In category pages, this needs to be a bit smaller */
 .category #main_content {width: 450px}
 
-
 #side_content {
   float: left;
   margin: 25px 0 0 0;
@@ -762,7 +747,6 @@ input[type="text"], textarea {
   text-align: center;
   text-shadow: 0 1px 1px rgba(0,0,0,.75);
   }
-  
 
 /**
  * General 'Atractivos' list styling
@@ -971,7 +955,6 @@ input[type="text"], textarea {
 /**
  * Home
  */
-
 .home #map_container {
   background: url('images/bg_map_dondeir_small.png') no-repeat center top;
   margin-top: 15px;
@@ -984,7 +967,10 @@ input[type="text"], textarea {
   margin: 0;
 }
 
-
+/*
+ * Hoteles Category
+ */
+ .category-hoteles #subheader span { background-image: url('images/headericon_hoteles.png'); }
 
 /**
  * Hoteles
@@ -1097,7 +1083,6 @@ input[type="text"], textarea {
     right: 1em;
     }
     
-    
     /* Recomendaciones
  ****************************/
 #recomend .subheader span {background-image: url('/img/recomendaciones_icon.png');}
@@ -1159,7 +1144,6 @@ input[type="text"], textarea {
 /**
  * Somos, Contacto, Publicidad
  */
-
 #somos #main_content p {
   width: 80%;
 }
@@ -1186,11 +1170,7 @@ input[type="text"], textarea {
   }
   #contact_form label:after { content: ':'; }
   #contact_form .button { float: right; }
-
-
-
-
-
+  
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
