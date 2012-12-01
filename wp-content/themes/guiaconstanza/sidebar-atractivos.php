@@ -5,7 +5,7 @@
 		'orderby'        => 'rand'
 	));
 ?>
-						<section class="places-list">
+						<section class="places-list smaller">
 							<h3>Atractivos</h3>
 							<?php while ( $atractivos->have_posts() ) : $atractivos->the_post(); ?>
 							<article>

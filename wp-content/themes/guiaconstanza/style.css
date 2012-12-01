@@ -263,6 +263,7 @@ body {
 .fullbanner { width: 468px; height: 60px; margin-top: 20px; }
 .squarepopup { width: 250px; height: 250px; }
 .verticalbanner { width: 120px; height: 240px; }
+.skyscraper { width: 120px; height: 600px; }
 .fullbanner, .verticalbanner, .squarepopup, .skyscraper { background-color: darkGray; color: white; display: block; }
 #dondeir-widget .squarepopup { margin-left: 2.7em; }
 #dondeir-widget .verticalbanner, #dondeir-widget .squarepopup { float: left; margin-top: 1em; }
@@ -792,6 +793,13 @@ input[type="text"], textarea {
 #side_content .places-list { margin-top: 15px; width: 260px }
 #side_content .places-list article { padding: 15px 0 }
 #side_content .places-list img { margin-bottom: 0 }
+#side_content .places-list .skyscraper { position: absolute; right: 2em; bottom: 0; }
+
+/**
+ * Smaller 'Atractivos' list styling
+ */
+.places-list.smaller {}
+.places-list.smaller h4 { font-size: 100%; white-space: normal; }
 
 
 /**
