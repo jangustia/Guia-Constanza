@@ -976,9 +976,10 @@ input[type="text"], textarea {
 }
 
 /*
- * Hoteles Category
+ * Hoteles, Bares & Restaurantes Category
  */
  .category-hoteles #subheader span { background-image: url('images/headericon_hoteles.png'); }
+ .category-bares-y-restaurantes #subheader span { background-image: url('images/headericon_bares.png'); }
 
 /**
  * Hoteles
