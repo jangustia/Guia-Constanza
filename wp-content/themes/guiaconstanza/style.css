@@ -721,6 +721,7 @@ input[type="text"], textarea {
 .category #main_content {width: 450px}
 
 #side_content {
+  position: relative;
   float: left;
   margin: 25px 0 0 0;
   width: 410px;
@@ -793,13 +794,14 @@ input[type="text"], textarea {
 #side_content .places-list { position: relative; margin-top: 15px; width: 260px; }
 #side_content .places-list article { padding: 15px 0 }
 #side_content .places-list img { margin-bottom: 0 }
-#side_content .places-list .skyscraper { position: absolute; top: 0; left: 300px; }
+.category #side_content .places-list .skyscraper { position: absolute; top: 0; left: 300px; }
 
 /**
  * Smaller 'Atractivos' list styling
  */
 .places-list.smaller {}
 .places-list.smaller h4 { font-size: 100%; white-space: normal; }
+.places-list.smaller .skyscraper { left: 280px; }
 
 
 /**
@@ -924,11 +926,11 @@ input[type="text"], textarea {
 	
 	/* Side Information */
 .sideinfo {
-	margin-right: 2em;
-	position: absolute;
+	margin-right: 5px;
+	/* position: absolute;
 	top: 2em;
 	right: 0;
-	width: 41em;
+	width: 41em; */
 	}
 	.sideinfo h3, .sideinfo h4 {color: #A1420F;}
 	.sideinfo h3 {font-size: 1.8em; margin: 0 0 .5em 0; padding: 0;}
@@ -951,7 +953,7 @@ input[type="text"], textarea {
 			height: 3.5em;
 			}
 		.sideinfo .box p {font-size: 1.2em; line-height: 1.2;}
-	.sideinfo h4 a:link {font-size: 1.4em;}
+	.sideinfo h4 a:link {/* font-size: 1.4em; */}
 	.sideinfo section:last-child {padding-right: 15em; position: relative;}
 	.sideinfo section:last-child .skyscraper {position: absolute; right: 0; top: 1em;}
 	.sideinfo section article {
