@@ -790,10 +790,10 @@ input[type="text"], textarea {
     overflow: hidden;
   }
 
-#side_content .places-list { margin-top: 15px; width: 260px }
+#side_content .places-list { position: relative; margin-top: 15px; width: 260px; }
 #side_content .places-list article { padding: 15px 0 }
 #side_content .places-list img { margin-bottom: 0 }
-#side_content .places-list .skyscraper { position: absolute; right: 2em; bottom: 0; }
+#side_content .places-list .skyscraper { position: absolute; top: 0; left: 300px; }
 
 /**
  * Smaller 'Atractivos' list styling
