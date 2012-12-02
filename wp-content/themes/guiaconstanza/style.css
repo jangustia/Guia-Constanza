@@ -980,6 +980,21 @@ input[type="text"], textarea {
  */
  .category-hoteles #subheader span { background-image: url('images/headericon_hoteles.png'); }
  .category-bares-y-restaurantes #subheader span { background-image: url('images/headericon_bares.png'); }
+ 
+/*
+ * Atractivos
+ */
+ .category-atractivos #featured_atractivos { margin-top: 15px; width: 471px; }
+ .category-atractivos #side_content { margin-top: 20px; }
+ .category-atractivos .skyscraper { bottom: 150px!important; }
+ .category-atractivos #subheader span { background-image: url('images/headericon_atractivos.png'); }
+ .atractivos_recomendaciones {
+	 display: block;
+	 width: 410px;
+	 height: 240px;
+	 border: solid 1px #CCC;
+	 border-radius: 10px;
+ }
 
 /**
  * Hoteles

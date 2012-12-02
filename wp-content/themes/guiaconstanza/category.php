@@ -92,7 +92,10 @@
 
 				<div id="container" class="wrap" role="main">
 					<div id="main_content">
-					<h2><?php printf( __( '%s', 'boilerplate' ), '' . single_cat_title( '', false ) . '' );?></h2>
+					<?php if ($has_search) : ?>
+						<h2><?php printf( __( '%s', 'boilerplate' ), '' . single_cat_title( '', false ) . '' );?></h2>
+					<?php endif; ?>
+					
 					<?php if ( !$loop->have_posts() ): ?>
 						<h2>No hay nah, bro</h2>
 					<?php else: ?>
@@ -118,6 +121,12 @@
 
 					<div id="side_content">
 						<div class="places-list">
+							<?php if (!$has_search) : ?>
+								<div class="atractivos_recomendaciones">
+									
+								</div>
+							<?php endif; ?>
+							
 							<?php // Get "Atractivos" section
 							get_sidebar( 'atractivos' ); ?>
 						</div><!-- .places-list -->
