@@ -12,7 +12,7 @@
 	));
 	
 	$blogs = new WP_Query (array (
-		'category_name'      => 'blog',
+		'category_name'  => 'blog',
 		'posts_per_page' => 5,
 		'orderby'        => 'rand'
 	));
@@ -26,7 +26,7 @@
 
 						<div id="hotel_slide" class="nivoSlider">
 						<?php while ($hoteles->have_posts()): $hoteles->the_post(); ?>
-							<a href="<?php the_permalink(); ?>">
+							<a class="nivo-imageLink" href="<?php the_permalink(); ?>">
 								<?php the_post_thumbnail ('medium', array ('title'=>get_the_title())); ?>
 							</a>
 						<?php endwhile; ?>
@@ -57,6 +57,7 @@
 							</div>
 						<?php endwhile; ?>
 					</section>
+					
 					<section id="featured_posts">
 						<h2>Blog: La Suiza del Caribe</h2>
 						
@@ -74,6 +75,6 @@
 								<p><?php echo new_excerpt (500); ?></p>
 						</div>
 						<?php endwhile; ?>
-						
 					</section>
+					
 				</div><!-- #featured -->
