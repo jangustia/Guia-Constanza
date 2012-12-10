@@ -74,5 +74,7 @@
 					)
 				);
 			?>
+			<li><a rel="external" href="http://www.facebook.com">Facebook</a></li>
+			<li><a rel="external" href="http://www.twitter.com">Twitter</a></li>
 		</ul>
 	</nav><!-- #access -->
