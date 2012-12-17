@@ -25,7 +25,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 			'menu'  => get_post_meta ($post_id, 'menu',  TRUE) ? 'Restaurante'   : '',
 			'bar'   => get_post_meta ($post_id, 'bar',   TRUE) ? 'Bar'           : '',
 			'tv'    => get_post_meta ($post_id, 'tv',    TRUE) ? 'Televisión'    : '',
-			'wifi'  => get_post_meta ($post_id, 'tv',    TRUE) ? 'Wirless'       : ''
+			'wifi'  => get_post_meta ($post_id, 'wifi',    TRUE) ? 'Wireless'       : ''
 		);
 
 		$rate_title = 'Hotel';
@@ -52,6 +52,12 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 	$website  = get_post_meta ($post_id, 'website',  TRUE);
 	$geo_lat  = get_post_meta ($post_id, 'geo_lat',  TRUE);
 	$geo_long = get_post_meta ($post_id, 'geo_long', TRUE);
+	$images   = array(
+					get_post_meta ($post_id, 'image1', TRUE),
+					get_post_meta ($post_id, 'image2', TRUE),
+					get_post_meta ($post_id, 'image3', TRUE),
+					get_post_meta ($post_id, 'image4', TRUE)
+				);
 
 ?>
 				<h1 id="subheader" class="wrap">
@@ -68,8 +74,14 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 						<div id="details">
 							<h2 class="fn org"><?php the_title(); ?></h2>
 							<figure>
-								<span>Cabañas Palofino</span>
-								<img src="<?php bloginfo('template_url'); ?>/images/rancho.jpg" alt="Fotografia de unos locales en <?php echo the_title(); ?>" />
+								<span><?php the_title(); ?></span>
+								<div id="single_gallery" class="nivoSlider">
+									<?php foreach($images as $image) : ?>
+										<a class="nivo-imageLink" href="#">
+											<img src="<?php echo $image; ?>" alt="Image" />
+										</a>
+									<?php endforeach; ?>
+								</div>
 							</figure>
 
 							<h3>Descripción</h3>
@@ -89,7 +101,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 								<div id="adr"><?php echo $address; ?></div>
 							<?php endif; ?>
 
-							<ul class="clearfix">
+							<ul class="hotel_metadata clearfix">
 								<?php if (!empty ($phone)): ?>
 									<li id="tel" class="info"><?php echo $phone; ?></li>
 								<?php endif; ?>

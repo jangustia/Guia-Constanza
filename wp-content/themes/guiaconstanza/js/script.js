@@ -154,7 +154,7 @@ GUIACONSTANZA = {
 	single: {
 		single_marker_map : function (map_contain_id) {
 			var map_container = $('#' + map_contain_id),
-				marker_pos    = new google.maps.LatLng (map_container.data ('geo_lat'), map_container.data ('geo_long')),
+				marker_pos    = new google.maps.LatLng (parseFloat(map_container.data ('geo_lat')), parseFloat(map_container.data ('geo_long'))),
 			    gmap          = new google.maps.Map (document.getElementById (map_contain_id), {
 					zoom               : 10,
 					mapTypeControl     : false,
@@ -175,6 +175,12 @@ GUIACONSTANZA = {
 		},
 		
 		init : function() {
+			$('#single_gallery').nivoSlider ({
+				effect         : 'fade',
+				pauseTime      : 5000,
+				directionNav   : false,
+				captionOpacity : 1.0
+			});
 		},
 		
 		category_hoteles : function() {
