@@ -39,14 +39,16 @@
 					<?php endwhile; ?>
 
 					<div class="fullbanner">
-						<script type="text/javascript"><!--
-							google_ad_client = "ca-pub-8397939586383038";
-							/* GuiaConstanza 468x60 */
-							google_ad_slot = "6293014751";
-							google_ad_width = 468;
-							google_ad_height = 60;
+						<script type="text/javascript">
+							<!--
+								google_ad_client = "ca-pub-8397939586383038";
+								/* 468x60, creado 1/06/10 */
+								google_ad_slot = "4670795372";
+								google_ad_width = 468;
+								google_ad_height = 60;
 							//-->
 						</script>
+						<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 					</div>
 				</section><!-- #atractivos -->
 				<?php endif; ?>
@@ -70,8 +72,8 @@
 						<?php endwhile; ?>
 						</ul><!-- #marker_list -->
 					</div><!-- #map_container -->
-					<div class="verticalbanner"></div>
-					<div class="squarepopup"></div>
+					<!-- <div class="verticalbanner"></div> -->
+					<!-- <div class="squarepopup"></div> -->
 				</section>
 			</div><!-- #side_content -->
 
