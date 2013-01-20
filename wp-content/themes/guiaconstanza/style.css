@@ -261,6 +261,7 @@ body {
 
 /* Banner Ads */
 .fullbanner { width: 468px; height: 60px; margin-top: 20px; }
+.fullbanner.to_right { float: right; margin: -79px 17px 0px 0px; }
 .squarepopup { width: 250px; height: 250px; }
 .verticalbanner { width: 120px; height: 240px; }
 .skyscraper { width: 120px; height: 600px; }

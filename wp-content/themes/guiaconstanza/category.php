@@ -69,6 +69,18 @@
 
 				<h1 id="subheader" class="wrap">
 					<span><?php printf( __( '%s', 'boilerplate' ), '' . single_cat_title( '', false ) . '' );?></span>
+					<div class="fullbanner to_right">
+						<script type="text/javascript">
+							<!--
+								google_ad_client = "ca-pub-8397939586383038";
+								/* 468x60, creado 1/06/10 */
+								google_ad_slot = "4670795372";
+								google_ad_width = 468;
+								google_ad_height = 60;
+							//-->
+						</script>
+						<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
 				</h1>
 
 				<?php // Get "Featured" section
