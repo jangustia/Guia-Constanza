@@ -24,7 +24,7 @@ get_header(); ?>
 		<div id="somos" class="fullpage">
 			<ul class="breadcrumbs">
 				<li><a href="<?php echo bloginfo('url') ?>">Inicio</a></li>
-				<li>Somos</li>
+				<li><?php the_title(); ?></li>
 			</ul>
 			<img src="<?php bloginfo('template_url') ?>/images/img_somos_headline.jpg" alt="Paisaje de Constanza" />
 
