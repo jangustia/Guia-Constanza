@@ -1205,6 +1205,9 @@ input[type="text"], textarea {
 #somos #main_content p {
   width: 80%;
 }
+.page-id-28 #subheader span { background-image: url('images/somos_icon.png'); }
+.page-id-76 #subheader span { background-image: url('images/somos_icon.png'); }
+.page-id-257 #subheader span { background-image: url('images/somos_icon.png'); }
 
 #contact_form {}
   #contact_form input[type="text"] {
