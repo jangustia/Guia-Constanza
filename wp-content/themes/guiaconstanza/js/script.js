@@ -89,6 +89,29 @@ GUIACONSTANZA = {
 			});
 		},
 		
+		open_weather_lightbox : function() {
+			var $lightbox = $('.lightbox');
+			var $details = $('.clima_details');
+			
+			$lightbox.fadeIn("fast", function() {
+				$details.fadeIn("fast");
+			});
+			
+			$(".close_btn").click(function(e) {
+				e.preventDefault();
+				GUIACONSTANZA.common.close_weather_lightbox();
+			});
+		},
+		
+		close_weather_lightbox : function() {
+			var $lightbox = $('.lightbox');
+			var $details = $('.clima_details');
+			
+			$details.fadeOut("fast", function() {
+				$lightbox.fadeOut();
+			});
+		},
+		
 		init : function() {
 			var $featured = $('#featured');
 			
@@ -97,6 +120,11 @@ GUIACONSTANZA = {
 				GUIACONSTANZA.common.slide_nav ('#featured_posts', '.featured_arrows', '.slide');
 				GUIACONSTANZA.common.main_feature();
 			}
+			
+			$("#weather_lightbox").click(function(e) {
+				e.preventDefault();
+				GUIACONSTANZA.common.open_weather_lightbox();
+			});
 		}
 	}, // end common object
 	

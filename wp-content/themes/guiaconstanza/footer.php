@@ -46,6 +46,18 @@
 
 	<!-- Vines container -->
 	<div id="vines"></div>
+	
+	<div class="lightbox"></div>
+	<div class="clima_details">
+		<h1 class="lightheader">
+			<img src="<?php bloginfo ('template_url'); ?>/images/cloud_icon.png">
+			Clima en Constanza
+			<a class="close_btn" href="#">cerrar</a>
+		</h1>
+		<div class="clima_content">
+			<script type="text/javascript" src="http://www.freemeteo.com/weather.fm?key=6141AD0BAB4FA1DDA8CAFBEEA98D8C52254883"></script>
+		</div>
+	</div>
 
 	<!-- JavaScript at the bottom for fast page loading -->
 
