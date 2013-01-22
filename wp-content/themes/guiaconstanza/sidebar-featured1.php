@@ -12,24 +12,24 @@
 	));
 	
 	$blogs = new WP_Query (array (
-		'category_name'  => 'blog',
+		'post_type'      => 'gc_atractivos',
 		'posts_per_page' => 5,
 		'orderby'        => 'rand'
 	));
 
-	$bares_first_post = TRUE;
+	$hoteles_first_post = TRUE;
 	$blogs_first_post = TRUE;
 	
 	/* 
-	 * Hoteles are shown first
+	 * Bares y Restaurantes are shown first
 	 */
 ?>
 				<div id="featured" class="wrap clearfix">
 					<section id="featured_hotel">
-						<h2>Hoteles Destacados</h2>
+						<h2>Bares y Restaurantes Destacados</h2>
 
 						<div id="hotel_slide" class="nivoSlider">
-						<?php while ($hoteles->have_posts()): $hoteles->the_post(); ?>
+						<?php while ($bares_y_rests->have_posts()): $bares_y_rests->the_post(); ?>
 							<a class="nivo-imageLink" href="<?php the_permalink(); ?>">
 								<?php the_post_thumbnail ('medium', array ('title'=>get_the_title())); ?>
 							</a>
@@ -38,7 +38,7 @@
 					</section>
 
 					<section id="featured_bars">
-						<h2>Bares y Restaurantes</h2>
+						<h2>Hoteles</h2>
 
 						<nav class="featured_arrows">
 							<ul>
@@ -47,15 +47,19 @@
 							</ul>
 						</nav>
 
-						<?php while ($bares_y_rests->have_posts()): $bares_y_rests->the_post(); ?>
-							<div class="slide<?php if ($bares_first_post) { $bares_first_post = FALSE; ?> active<?php }?>">
+						<?php while ($hoteles->have_posts()): $hoteles->the_post(); ?>
+							<div class="slide<?php if ($hoteles_first_post) { $hoteles_first_post = FALSE; ?> active<?php }?>">
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 								<?php the_post_thumbnail ('thumbnail'); ?>
 								<p><?php echo new_excerpt (200); ?></p>
 
 								<ul class="includes_small">
-								<?php foreach (bares_y_rests_icons() as $slug => $name): ?>
-									<li class="<?php echo $slug . "_small"; ?>"><?php //echo $name;?></li>
+								<?php $counter = 0; ?>
+								<?php foreach (hoteles_icons() as $slug => $name): ?>
+									<?php if ($counter < 5) : ?>
+										<li class="<?php echo $slug . "_small"; ?>"><?php //echo $name;?></li>
+									<?php endif; ?>
+									<?php $counter++; ?>
 								<?php endforeach; ?>
 								</ul>
 							</div>
@@ -63,7 +67,7 @@
 					</section>
 					
 					<section id="featured_posts">
-						<h2>Blog: La Suiza del Caribe</h2>
+						<h2>Atractivos</h2>
 						
 						<nav class="featured_arrows">
 							<ul>

@@ -85,7 +85,13 @@
 
 				<?php // Get "Featured" section
 				if ($has_search)
-					get_sidebar( 'featured' ); ?>
+					
+					if ($category->cat_ID == 3) {
+						get_sidebar( 'featured' );
+					} else if ($category->cat_ID == 9) {
+						get_sidebar( 'featured1' );
+					}
+					 ?>
 
 				<?php if ($has_search): ?>
 					<div id="adv_search" class="wrap">

@@ -890,6 +890,29 @@ function bares_y_rests_icons() {
 }
 endif;
 
+if (!function_exists ('hoteles_icons')):
+function hoteles_icons() {
+	$icons         = array();
+	$custom_fields = get_post_custom();
+	$facilidades   = array (
+		'tv'       => 'Televisión',
+		'wifi'     => 'Wireless',
+		'menu' 	   => 'Restaurante',
+		'bar'      => 'Tragos',
+		'heat' 	   => 'Agua Caliente',
+		'james'    => 'Juegos',
+		'pool' 	   => 'Piscina',
+		'chim' 	   => 'Chimenea'
+	);
+
+	foreach ($custom_fields as $i => $entry)
+		if (array_key_exists ($i, $facilidades) && current ($entry))
+			$icons[$i] = $facilidades[$i];
+
+	return $icons;
+}
+endif;
+
 function custom_excerpt_more( $more ) {
 	return ' ...';
 }
