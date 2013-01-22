@@ -670,6 +670,32 @@ input[type="text"], textarea {
 .tv {background-position: 138px 0;}
 .wifi {background-position: 69px 0;}
 
+/* Icons Small */
+.chim_small {background-position: 0 0;}
+.pool_small {background-position: 325px 0;}
+.juegos_small, .james_small {background-position: 279px 0;}
+.agua_small, .heat_small {background-position: 232px 0;}
+.rest_small, .menu_small {background-position: 185px 0;}
+.bar_small {background-position: 139px 0;}
+.tv_small {background-position: 93px 0;}
+.wifi_small {background-position: 47px 0;}
+
+/* Small versions of icons */
+.includes_small {
+	clear: both;
+	list-style: none;
+	margin: 10px 0;
+	overflow: hidden;
+	padding: 0;
+}
+.includes_small li {
+    background-image: url("images/icons_services_small.png");
+    float: left;
+    margin: 10px 4px 0 0;
+    width: 47px;
+    height: 47px;
+}
+
 /*.slide .chim {background-position: 0 0;}
 .slide .pool {background-position: 324px 0;}
 .slide .juegos, .slide .james {background-position: 277px 0;}

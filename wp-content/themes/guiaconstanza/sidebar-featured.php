@@ -47,11 +47,11 @@
 							<div class="slide<?php if ($bares_first_post) { $bares_first_post = FALSE; ?> active<?php }?>">
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 								<?php the_post_thumbnail ('thumbnail'); ?>
-								<p><?php echo new_excerpt (120); ?></p>
+								<p><?php echo new_excerpt (200); ?></p>
 
-								<ul class="includes">
+								<ul class="includes_small">
 								<?php foreach (bares_y_rests_icons() as $slug => $name): ?>
-									<li class="<?php echo $slug; ?>"><?php echo $name;?></li>
+									<li class="<?php echo $slug . "_small"; ?>"><?php //echo $name;?></li>
 								<?php endforeach; ?>
 								</ul>
 							</div>
