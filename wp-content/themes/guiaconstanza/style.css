@@ -738,9 +738,9 @@ input[type="text"], textarea {
     }
 
 #main_content {
-  margin: 25px 15px;
+  margin: 25px 20px;
   float: left;
-  width: 480px;
+  width: 464px;
   }
   #main_content h2,
   #side_content h2,
@@ -760,7 +760,7 @@ input[type="text"], textarea {
 }
 .category #side_content {
   margin-top: 240px;
-  margin-left: 15px;
+  margin-left: 5px;
 }
 
 /* Buttons */
@@ -800,7 +800,7 @@ input[type="text"], textarea {
     border-bottom: 1px dashed #D0D0D0;
     clear: both;
     overflow: auto;
-    padding: 20px 10px;
+    padding: 20px 10px 20px 0px;
     -webkit-transition: background 0.3s ease;
     -moz-transition: background 0.3s ease;
     -o-transition: background 0.3s ease;
@@ -833,12 +833,12 @@ input[type="text"], textarea {
 #side_content .places-list { position: relative; margin-top: 15px; width: 260px; }
 #side_content .places-list article { padding: 15px 0 }
 #side_content .places-list img { margin-bottom: 0 }
-.category #side_content .places-list .skyscraper { position: absolute; top: 0; left: 300px; }
+.category #side_content .places-list .skyscraper { position: absolute; top: 0; left: 295px; }
 
 /**
  * Smaller 'Atractivos' list styling
  */
-.places-list.smaller {}
+.category-atractivos #side_content .places-list.smaller { width: 230px; }
 .places-list.smaller h4 { font-size: 125%; white-space: normal; }
 .places-list.smaller .skyscraper { left: 280px; }
 
@@ -1029,9 +1029,9 @@ input[type="text"], textarea {
  .category-atractivos #side_content { margin-top: 20px; }
  .category-atractivos .skyscraper { bottom: 150px!important; }
  .category-atractivos #subheader span { background-image: url('images/headericon_atractivos.png'); }
- .category-atractivos .box { width: 395px; }
+ .category-atractivos .box { width: 378px; }
  .category-atractivos #side_content { margin-left: 20px!important; }
- .category-atractivos #side_content .places-list .skyscraper { left: 295px; }
+ .category-atractivos #side_content .places-list .skyscraper { left: 277px; }
 
 /**
  * Hoteles
