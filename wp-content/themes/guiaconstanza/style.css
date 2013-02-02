@@ -1049,7 +1049,7 @@ input[type="text"], textarea {
   #details figure {
     background: url('images/bg_details_slider.png') no-repeat -8px -11px;
     margin-top: 15px;
-    padding: 19px 0 16px 14px;
+    padding: 15px 0 9px 11px;
     position: relative;
     }
   #details figure img {
