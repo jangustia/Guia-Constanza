@@ -806,9 +806,6 @@ input[type="text"], textarea {
     -o-transition: background 0.3s ease;
     transition: background 0.3s ease;
   }
-  .places-list article:hover {
-    background: #FFFCDB;
-  }
   .places-list h3, .places-list h4 {
     color: #325800;
     font-size: 161.6%;
