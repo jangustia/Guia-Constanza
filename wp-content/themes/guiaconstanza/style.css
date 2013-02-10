@@ -1160,6 +1160,7 @@ input[type="text"], textarea {
  .single-gc_atractivos .box { width: 384px; }
  .single-gc_atractivos #side_content .places-list .skyscraper { left: 284px; }
  .single-gc_atractivos #details h2 { border-bottom: none; }
+ .single-gc_atractivos #details img { float: left; margin: 0px 10px 0px 0px; }
  .single-gc_atractivos .postmeta { border-bottom: 1px dashed #CCC; padding-bottom: .3em; overflow: hidden; }
  .postmeta .postdate { float: left; }
  .postmeta .postcat { float: left; margin-left: 87px; }
