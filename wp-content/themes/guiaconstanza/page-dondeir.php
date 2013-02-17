@@ -54,11 +54,14 @@
 							<?php endwhile; ?>
 							</ul>
 						</div><!-- #map_container -->
-						<div id="dondeir_share">Compartir:
-							<img src="<?php bloginfo('template_url') ?>/images/icon_twt_dondeir.png" alt="Twitter" />
-							<img src="<?php bloginfo('template_url') ?>/images/icon_fb_dondeir.png" alt="Facebook" />
+						<div id="dondeir_share">
+							<!-- Share on Twitter -->
+							<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+							<!-- Share on FB -->
+							<div class="fb-like" data-send="false" data-width="315" data-show-faces="false"></div>
 						</div>
 					</div><!-- #dondeir -->
-
 			<?php endwhile ?>
 <?php get_footer() ?>
