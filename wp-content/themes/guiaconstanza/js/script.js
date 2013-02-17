@@ -151,7 +151,7 @@ GUIACONSTANZA = {
 		},
 		
 		// !Donde Ir
-		page_id_113 : function() {
+		page_id_24 : function() {
 			GUIACONSTANZA.common.dondeir_map ('dondeir');
 		}
 	}, // end page object
@@ -239,7 +239,7 @@ UTIL = {
 	action_from_body: function() {
 		var body        = $(document.body),
 		    con_classes = new Array ('home', 'page', 'category', 'single', 'search', 'archive'),
-		    act_classes = new Array ('category-hoteles', 'category-bares-y-restaurantes', 'category-atractivos', 'page-id-113'),
+		    act_classes = new Array ('category-hoteles', 'category-bares-y-restaurantes', 'category-atractivos', 'page-id-24'),
 		    con_length  = con_classes.length,
 		    act_length  = act_classes.length,
 		    i         = 0,

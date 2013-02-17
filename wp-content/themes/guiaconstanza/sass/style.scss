@@ -1106,36 +1106,73 @@ input[type="text"], textarea {
     #subheader {
         span {background-image: url('images/headericon_dondeir.png');}
     }
+
+    #footer {
+        margin-top: -8px;
+    }
 }
 
 #dondeir {
-    background: url('images/bg_dondeir.jpg') no-repeat top;
+    background: url('images/donde_ir_bg.jpg') no-repeat top;
     margin: -15px 0px 0px 0px;
-    padding: 10px 30px;
+    padding: 15px 0px;
     min-height: 751px;
 
-    section {
-        margin: 20px 15px; 
-        width: 500px;
-
-        h2 {font-size: 2.2em; margin: 0;}
-        p {font-size: 1.2em;}
+    .donde_ir_sections {
+        overflow: hidden;
+        margin-bottom: 20px;
     }
+
+    section {
+        margin: 0px 15px; 
+        width: 430px;
+        float: left;
+
+        h2 {
+            font-size: 1.8em; margin: 0;
+            &.tweets_title { width: 210px; float: left; padding-bottom: 10px; }
+        }
+
+        .constanza_hashtag { float: right; margin-top: 10px; }
+        p {font-size: 1.1em;}
+    }
+
+    .tweets_container { clear: both; }
+
+    #constanza_tweets {
+        margin: 0px;
+        padding: 0px;
+
+        li {
+            list-style: none;
+            border-bottom: dotted 1px #534741;
+
+            &:last-child { border-bottom: none; }
+
+            p {
+                strong { color: #335a00; }
+                .time { font-size: 0.8em; }
+            }
+        }
+    }
+
+    .fullpage { padding: 20px 20px 0px 20px; }
 
     #map_container {
         background: url('images/bg_map_dondeir.png') no-repeat center top;
-        padding: 15px 20px;
+        padding: 10px 30px 25px 30px;
     }
 
     #dondeir_map {
-        width: 831px;
-        height: 429px;
+        width: 869px;
+        height: 481px;
     }
 }
 
 #dondeir_share {
     text-align: right;
     vertical-align: middle;
+    padding-bottom: 6px;
 
     img {margin: 0 .5em;}
 }
