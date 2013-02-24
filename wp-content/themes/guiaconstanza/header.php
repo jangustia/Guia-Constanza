@@ -27,6 +27,7 @@
 		?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/jquery.mCustomScrollbar.css" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
 		/* We add some JavaScript to pages with the comment form

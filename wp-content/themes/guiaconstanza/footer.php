@@ -69,6 +69,7 @@
 
 	<!-- scripts concatenated and minified via build script -->
 	<script defer src="<?php bloginfo ('template_url'); ?>/js/plugins.js"></script>
+	<script defer src="<?php bloginfo ('template_url'); ?>/js/libs/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script defer src="<?php bloginfo ('template_url'); ?>/js/script.js"></script>
 	<!-- end scripts -->
 

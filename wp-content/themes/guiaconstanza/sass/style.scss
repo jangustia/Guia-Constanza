@@ -1137,10 +1137,14 @@ input[type="text"], textarea {
         p {font-size: 1.1em;}
     }
 
-    .tweets_container { clear: both; }
+    .tweets_container { 
+        width: 430px;
+        height: 160px;
+        clear: both; 
+    }
 
     #constanza_tweets {
-        margin: 0px;
+        margin: -11px 0px 0px 0px;
         padding: 0px;
 
         li {

@@ -153,6 +153,7 @@ GUIACONSTANZA = {
 		// !Donde Ir
 		page_id_24 : function() {
 			GUIACONSTANZA.common.dondeir_map ('dondeir');
+			$(".tweets_container").mCustomScrollbar();
 		}
 	}, // end page object
 	

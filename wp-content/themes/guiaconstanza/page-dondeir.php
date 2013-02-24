@@ -10,6 +10,9 @@
 	);
 
 	$loop = new WP_Query ($query_args);
+
+	$twitter_media = json_decode(file_get_contents("http://search.twitter.com/search.json?result_type=recent&q=%23ConstanzaRD"));
+	$tweets = $twitter_media->results;
 ?>
 			<?php while (have_posts()) : the_post(); ?>
 				<h1 id="subheader" class="wrap">
@@ -47,12 +50,17 @@
 								<span class="constanza_hashtag">Hashtag #ConstanzaRD</span>
 								<div class="tweets_container">
 									<ul id="constanza_tweets">
-										<li>
-											<p><strong>Rancho Guaraguao: </strong>Amanece en #Constanza con una suave neblina que nos arropa, con el friito y una taza de cafe #Constanzard. <span class="time">2 days ago</span></p>
-										</li>
-										<li>
-											<p><strong>Rancho Guaraguao: </strong>Amanece en #Constanza con una suave neblina que nos arropa, con el friito y una taza de cafe #Constanzard. <span class="time">2 days ago</span></p>
-										</li>
+										<?php foreach ($tweets as $tweet) : ?>
+											<li>
+												<p>
+													<strong><?php echo $tweet->from_user_name; ?>: </strong>
+													<?php echo $tweet->text; ?> 
+													<span class="time">
+														<?php echo time_passed(strtotime($tweet->created_at)); ?>
+													</span>
+												</p>
+											</li>
+										<?php endforeach; ?>
 									</ul>
 								</div>
 							</section>
