@@ -1342,7 +1342,7 @@ input[type="text"], textarea {
     border: 0 !important;
 }
 
-/* Clima Lightbox */
+/* Lightboxes */
 .lightbox {
     position: fixed;
     display: none;
@@ -1357,18 +1357,14 @@ input[type="text"], textarea {
     margin: 0px;
     padding: 0px;
 }
-.clima_details {
+.lightbox_details {
     display: none;
     position: absolute;
-    width: 500px;
-    height: 780px;
     top: 50%;
     left: 50%;
-    margin-left: -250px;
-    margin-top: -300px;
     z-index: 9999;
 
-    h1 {
+    .lightbox_header {
         display: block;
         position: relative;
         color: #FFF;
@@ -1420,12 +1416,51 @@ input[type="text"], textarea {
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#487107', endColorstr='#709d12',GradientType=0 );
     }
 
-    .clima_content {
+    .lightbox_content {
         overflow: hidden;
         border-radius: 0px 0px 6px 6px;
         padding: 10px 10px 10px 4px;
-        height: 685px;
         background: #FFF;
+    }
+}
+
+// Weather Lightbox
+.clima_details {
+    width: 500px;
+    height: 780px;
+    margin-left: -250px;
+    margin-top: -300px;
+}
+.clima_content {
+    height: 685px;
+}
+
+// Recomendaciones Lightbox
+.recomendaciones_details {
+    width: 550px;
+    height: 500px;
+    margin-left: -275px;
+    margin-top: -250px;
+}
+.recomendaciones_content {
+    padding: 20px 40px 40px 40px!important;
+    height: 170px;
+
+    p { 
+        color: #737373; 
+        text-align: center;
+
+        &.in_middle {
+            font-size: 2em;
+            margin: 25px 20px 0px 19px;
+            float: left;
+        }
+    }
+
+    .twitter_btn, .fb_btn {
+        float: left;
+        padding: 26px 12px;
+        border-radius: 10px;
     }
 }
 

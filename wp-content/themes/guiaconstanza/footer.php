@@ -48,16 +48,38 @@
 	<div id="vines"></div>
 	
 	<div class="lightbox"></div>
-	<div class="clima_details">
-		<h1 class="lightheader">
+
+	<!-- Clima lightbox -->
+	<div class="lightbox_details clima_details">
+		<h1 class="lightbox_header">
 			<img src="<?php bloginfo ('template_url'); ?>/images/cloud_icon.png">
 			Clima en Constanza
 			<a class="close_btn" href="#">cerrar</a>
 		</h1>
-		<div class="clima_content">
+		<div class="lightbox_content clima_content">
 			<script type="text/javascript" src="http://www.freemeteo.com/weather.fm?key=6141AD0BAB4FA1DDA8CAFBEEA98D8C52254883"></script>
 		</div>
 	</div>
+
+	<!-- Recomendaciones Lightbox -->
+	<div class="lightbox_details recomendaciones_details">
+		<h1 class="lightbox_header">
+			<img src="<?php bloginfo ('template_url'); ?>/images/recommend_icon.png">
+			Añadir Recomendacion
+			<a class="close_btn" href="#">cerrar</a>
+		</h1>
+		<div class="lightbox_content recomendaciones_content">
+			<p>Ingrese a su cuenta de <strong>Facebook</strong> o <strong>Twitter</strong> para recomendar.</p>
+			<a href="#" class="button twitter_btn">
+				<img src="<?php bloginfo ('template_url'); ?>/images/twitter_logo.png" alt="Twitter">
+			</a>
+			<p class="in_middle">o</p>
+			<a href="#" class="button fb_btn">
+				<img src="<?php bloginfo ('template_url'); ?>/images/facebook_logo.png" alt="Facebook">
+			</a>
+		</div>
+	</div>
+
 
 	<!-- JavaScript at the bottom for fast page loading -->
 

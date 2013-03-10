@@ -154,6 +154,30 @@ GUIACONSTANZA = {
 		page_id_24 : function() {
 			GUIACONSTANZA.common.dondeir_map ('dondeir');
 			$(".tweets_container").mCustomScrollbar();
+		}, 
+
+		// Recomendaciones
+		page_id_26 : function() {
+			var $lightbox = $('.lightbox');
+			var $details = $('.recomendaciones_details');
+
+			// Open login lightbox
+			$("a.button").on("click", function(e) {
+				e.preventDefault();
+
+				$lightbox.fadeIn("fast", function() {
+					$details.fadeIn("fast");
+				});
+			});
+
+			// Close lightboxes
+			$(".recomendaciones_details").find(".close_btn").on("click", function(e) {
+				e.preventDefault();
+				
+				$details.fadeOut("fast", function() {
+					$lightbox.fadeOut();
+				});
+			});
 		}
 	}, // end page object
 	
@@ -240,7 +264,7 @@ UTIL = {
 	action_from_body: function() {
 		var body        = $(document.body),
 		    con_classes = new Array ('home', 'page', 'category', 'single', 'search', 'archive'),
-		    act_classes = new Array ('category-hoteles', 'category-bares-y-restaurantes', 'category-atractivos', 'page-id-24'),
+		    act_classes = new Array ('category-hoteles', 'category-bares-y-restaurantes', 'category-atractivos', 'page-id-24', 'page-id-26'),
 		    con_length  = con_classes.length,
 		    act_length  = act_classes.length,
 		    i         = 0,
