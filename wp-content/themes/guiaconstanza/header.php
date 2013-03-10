@@ -47,13 +47,25 @@
 <body <?php body_class(); ?>>
 	<!-- FB SDK -->
 	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=410933328947702";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+			  appId      : '494996673870303', // App ID
+			  channelUrl : '//www.guiaconstanza.com/channel.html', // Channel File
+			  status     : true, // check login status
+			  cookie     : true, // enable cookies to allow the server to access the session
+			  xfbml      : true  // parse XFBML
+			});
+		};
+
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=410933328947702";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
 	
 	<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 	<a class="visuallyhidden" id="skip" href="#content" title="<?php esc_attr_e( 'Skip to content', 'boilerplate' ); ?>"><?php _e( 'Skip to content', 'boilerplate' ); ?></a>
