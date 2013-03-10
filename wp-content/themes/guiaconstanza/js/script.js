@@ -111,6 +111,36 @@ GUIACONSTANZA = {
 				$lightbox.fadeOut();
 			});
 		},
+
+		do_fb_login : function() {
+			FB.login(function(response) {
+		        if (response.authResponse) {
+		            console.log("logged in with facebook");
+		            GUIACONSTANZA.common.fb_insert_recommendation();
+		        } else {
+		            console.log("cancelled login");
+		        }
+		    });
+		},
+
+		fb_insert_recommendation : function() {
+			var $lightbox = $('.lightbox');
+			var $details = $('.recomendaciones_details');
+			var $login_area = $(".login_area");
+			var $write_recommendation = $(".write_recommendation");
+
+			console.log("ready to insert recommendation!");
+
+			FB.api("/me", function(response) {
+				console.log(response);
+
+				$login_area.fadeOut("normal", function() {
+					$write_recommendation.find("h3").text(response.name);
+					$write_recommendation.find("img").attr("src", "https://graph.facebook.com/" + response.id + "/picture?width=40&height=40");
+					$write_recommendation.fadeIn();
+				});
+		    });
+		},
 		
 		init : function() {
 			var $featured = $('#featured');
@@ -160,6 +190,31 @@ GUIACONSTANZA = {
 		page_id_26 : function() {
 			var $lightbox = $('.lightbox');
 			var $details = $('.recomendaciones_details');
+			var $login_area = $(".login_area");
+			var $write_recommendation = $(".write_recommendation");
+
+			// do facebook login
+			$(".fb_btn").on("click", function(e) {
+				e.preventDefault();
+
+				FB.getLoginStatus(function(response) {
+					if (response.status === 'connected') {
+						console.log("connected");
+						GUIACONSTANZA.common.fb_insert_recommendation();
+					} else if (response.status === 'not_authorized') {
+						console.log("not_authorized");
+						GUIACONSTANZA.common.do_fb_login();
+					} else {
+						console.log("not logged in");
+						GUIACONSTANZA.common.do_fb_login();
+					}
+				});
+			});
+
+			// do twitter login
+			$(".twitter_btn").on("click", function(e) {
+
+			});
 
 			// Open login lightbox
 			$("a.button").on("click", function(e) {
@@ -173,9 +228,13 @@ GUIACONSTANZA = {
 			// Close lightboxes
 			$(".recomendaciones_details").find(".close_btn").on("click", function(e) {
 				e.preventDefault();
-				
+
 				$details.fadeOut("fast", function() {
 					$lightbox.fadeOut();
+
+					// Show login again ;)
+					$write_recommendation.hide();
+					$login_area.show();
 				});
 			});
 		}
