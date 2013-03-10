@@ -1437,30 +1437,74 @@ input[type="text"], textarea {
 
 // Recomendaciones Lightbox
 .recomendaciones_details {
-    width: 550px;
+    width: 570px;
     height: 500px;
     margin-left: -275px;
     margin-top: -250px;
 }
 .recomendaciones_content {
-    padding: 20px 40px 40px 40px!important;
-    height: 170px;
+    height: 270px;
 
-    p { 
-        color: #737373; 
-        text-align: center;
+    .login_area {
+        padding: 20px 40px 40px 40px!important;
 
-        &.in_middle {
-            font-size: 2em;
-            margin: 25px 20px 0px 19px;
+        p { 
+            color: #737373; 
+            text-align: center;
+            margin-bottom: 30px;
+
+            &.in_middle {
+                font-size: 2em;
+                margin: 25px 20px 0px 19px;
+                float: left;
+            }
+        }
+
+        .twitter_btn, .fb_btn {
             float: left;
+            padding: 26px 12px;
+            border-radius: 10px;
         }
     }
 
-    .twitter_btn, .fb_btn {
-        float: left;
-        padding: 26px 12px;
-        border-radius: 10px;
+    .write_recommendation {
+        padding: 6px 16px 16px 16px!important;
+        display: none;
+
+        .recommendation_heading {
+            overflow: hidden;
+            margin-bottom: 10px;
+
+            img { 
+                float: left;
+                display: block;
+                border: 1px solid #333;
+            }
+
+            h3 {
+                margin: 0;
+                padding: 10px 0px 0px 50px;
+                color: #598527;
+                font-size: 1.2em;
+            }
+        }
+
+        textarea { margin-bottom: 15px; }
+
+        h5, p { 
+            width: 390px;
+            float: left;
+            margin: 0; 
+            padding: 0; 
+        }
+
+        .please_no { margin-top: 15px; }
+
+        p { color: #3e3e3e; font-size: 0.9em; }
+
+        input[type="submit"] {
+            float: right;
+        }
     }
 }
 

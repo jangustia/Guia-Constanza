@@ -69,14 +69,30 @@
 			<a class="close_btn" href="#">cerrar</a>
 		</h1>
 		<div class="lightbox_content recomendaciones_content">
-			<p>Ingrese a su cuenta de <strong>Facebook</strong> o <strong>Twitter</strong> para recomendar.</p>
-			<a href="#" class="button twitter_btn">
-				<img src="<?php bloginfo ('template_url'); ?>/images/twitter_logo.png" alt="Twitter">
-			</a>
-			<p class="in_middle">o</p>
-			<a href="#" class="button fb_btn">
-				<img src="<?php bloginfo ('template_url'); ?>/images/facebook_logo.png" alt="Facebook">
-			</a>
+			<div class="login_area">
+				<p>Ingrese a su cuenta de <strong>Facebook</strong> o <strong>Twitter</strong> para recomendar.</p>
+				<a href="#" class="button twitter_btn">
+					<img src="<?php bloginfo ('template_url'); ?>/images/twitter_logo.png" alt="Twitter">
+				</a>
+				<p class="in_middle">o</p>
+				<a href="#" class="button fb_btn">
+					<img src="<?php bloginfo ('template_url'); ?>/images/facebook_logo.png" alt="Facebook">
+				</a>
+			</div><!-- .login_area -->
+
+			<div class="write_recommendation">
+				<form action="#" class="submit_recommendation">
+					<div class="recommendation_heading">
+						<img src="<?php bloginfo('template_url') ?>/images/recomend_thumb.png" alt="Recommend" />
+						<h3>Julio Rodriguez</h3>
+					</div>
+					<textarea name="message" id="message" cols="72" rows="6"></textarea>
+					<h5>Normas de uso:</h5>
+					<p>GuiaConstanza.com no se hace responsable de los comentarios emitidos por sus lectores y colaboradores.</p>
+					<p class="please_no">Por favor no comentes en <strong>MAYÚSCULAS</strong>, te lo agradeceremos.</p>
+					<input type="submit" class="button" value="Añadir">
+				</form>
+			</div><!-- .write_recommendation -->
 		</div>
 	</div>
 
