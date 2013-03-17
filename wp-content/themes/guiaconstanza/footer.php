@@ -81,7 +81,7 @@
 			</div><!-- .login_area -->
 
 			<div class="write_recommendation">
-				<form action="#" class="submit_recommendation">
+				<form action="#" class="submit_recommendation" method="post">
 					<div class="recommendation_heading">
 						<img src="<?php bloginfo('template_url') ?>/images/recomend_thumb.png" alt="Recommend" />
 						<h3>Julio Rodriguez</h3>
@@ -90,7 +90,7 @@
 					<h5>Normas de uso:</h5>
 					<p>GuiaConstanza.com no se hace responsable de los comentarios emitidos por sus lectores y colaboradores.</p>
 					<p class="please_no">Por favor no comentes en <strong>MAYÚSCULAS</strong>, te lo agradeceremos.</p>
-					<input type="submit" class="button" value="Añadir">
+					<input id="submit_recommendation_btn" type="submit" class="button" value="Añadir">
 				</form>
 			</div><!-- .write_recommendation -->
 		</div>

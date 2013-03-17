@@ -1,6 +1,7 @@
 /* Authors:
 	Nizar Khalife Iglesias,
 	Waldemar Figueroa,
+	Jonathan Torres
 */
 
 GUIACONSTANZA = {
@@ -124,10 +125,10 @@ GUIACONSTANZA = {
 		},
 
 		fb_insert_recommendation : function() {
-			var $lightbox = $('.lightbox');
-			var $details = $('.recomendaciones_details');
-			var $login_area = $(".login_area");
-			var $write_recommendation = $(".write_recommendation");
+			var $lightbox = $('.lightbox'),
+				$details = $('.recomendaciones_details'),
+				$login_area = $(".login_area"),
+				$write_recommendation = $(".write_recommendation");
 
 			console.log("ready to insert recommendation!");
 
@@ -138,6 +139,42 @@ GUIACONSTANZA = {
 					$write_recommendation.find("h3").text(response.name);
 					$write_recommendation.find("img").attr("src", "https://graph.facebook.com/" + response.id + "/picture?width=40&height=40");
 					$write_recommendation.fadeIn();
+
+					$("#submit_recommendation_btn").on("click", function(e) {
+						e.preventDefault();
+						var message = $("#message").val();
+
+						$.ajax({
+							type : "POST",
+							url : "http://local.guiaconstanza.com/wp-content/themes/guiaconstanza/inc/inc.proc.recommendation.php",
+							data : { post_name : response.name, user_id : response.id, post_msg : message },
+							success : function() {
+								$details.fadeOut("fast", function() {
+									$("#message").val("");
+									$lightbox.fadeOut();
+								});
+
+								// Append markup
+								var rec_markup = "";
+								rec_markup += "<article>";
+								rec_markup += "    <img src=\"https://graph.facebook.com/" + response.id + "/picture?width=40&height=40\" alt=\"Recommend\" />";
+								rec_markup += "    <span class=\"tip\"></span>";
+								rec_markup += "    <div class=\"box\">";
+								rec_markup += "        <h3>" + response.name + "</h3>";
+								rec_markup += "        <p>" + message + "</p>";
+								rec_markup += "        <span>A moment ago</span>";
+								rec_markup += "    </div>";
+								rec_markup += "</article>";
+
+								$("#recommend").find("h2").after(rec_markup);
+							},
+							error : function() {
+								console.log("AJAX: Failed insertion of recommendation");
+							}
+						});
+
+						console.log("You wrote: " + message);
+					});
 				});
 		    });
 		},
@@ -188,10 +225,10 @@ GUIACONSTANZA = {
 
 		// Recomendaciones
 		page_id_26 : function() {
-			var $lightbox = $('.lightbox');
-			var $details = $('.recomendaciones_details');
-			var $login_area = $(".login_area");
-			var $write_recommendation = $(".write_recommendation");
+			var $lightbox = $('.lightbox'),
+				$details = $('.recomendaciones_details'),
+				$login_area = $(".login_area"),
+				$write_recommendation = $(".write_recommendation");
 
 			// do facebook login
 			$(".fb_btn").on("click", function(e) {

@@ -62,7 +62,7 @@
 			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) return;
 			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=410933328947702";
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=494996673870303";
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>

@@ -3,7 +3,26 @@
  * Template Name: Recomendaciones
  */
 
-get_header(); ?>
+	get_header();
+
+	$mysqli = new mysqli("host", "user_name", "user_password", "database_name");
+	
+	if ($mysqli->connect_errno) {
+	    echo "Failed to connect to MySQL! " . mysqli_connect_error();
+	}
+
+	$query = "SELECT * FROM `recommendations` ORDER BY `recommendations`.`id` DESC";
+	$result = mysqli_query($mysqli, $query);
+	$recommendations = array();
+
+	while ($set = mysqli_fetch_object($result)) {
+		array_push($recommendations, $set);
+	}
+
+	$mysqli->close();
+	
+	//print_r($recommendations);
+?>
 
 	<h1 id="subheader" class="wrap">
 		<span><?php the_title(); ?></span>
@@ -31,17 +50,17 @@ get_header(); ?>
 			<div id="recommend">
 				<section>
 					<h2>Conozca las recomendaciones de quienes ya han visitado Constanza. <strong>Animate a compartir tu experiencia!</strong></h2>
-					<?php for($i=0;$i<8;$i++): ?>
+					<?php foreach ($recommendations as $recommendation) : ?>
 						<article>
-							<img src="<?php bloginfo('template_url') ?>/images/recomend_thumb.png" alt="Recommend" />
+							<img src="https://graph.facebook.com/<?php echo $recommendation->user_id; ?>/picture?width=40&height=40" alt="Recommend" />
 							<span class="tip"></span>
 							<div class="box">
-								<h3>Julio Rodríguez</h3>
-								<p>Nam sed erat. Nunc lorem risus, elementum mollis, suscipit quis, tempor ac, ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-								<span>Hace 5 días</span>
+								<h3><?php echo $recommendation->name; ?></h3>
+								<p><?php echo $recommendation->post_info; ?></p>
+								<span><?php echo time_passed(strtotime($recommendation->post_time)); ?></span>
 							</div>
 						</article>
-					<?php endfor; ?>
+					<?php endforeach; ?>
 					
 					<div class="pages_area">
 						<ul class="pagination">
