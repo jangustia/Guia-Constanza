@@ -116,10 +116,9 @@ GUIACONSTANZA = {
 		do_fb_login : function() {
 			FB.login(function(response) {
 		        if (response.authResponse) {
-		            console.log("logged in with facebook");
 		            GUIACONSTANZA.common.fb_insert_recommendation();
 		        } else {
-		            console.log("cancelled login");
+		            
 		        }
 		    });
 		},
@@ -130,11 +129,7 @@ GUIACONSTANZA = {
 				$login_area = $(".login_area"),
 				$write_recommendation = $(".write_recommendation");
 
-			console.log("ready to insert recommendation!");
-
 			FB.api("/me", function(response) {
-				console.log(response);
-
 				$login_area.fadeOut("normal", function() {
 					$write_recommendation.find("h3").text(response.name);
 					$write_recommendation.find("img").attr("src", "https://graph.facebook.com/" + response.id + "/picture?width=40&height=40");
@@ -169,11 +164,9 @@ GUIACONSTANZA = {
 								$("#recommend").find("h2").after(rec_markup);
 							},
 							error : function() {
-								console.log("AJAX: Failed insertion of recommendation");
+								
 							}
 						});
-
-						console.log("You wrote: " + message);
 					});
 				});
 		    });
@@ -236,21 +229,13 @@ GUIACONSTANZA = {
 
 				FB.getLoginStatus(function(response) {
 					if (response.status === 'connected') {
-						console.log("connected");
 						GUIACONSTANZA.common.fb_insert_recommendation();
 					} else if (response.status === 'not_authorized') {
-						console.log("not_authorized");
 						GUIACONSTANZA.common.do_fb_login();
 					} else {
-						console.log("not logged in");
 						GUIACONSTANZA.common.do_fb_login();
 					}
 				});
-			});
-
-			// do twitter login
-			$(".twitter_btn").on("click", function(e) {
-
 			});
 
 			// Open login lightbox

@@ -70,11 +70,7 @@
 		</h1>
 		<div class="lightbox_content recomendaciones_content">
 			<div class="login_area">
-				<p>Ingrese a su cuenta de <strong>Facebook</strong> o <strong>Twitter</strong> para recomendar.</p>
-				<a href="#" class="button twitter_btn">
-					<img src="<?php bloginfo ('template_url'); ?>/images/twitter_logo.png" alt="Twitter">
-				</a>
-				<p class="in_middle">o</p>
+				<p>Ingrese a su cuenta de <strong>Facebook</strong> para recomendar.</p>
 				<a href="#" class="button fb_btn">
 					<img src="<?php bloginfo ('template_url'); ?>/images/facebook_logo.png" alt="Facebook">
 				</a>

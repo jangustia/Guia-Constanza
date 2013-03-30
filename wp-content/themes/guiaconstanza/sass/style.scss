@@ -1126,11 +1126,11 @@ input[type="text"], textarea {
 
     .button {
         float: right;
-        padding: 10px;
+        padding: 10px 10px 10px 0px;
         margin-top: -10px;
 
         span {
-            background: url('images/recommend_icons.png') no-repeat center left;
+            background: url('images/recommend_icons.png') no-repeat 20px -2px;
             display: block;
             padding: 0px 10px 0px 0px;
             width: 205px;
@@ -1451,6 +1451,7 @@ input[type="text"], textarea {
         p { 
             color: #737373; 
             text-align: center;
+            font-size: 1.3em;
             margin-bottom: 30px;
 
             &.in_middle {
@@ -1460,9 +1461,10 @@ input[type="text"], textarea {
             }
         }
 
-        .twitter_btn, .fb_btn {
+        .fb_btn {
             float: left;
             padding: 26px 12px;
+            margin-left: 142px;
             border-radius: 10px;
         }
     }
