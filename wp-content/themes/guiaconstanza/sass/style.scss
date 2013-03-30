@@ -1071,41 +1071,48 @@ input[type="text"], textarea {
         padding-bottom: .7em;
         text-transform: none;
     }
+    
+    .all_recomendations {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
 
-    article {
-        border: 0; 
-        position: relative;
-        margin-bottom: 20px;
-
-        .tip {
-            position: absolute;
+        li {
             display: block;
-            top: 20px;
-            left: 46px;
-            width: 24px;
-            height: 27px;
-            background: transparent url(images/bubble_tip.png) no-repeat;
-        }
+            border: 0; 
+            position: relative;
+            margin-bottom: 20px;
 
-        img {
-            float: left;
-            border: 1px solid #CCC;
-        }
-        .box { 
-            margin-left: 67px;
-            padding: 8px; 
-            border-radius: 9px;
-
-            h3 {
-                color: #598527;
-                margin: 0px 0px 6px 0px;
+            .tip {
+                position: absolute;
+                display: block;
+                top: 20px;
+                left: 46px;
+                width: 24px;
+                height: 27px;
+                background: transparent url(images/bubble_tip.png) no-repeat;
             }
 
-            p { 
-                color: #212121;
-                margin: 0px 0px 6px 0px; 
+            img {
+                float: left;
+                border: 1px solid #CCC;
             }
-            span { color: #345901; font-size: 0.8em; }
+            .box { 
+                margin-left: 67px;
+                padding: 8px; 
+                border-radius: 9px;
+
+                h3 {
+                    color: #598527;
+                    margin: 0px 0px 6px 0px;
+                }
+
+                p { 
+                    color: #212121;
+                    margin: 0px 0px 6px 0px; 
+                }
+                span { color: #345901; font-size: 0.8em; }
+            }
         }
     }
 

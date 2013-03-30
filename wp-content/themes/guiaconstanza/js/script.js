@@ -151,7 +151,7 @@ GUIACONSTANZA = {
 
 								// Append markup
 								var rec_markup = "";
-								rec_markup += "<article>";
+								rec_markup += "<li>";
 								rec_markup += "    <img src=\"https://graph.facebook.com/" + response.id + "/picture?width=40&height=40\" alt=\"Recommend\" />";
 								rec_markup += "    <span class=\"tip\"></span>";
 								rec_markup += "    <div class=\"box\">";
@@ -159,9 +159,10 @@ GUIACONSTANZA = {
 								rec_markup += "        <p>" + message + "</p>";
 								rec_markup += "        <span>A moment ago</span>";
 								rec_markup += "    </div>";
-								rec_markup += "</article>";
+								rec_markup += "</li>";
 
-								$("#recommend").find("h2").after(rec_markup);
+								$(".all_recomendations").prepend(rec_markup);
+								GUIACONSTANZA.common.paginate_recommendations();
 							},
 							error : function() {
 								
@@ -170,6 +171,44 @@ GUIACONSTANZA = {
 					});
 				});
 		    });
+		},
+
+		paginate_recommendations : function() {
+			var prev = { start: 0, stop: 0 },
+    			cont = $('.all_recomendations li');
+
+			$(".pagination").paging(cont.length, {
+				format: '< ncnnn >',
+				page: 1,
+				perpage: 8,
+
+				// Code which gets executed when user selects a page
+				onSelect: function (page) {
+					var data = this.slice;
+
+					cont.slice(prev[0], prev[1]).css('display', 'none');
+					cont.slice(data[0], data[1]).css('display', 'block');
+
+					prev = data;
+
+					return false;
+				},
+
+				onFormat: function (type) {
+					switch (type) {
+						case 'block': // n and c
+							if (!this.active)
+								return '<li>' + this.value + '</li>';
+							else
+								return '<li><a href="#">' + this.value + '</a></li>';
+						
+						case 'next': // >
+							return '<li><a href="#">&raquo;</a></li>';
+						case 'prev': // <
+							return '<li><a href="#">&laquo;</a></li>';
+					}
+				}
+			});
 		},
 		
 		init : function() {
@@ -237,6 +276,8 @@ GUIACONSTANZA = {
 					}
 				});
 			});
+
+			GUIACONSTANZA.common.paginate_recommendations();
 
 			// Open login lightbox
 			$("a.button").on("click", function(e) {

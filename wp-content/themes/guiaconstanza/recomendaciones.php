@@ -50,31 +50,23 @@
 			<div id="recommend">
 				<section>
 					<h2>Conozca las recomendaciones de quienes ya han visitado Constanza. <strong>Animate a compartir tu experiencia!</strong></h2>
-					<?php foreach ($recommendations as $recommendation) : ?>
-						<article>
-							<img src="https://graph.facebook.com/<?php echo $recommendation->user_id; ?>/picture?width=40&height=40" alt="Recommend" />
-							<span class="tip"></span>
-							<div class="box">
-								<h3><?php echo $recommendation->name; ?></h3>
-								<p><?php echo $recommendation->post_info; ?></p>
-								<span><?php echo time_passed(strtotime($recommendation->post_time)); ?></span>
-							</div>
-						</article>
-					<?php endforeach; ?>
+					<ul class="all_recomendations">
+						<?php foreach ($recommendations as $recommendation) : ?>
+							<li>
+								<img src="https://graph.facebook.com/<?php echo $recommendation->user_id; ?>/picture?width=40&height=40" alt="Recommend" />
+								<span class="tip"></span>
+								<div class="box">
+									<h3><?php echo $recommendation->name; ?></h3>
+									<p><?php echo $recommendation->post_info; ?></p>
+									<span><?php echo time_passed(strtotime($recommendation->post_time)); ?></span>
+								</div>
+							</li>
+						<?php endforeach; ?>
+					</ul>
 					
 					<div class="pages_area">
 						<ul class="pagination">
-							<li><a href="#">&laquo;</a></li>
-							<li>1</li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">6</a></li>
-							<li class="spacer">&#8230;</li>
-							<li><a href="#">21</a></li>
-							<li><a href="#">22</a></li>
-							<li><a href="#">&raquo;</a></li>
+							
 						</ul>
 
 						<a class="button" href="#"><span>Añadir Recomendación</span></a>
