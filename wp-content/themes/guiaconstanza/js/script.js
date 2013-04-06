@@ -126,14 +126,14 @@ GUIACONSTANZA = {
 		fb_insert_recommendation : function() {
 			var $lightbox = $('.lightbox'),
 				$details = $('.recomendaciones_details'),
-				$login_area = $(".login_area"),
 				$write_recommendation = $(".write_recommendation");
 
-			FB.api("/me", function(response) {
-				$login_area.fadeOut("normal", function() {
+			$lightbox.fadeIn("fast", function() {
+				$details.fadeIn("fast");
+
+				FB.api("/me", function(response) {
 					$write_recommendation.find("h3").text(response.name);
 					$write_recommendation.find("img").attr("src", "https://graph.facebook.com/" + response.id + "/picture?width=40&height=40");
-					$write_recommendation.fadeIn();
 
 					$("#submit_recommendation_btn").on("click", function(e) {
 						e.preventDefault();
@@ -169,8 +169,8 @@ GUIACONSTANZA = {
 							}
 						});
 					});
-				});
-		    });
+			    });
+			});
 		},
 
 		paginate_recommendations : function() {
@@ -258,12 +258,12 @@ GUIACONSTANZA = {
 		// Recomendaciones
 		page_id_26 : function() {
 			var $lightbox = $('.lightbox'),
-				$details = $('.recomendaciones_details'),
-				$login_area = $(".login_area"),
-				$write_recommendation = $(".write_recommendation");
+				$details = $('.recomendaciones_details');
 
-			// do facebook login
-			$(".fb_btn").on("click", function(e) {
+			GUIACONSTANZA.common.paginate_recommendations();
+
+			// Do facebook login
+			$("a.button").on("click", function(e) {
 				e.preventDefault();
 
 				FB.getLoginStatus(function(response) {
@@ -277,27 +277,12 @@ GUIACONSTANZA = {
 				});
 			});
 
-			GUIACONSTANZA.common.paginate_recommendations();
-
-			// Open login lightbox
-			$("a.button").on("click", function(e) {
-				e.preventDefault();
-
-				$lightbox.fadeIn("fast", function() {
-					$details.fadeIn("fast");
-				});
-			});
-
 			// Close lightboxes
 			$(".recomendaciones_details").find(".close_btn").on("click", function(e) {
 				e.preventDefault();
 
 				$details.fadeOut("fast", function() {
 					$lightbox.fadeOut();
-
-					// Show login again ;)
-					$write_recommendation.hide();
-					$login_area.show();
 				});
 			});
 		}

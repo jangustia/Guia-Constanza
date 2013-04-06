@@ -69,18 +69,11 @@
 			<a class="close_btn" href="#">cerrar</a>
 		</h1>
 		<div class="lightbox_content recomendaciones_content">
-			<div class="login_area">
-				<p>Ingrese a su cuenta de <strong>Facebook</strong> para recomendar.</p>
-				<a href="#" class="button fb_btn">
-					<img src="<?php bloginfo ('template_url'); ?>/images/facebook_logo.png" alt="Facebook">
-				</a>
-			</div><!-- .login_area -->
-
 			<div class="write_recommendation">
 				<form action="#" class="submit_recommendation" method="post">
 					<div class="recommendation_heading">
 						<img src="<?php bloginfo('template_url') ?>/images/recomend_thumb.png" alt="Recommend" />
-						<h3>Julio Rodriguez</h3>
+						<h3></h3>
 					</div>
 					<textarea name="message" id="message" cols="72" rows="6"></textarea>
 					<h5>Normas de uso:</h5>
