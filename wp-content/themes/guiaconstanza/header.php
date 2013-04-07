@@ -97,7 +97,7 @@
 					)
 				);
 			?>
-			<li><a rel="external" href="http://www.facebook.com">Facebook</a></li>
-			<li><a rel="external" href="http://www.twitter.com">Twitter</a></li>
+			<li><a rel="external" href="https://www.facebook.com/guiaconstanza" target="_blank">Facebook</a></li>
+			<li><a rel="external" href="https://www.twitter.com/guiaconstanza" target="_blank">Twitter</a></li>
 		</ul>
 	</nav><!-- #access -->
