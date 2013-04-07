@@ -1444,6 +1444,7 @@ input[type="text"], textarea {
 
 // Recomendaciones Lightbox
 .recomendaciones_details {
+    position: fixed;
     width: 570px;
     height: 500px;
     margin-left: -275px;
