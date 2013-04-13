@@ -621,30 +621,29 @@ input[type="text"], textarea {
 #featured_hotel .nivo-caption, 
 #featured_atractivos .nivo-caption, 
 #single_gallery .nivo-caption {
-    background: #333;
-    background: rgba(0,0,0,0.65);
-    font-size: 17px;
+    font-size: 20px;
     font-weight: bold;
     color: #FFF;
     text-overflow: ellipsis;
-    margin: 15px;
     padding: 15px;
     position: absolute;
     left: 0;
     bottom: 0;
-    width: auto;
+    width: 370px;
+    height: 70px;
+    @include linear-gradient(top, rgba(51,51,51,0) 0%, rgba(10,10,10,1) 100%);
 }
 
 #featured_hotel .nivo-caption p, 
 #featured_atractivos .nivo-caption p, 
-#single_gallery .nivo-caption p { margin: 0; }
+#single_gallery .nivo-caption p { margin: 33px 0px 0px 0px; }
 
 #featured_hotel .nivo-controlNav, 
 #featured_atractivos .nivo-controlNav, 
 #single_gallery .nivo-controlNav {
     position: absolute;
-    bottom: 25px;
-    right: 25px;
+    top: 6px;
+    right: 12px;
     z-index: 999;
 }
 
@@ -655,8 +654,8 @@ input[type="text"], textarea {
     float: left;
     display: block;
     text-indent: -9999em;
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
 }
 
 #featured_hotel .active, 
