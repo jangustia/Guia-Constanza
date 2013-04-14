@@ -125,14 +125,16 @@
 							</ul>
 							<?php get_sidebar( 'featured-atractivos' ); ?>
 						<?php endif; ?>
-
-						<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-							<article>
-								<?php the_post_thumbnail ('thumbnail'); ?>
-								<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-								<p><?php echo get_the_excerpt(); ?></p>
-							</article>
-						<?php endwhile; ?>
+						
+						<ul>
+							<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+								<li>
+									<?php the_post_thumbnail ('thumbnail'); ?>
+									<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+									<p><?php echo get_the_excerpt(); ?></p>
+								</li>
+							<?php endwhile; ?>
+						</ul>
 						</div><!-- .places-list -->
 					<?php endif; ?>
 					</div><!-- #main_content -->

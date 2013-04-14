@@ -29,14 +29,15 @@
 				<?php else: ?>
 				<section class="places-list">
 					<h2>Atractivos</h2>
-
-					<?php while ( $atractivos->have_posts() ) : $atractivos->the_post(); ?>
-						<article>
-							<?php the_post_thumbnail ('thumbnail'); ?>
-							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-							<?php echo get_the_excerpt(); ?>
-						</article>
-					<?php endwhile; ?>
+					<ul>
+						<?php while ( $atractivos->have_posts() ) : $atractivos->the_post(); ?>
+							<li>
+								<?php the_post_thumbnail ('thumbnail'); ?>
+								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+								<?php echo get_the_excerpt(); ?>
+							</li>
+						<?php endwhile; ?>
+					</ul>
 
 					<div class="fullbanner">
 						<script type="text/javascript">

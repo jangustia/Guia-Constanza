@@ -79,8 +79,10 @@ body {
         position: relative; 
         margin-top: 15px; 
         width: 260px;
-
-        article { padding: 15px 0; }
+        
+        ul {
+            li { padding: 15px 0; }
+        }
         img { margin-bottom: 0; }
     }
 }
@@ -721,15 +723,23 @@ input[type="text"], textarea {
  * General 'Atractivos' list styling
  */
 .places-list {
-    article {
-        border-bottom: 1px dashed #D0D0D0;
-        clear: both;
-        overflow: auto;
-        padding: 20px 10px 20px 0px;
-        -webkit-transition: background 0.3s ease;
-        -moz-transition: background 0.3s ease;
-        -o-transition: background 0.3s ease;
-        transition: background 0.3s ease;
+    ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+
+        li {
+            border-bottom: 1px dashed #D0D0D0;
+            clear: both;
+            overflow: auto;
+            padding: 20px 10px 20px 0px;
+            -webkit-transition: background 0.3s ease;
+            -moz-transition: background 0.3s ease;
+            -o-transition: background 0.3s ease;
+            transition: background 0.3s ease;
+
+            &:last-child { border-bottom: none; }
+        }
     }
 
     h3, h4 {

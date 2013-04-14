@@ -7,12 +7,14 @@
 ?>
 						<section class="places-list smaller">
 							<h3>Atractivos</h3>
-							<?php while ( $atractivos->have_posts() ) : $atractivos->the_post(); ?>
-							<article>
-								<?php the_post_thumbnail ('square-thumb'); ?>
-								<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
-							</article>
-							<?php endwhile; ?>
+							<ul>
+								<?php while ( $atractivos->have_posts() ) : $atractivos->the_post(); ?>
+									<li>
+										<?php the_post_thumbnail ('square-thumb'); ?>
+										<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
+									</li>
+								<?php endwhile; ?>
+							</ul>
 							<div class="skyscraper">
 								<script type="text/javascript">
 									<!--
