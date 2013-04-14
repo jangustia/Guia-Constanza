@@ -331,6 +331,7 @@ GUIACONSTANZA = {
 					position  : marker_pos,
 					map       : gmap,
 					title     : $('#details .org').text(),
+					icon      : 'wp-content/themes/guiaconstanza/images/gmap_icon.png',
 					animation : google.maps.Animation.DROP
 			  });
 		},
