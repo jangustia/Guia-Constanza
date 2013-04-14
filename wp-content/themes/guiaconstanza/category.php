@@ -129,7 +129,15 @@
 						<ul>
 							<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 								<li>
-									<?php the_post_thumbnail ('thumbnail'); ?>
+									<div class="circled">
+										<div class="inside">
+											<?php if (has_post_thumbnail()) : ?>
+												<?php the_post_thumbnail ('thumbnail'); ?>
+											<?php else : ?>
+												<img src="<?php bloginfo('template_url') ?>/images/atractivos_listing_thumb_guide.png" alt="">
+											<?php endif; ?>
+										</div>
+									</div>
 									<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 									<p><?php echo get_the_excerpt(); ?></p>
 								</li>

@@ -10,7 +10,15 @@
 							<ul>
 								<?php while ( $atractivos->have_posts() ) : $atractivos->the_post(); ?>
 									<li>
-										<?php the_post_thumbnail ('square-thumb'); ?>
+										<div class="circled">
+											<div class="inside">
+												<?php if (has_post_thumbnail()) : ?>
+													<?php the_post_thumbnail ('thumbnail'); ?>
+												<?php else : ?>
+													<img src="<?php bloginfo('template_url') ?>/images/atractivos_listing_thumb_guide.png" alt="">
+												<?php endif; ?>
+											</div>
+										</div>
 										<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
 									</li>
 								<?php endwhile; ?>
