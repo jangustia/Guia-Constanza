@@ -34,7 +34,7 @@ GUIACONSTANZA = {
 				    	position  : new google.maps.LatLng (marker_element.data ('geo_lat'), marker_element.data ('geo_long')),
 				    	map       : gmap,
 				    	title     : title,
-				    	icon      : 'wp-content/themes/guiaconstanza/images/gmap_icon.png',
+				    	icon      : 'http://local.guiaconstanza.com/wp-content/themes/guiaconstanza/images/gmap_icon.png',
 				    	animation : google.maps.Animation.DROP
 				    }),
 				    info_window    = new google.maps.InfoWindow({
