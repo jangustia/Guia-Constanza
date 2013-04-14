@@ -5,7 +5,9 @@
 
 	get_header();
 
-	$mysqli = new mysqli("host", "user_name", "user_password", "database_name");
+	$mysqli = new mysqli("localhost", "root", "root", "guia_constanza");
+	// $mysqli = new mysqli("host", "user_name", "user_password", "database_name");
+	// $mysqli = new mysqli("localhost", "jgarcia_wrdp1", "9kR089vVZxI9", "jgarcia_wrdp1");
 	
 	if ($mysqli->connect_errno) {
 	    echo "Failed to connect to MySQL! " . mysqli_connect_error();
