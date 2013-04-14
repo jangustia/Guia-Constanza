@@ -27,6 +27,20 @@ body {
 	font: 300 13px/1.4 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
+/**
+ * Some cool classes
+ */
+@mixin circle($width, $height, $bgcolor) {
+    width: $width;
+    height: $height;
+    border-radius: 50%;
+    background-color: $bgcolor;
+}
+.circled, .inside {
+    display: block;
+    overflow: hidden;
+}
+
 // Page Wrapper
 .wrap {
 	margin: 0 auto;
@@ -692,9 +706,18 @@ input[type="text"], textarea {
     &.active { display: block; }
 
     h3 {font-size: 93%; line-height: 1.3; margin: 0 0 10px;}
-    img {float: left; margin-right: 10px; width: 35%;}
     p {font-size: 12px; margin-bottom: 10px;}
     ul {list-style: none; margin-top: 0; padding: 0;}
+
+    .circled {
+        float: left;
+        margin: 0px 10px 0px 0px;
+        @include circle(80px, 80px, #e6e6e6);
+    }
+    .inside {
+        margin: 5px 0px 0px 5px;
+        @include circle(70px, 70px, #FFF);
+    }
 }
 
 

@@ -50,7 +50,15 @@
 						<?php while ($hoteles->have_posts()): $hoteles->the_post(); ?>
 							<div class="slide<?php if ($hoteles_first_post) { $hoteles_first_post = FALSE; ?> active<?php }?>">
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-								<?php the_post_thumbnail ('thumbnail'); ?>
+								<div class="circled">
+									<div class="inside">
+										<?php if (has_post_thumbnail()) : ?>
+											<?php the_post_thumbnail ('thumbnail'); ?>
+										<?php else : ?>
+											<img src="<?php bloginfo('template_url') ?>/images/hotel_thumb_default.jpg" alt="">
+										<?php endif; ?>
+									</div>
+								</div>
 								<p><?php echo new_excerpt (200); ?></p>
 
 								<ul class="includes_small">
@@ -79,7 +87,15 @@
 						<?php while ($blogs->have_posts()): $blogs->the_post(); ?>
 							<div class="slide<?php if ($blogs_first_post) { $blogs_first_post = FALSE; ?> active<?php }?>">
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-								<?php the_post_thumbnail ('thumbnail'); ?>
+								<div class="circled">
+									<div class="inside">
+										<?php if (has_post_thumbnail()) : ?>
+											<?php the_post_thumbnail ('thumbnail'); ?>
+										<?php else : ?>
+											<img src="<?php bloginfo('template_url') ?>/images/hotel_thumb_default.jpg" alt="">
+										<?php endif; ?>
+									</div>
+								</div>
 								<p><?php echo new_excerpt (500); ?></p>
 						</div>
 						<?php endwhile; ?>
