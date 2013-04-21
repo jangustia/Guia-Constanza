@@ -17,7 +17,8 @@
 	get_sidebar( 'featured' );
 
 	$query_args = array (
-		'post_type' => 'gc_atractivos'
+		'post_type' => 'gc_atractivos',
+		'posts_per_page' => 3
 	);
 
 	$atractivos = new WP_Query ($query_args);
@@ -42,10 +43,12 @@
 									</div>
 								</div>
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-								<?php echo get_the_excerpt(); ?>
+								<?php new_excerpt(160); ?>
 							</li>
 						<?php endwhile; ?>
 					</ul>
+
+					<a href="<?php echo get_category_link('6'); ?>" class="know_more">Conoce otros atractivos</a>
 
 					<div class="fullbanner">
 						<script type="text/javascript">
@@ -81,8 +84,8 @@
 						<?php endwhile; ?>
 						</ul><!-- #marker_list -->
 					</div><!-- #map_container -->
-					<!-- <div class="verticalbanner"></div> -->
-					<!-- <div class="squarepopup"></div> -->
+					<div class="verticalbanner"></div>
+					<div class="squarepopup"></div>
 				</section>
 			</div><!-- #side_content -->
 
