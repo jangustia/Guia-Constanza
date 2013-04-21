@@ -779,7 +779,7 @@ input[type="text"], textarea {
         float: left;
         margin: 0 20px 10px 0;
         box-shadow: 0 1px 1px rgba(0,0,0,0.35);
-        @include circle(100px, 100px, #e6e6e6);
+        @include circle(100px, 100px, #e5e5e5);
 
         .inside {
             margin: 5px 0px 0px 5px;
