@@ -948,7 +948,7 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size ('square-thumb', 75,  75,  true);  // Small square thumbnail for showing in sidebar lists
 	add_image_size ('thumbnail',    115, 91,  true);  // Small rectangular thumbnail for showing in lists (Home for example)
 	add_image_size ('medium',       400, 240, true);  // Medium image for showing in featured home rotator
-	add_image_size ('atractivo-featured',  471, 261, true);
+	add_image_size ('atractivo-featured',  445, 252, true);
 }
 
 // Time passed function for tweets

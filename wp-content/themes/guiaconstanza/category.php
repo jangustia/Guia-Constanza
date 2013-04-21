@@ -80,10 +80,11 @@
 							//-->
 						</script>
 						<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-					</div>
-				</h1>
+					</div><!-- .fullbanner -->
+				</h1><!-- #subheader -->
 
-				<?php // Get "Featured" section
+				<?php 
+				// Get "Featured" section
 				if ($has_search)
 					
 					if ($category->cat_ID == 3) {
@@ -91,8 +92,9 @@
 					} else if ($category->cat_ID == 9) {
 						get_sidebar( 'featured1' );
 					}
-					 ?>
-
+				?>
+				
+				<!-- Advanced Search -->
 				<?php if ($has_search): ?>
 					<div id="adv_search" class="wrap">
 						<form action="<?php echo get_category_link ($category->cat_ID) ?>">
@@ -107,44 +109,66 @@
 						</form>
 					</div>
 				<?php endif ?>
+				
 
 				<div id="container" class="wrap" role="main">
 					<div id="main_content">
-					<?php if ($has_search) : ?>
-						<h2><?php printf( __( '%s', 'boilerplate' ), '' . single_cat_title( '', false ) . '' );?></h2>
-					<?php endif; ?>
-					
-					<?php if ( !$loop->have_posts() ): ?>
-						<h2>No hay nah, bro</h2>
-					<?php else: ?>
-						<div class="places-list">
-						<?php if (!$has_search): ?>
-							<ul class="breadcrumbs">
-								<li><a href="<?php echo home_url( '/' ); ?>">Inicio</a></li>
-								<li><?php the_category(' '); ?></li>
-							</ul>
-							<?php get_sidebar( 'featured-atractivos' ); ?>
+						<?php if ($has_search) : ?>
+							<h2><?php printf( __( '%s', 'boilerplate' ), '' . single_cat_title( '', false ) . '' );?></h2>
 						<?php endif; ?>
 						
-						<ul>
-							<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-								<li>
-									<div class="circled">
-										<div class="inside">
-											<?php if (has_post_thumbnail()) : ?>
-												<?php the_post_thumbnail ('thumbnail'); ?>
-											<?php else : ?>
-												<img src="<?php bloginfo('template_url') ?>/images/atractivos_listing_thumb_guide.png" alt="">
-											<?php endif; ?>
+						<?php if ( !$loop->have_posts() ): ?>
+							<h2>No hay nah, bro</h2>
+						<?php else: ?>
+							<div class="places-list">
+								<?php if (!$has_search): ?>
+									<ul class="breadcrumbs">
+										<li><a href="<?php echo home_url( '/' ); ?>">Inicio</a></li>
+										<li><?php printf( __( '%s', 'boilerplate' ), '' . single_cat_title( '', false ) . '' );?></li>
+									</ul>
+									
+									<div class="featured_atractivo">
+										<?php
+											$featured = new WP_Query (array (
+												'post_type'      => 'gc_atractivos',
+												'posts_per_page' => 1,
+												'orderby'        => 'rand'
+											));
+										?>
+
+										<?php while ($featured->have_posts()): $featured->the_post(); ?>
+											<a href="<?php the_permalink(); ?>">
+												<?php the_post_thumbnail ('atractivo-featured', array ('title'=>get_the_title())); ?></a>
+										<?php endwhile; ?>
+
+										<div class="post_sum">
+											<a href="<?php the_permalink(); ?>">
+												<?php the_title(); ?>
+											</a>
 										</div>
-									</div>
-									<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-									<p><?php echo get_the_excerpt(); ?></p>
-								</li>
-							<?php endwhile; ?>
-						</ul>
-						</div><!-- .places-list -->
-					<?php endif; ?>
+									</div><!-- .featured_atractivo -->
+									<?php //get_sidebar( 'featured-atractivos' ); ?>
+								<?php endif; ?>
+							
+								<ul>
+									<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+										<li>
+											<div class="circled">
+												<div class="inside">
+													<?php if (has_post_thumbnail()) : ?>
+														<?php the_post_thumbnail ('thumbnail'); ?>
+													<?php else : ?>
+														<img src="<?php bloginfo('template_url') ?>/images/atractivos_listing_thumb_guide.png" alt="">
+													<?php endif; ?>
+												</div>
+											</div>
+											<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+											<p><?php new_excerpt(160); ?></p>
+										</li>
+									<?php endwhile; ?>
+								</ul>
+							</div><!-- .places-list -->
+						<?php endif; ?>
 					</div><!-- #main_content -->
 
 					<div id="side_content" class="sideinfo">
