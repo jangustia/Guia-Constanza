@@ -704,7 +704,7 @@ input[type="text"], textarea {
     background-image: url('images/hover_rotator.png');
 }
 
-#featured_bars, #featured_posts { border-left: 1px solid #CCC; width: 280px; }
+#featured_bars, #featured_posts { border-left: 1px solid #CCC; width: 280px; @include box-sizing(border-box); }
 
 .slide {
     background: #e7e7e7 url('images/bg_featured.png') repeat-x bottom;
@@ -1028,6 +1028,8 @@ input[type="text"], textarea {
             .skyscraper { left: 277px; }
         }
     }
+
+    .we_recommend { padding: 12px; }
 
     .skyscraper { bottom: 150px!important; }
 
