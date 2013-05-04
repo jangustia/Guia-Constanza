@@ -176,13 +176,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 
 				<div id="side_content">
 					<aside class="sideinfo">
-						<section class="box">
-							<h3>Recomendamos</h3>
-
-							<img src="<?php bloginfo('template_url') ?>/images/generic_thumb.png" alt="" />
-							<h4><a href="#">Nulla a tellus also magna imperdiet intomarte molestie vitae sed purus.</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a tellus ac magnanmui perdiet molestie vitae sed purus. Nulla a tellus ac mangnanmui perdiet molestie vitae sed purus.</p>
-						</section>
+						<?php get_sidebar("recommend"); ?>
 
 						<section id="checkins" class="box" style="display:none">
 							<h3>Check-ins Recientes</h3>

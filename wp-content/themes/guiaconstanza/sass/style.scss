@@ -905,6 +905,54 @@ input[type="text"], textarea {
 }
 
 /**
+ * We Recommend Widget
+ */
+.we_recommend {
+    padding: 20px;
+
+    h3 { font-size: 1.4em!important; margin: 0px 0px 10px 0px!important; }
+
+    .recommend_slide {
+        display: none;
+
+        &.active { display: block; }
+
+        h4 { font-size: 1.2em; margin: 0px 0px 10px 0px; }
+
+        .circled {
+            float: left;
+            margin: 0px 10px 0px 0px;
+            @include circle(100px, 100px, #e5e5e5, #f5f5f5);
+
+            .inside {
+                margin: 5px 0px 0px 5px;
+                @include circle(90px, 90px, #FFF, #FFF);
+            }
+        }
+    }
+
+    .recommend_nav {
+        width: 50px;
+        list-style: none;
+        float: right;
+        overflow: hidden;
+        margin: 16px 0px 0px 0px;
+
+        li {
+            a {
+                display: block;
+                float: left;
+                width: 22px;
+                height: 22px;
+
+                &.next { background: transparent url(images/recommend_arrow_right.png) no-repeat; }
+                &.prev { background: transparent url(images/recommend_arrow_left.png) no-repeat; }
+            }
+        }
+    }
+}
+
+/**
  * Home Page
  */
  .home {

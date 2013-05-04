@@ -262,6 +262,7 @@ GUIACONSTANZA = {
 				$details = $('.recomendaciones_details');
 
 			GUIACONSTANZA.common.paginate_recommendations();
+			GUIACONSTANZA.common.slide_nav ('.we_recommend', '.recommend_nav', '.recommend_slide');
 
 			// Do facebook login
 			$("a.button").on("click", function(e) {
@@ -304,6 +305,8 @@ GUIACONSTANZA = {
 				directionNav   : false,
 				captionOpacity : 1.0
 			});
+
+			GUIACONSTANZA.common.slide_nav ('.we_recommend', '.recommend_nav', '.recommend_slide');
 		}
 	}, // end category object
 	
@@ -343,6 +346,8 @@ GUIACONSTANZA = {
 				directionNav   : false,
 				captionOpacity : 1.0
 			});
+
+			GUIACONSTANZA.common.slide_nav ('.we_recommend', '.recommend_nav', '.recommend_slide');
 		},
 		
 		category_hoteles : function() {
