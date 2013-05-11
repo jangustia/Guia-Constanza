@@ -1102,6 +1102,12 @@ input[type="text"], textarea {
         img { width: 460px; }
         span { display: none; }
     }
+
+    #featured_hotel .nivo-controlNav, 
+    #featured_atractivos .nivo-controlNav, 
+    #single_gallery .nivo-controlNav {
+        right: 30px;
+    }
 }
 
 .info {
