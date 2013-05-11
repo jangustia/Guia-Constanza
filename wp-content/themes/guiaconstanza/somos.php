@@ -26,31 +26,31 @@ get_header(); ?>
 				<li><a href="<?php echo bloginfo('url') ?>">Inicio</a></li>
 				<li><?php the_title(); ?></li>
 			</ul>
-			<img src="<?php bloginfo('template_url') ?>/images/img_somos_headline.jpg" alt="Paisaje de Constanza" />
 
 			<div id="main_content">
+				<img src="<?php bloginfo('template_url') ?>/images/somos_img.jpg" alt="Paisaje de Constanza" />
 				<?php the_content() ?>
 			</div><!-- #main_content -->
 
 			<div id="side_content">
 				<?php if (282 == get_the_ID()): ?>
-				<form id="contact_form">
-					<fieldset>
-						<label for="name">Nombre</label>
-						<input type="text" id="name" name="name" />
-						<label for="email">Correo</label>
-						<input type="text" id="email" name="email" />
-						<label for="message">Mensaje</label>
-						<textarea id="message"></textarea>
-						<input type="submit" class="button" name="submit" value="Enviar">
-					</fieldset>
-				</form>
+					<form id="contact_form">
+						<fieldset>
+							<label for="name">Nombre</label>
+							<input type="text" id="name" name="name" />
+							<label for="email">Correo</label>
+							<input type="text" id="email" name="email" />
+							<label for="message">Mensaje</label>
+							<textarea id="message"></textarea>
+							<input type="submit" class="button" name="submit" value="Enviar">
+						</fieldset>
+					</form>
 				<?php else: ?>
-				<h3 class="visuallyhidden">Enlaces</h3>
-				<ul class="button_menu clearfix">
-					<li><a class="button" href="<?php bloginfo('url') ?>/somos/publicidad/">Publicidad</a></li>
-					<li><a class="button" href="<?php bloginfo('url') ?>/somos/contacto/">Contacto</a></li>
-				</ul>
+					<h3 class="visuallyhidden">Enlaces</h3>
+					<ul class="button_menu clearfix">
+						<li><a class="button" href="<?php echo get_page_link(257); ?>">Publicidad</a></li>
+						<li><a class="button" href="<?php echo get_page_link(76); ?>">Contacto</a></li>
+					</ul>
 				<?php endif; ?>
 			</div>
 	</div><!-- #somos -->

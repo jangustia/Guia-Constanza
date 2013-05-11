@@ -1381,8 +1381,10 @@ input[type="text"], textarea {
  */
 #somos {
     #main_content {
-        p { width: 80%; }
+        width: 610px;
     }
+
+    #side_content { width: 277px; }
 }
 
 .page-id-28 {
