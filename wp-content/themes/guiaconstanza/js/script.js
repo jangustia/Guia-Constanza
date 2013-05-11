@@ -34,7 +34,7 @@ GUIACONSTANZA = {
 				    	position  : new google.maps.LatLng (marker_element.data ('geo_lat'), marker_element.data ('geo_long')),
 				    	map       : gmap,
 				    	title     : title,
-				    	icon      : 'http://local.guiaconstanza.com/wp-content/themes/guiaconstanza/images/gmap_icon.png',
+				    	icon      : 'http://guiaconstanza.com/wp-content/themes/guiaconstanza/images/gmap_icon.png',
 				    	animation : google.maps.Animation.DROP
 				    }),
 				    info_window    = new google.maps.InfoWindow({
@@ -142,7 +142,7 @@ GUIACONSTANZA = {
 
 						$.ajax({
 							type : "POST",
-							url : "http://local.guiaconstanza.com/wp-content/themes/guiaconstanza/inc/inc.proc.recommendation.php",
+							url : "http://guiaconstanza.com/wp-content/themes/guiaconstanza/inc/inc.proc.recommendation.php",
 							data : { post_name : response.name, user_id : response.id, post_msg : message },
 							success : function() {
 								$details.fadeOut("fast", function() {
