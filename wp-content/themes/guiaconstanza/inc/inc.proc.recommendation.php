@@ -1,8 +1,8 @@
 <?php
 	
-	$post_name = htmlentities($_POST['post_name']);
-	$user_id = htmlentities($_POST['user_id']);
-	$post_message = htmlentities($_POST['post_msg']);
+	$post_name = $_POST['post_name'];
+	$user_id = $_POST['user_id'];
+	$post_message = $_POST['post_msg'];
 
 	$mysqli = new mysqli("host", "user_name", "user_password", "database_name");
 	
