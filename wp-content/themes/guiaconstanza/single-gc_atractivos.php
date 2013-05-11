@@ -51,7 +51,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 									</span>
 								</div>
 							<?php the_content(); ?>
-							<?php comments_template( '', true ); ?>
+							<?php echo do_shortcode('[fbcomments]'); ?>
 					</div><!-- #details -->
 				</div><!-- #main_content -->
 

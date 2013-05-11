@@ -170,7 +170,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 							</form>
 						</section>
 
-						<?php comments_template( '', true ); ?>
+						<?php echo do_shortcode('[fbcomments]'); ?>
 					</div><!-- #details -->
 				</div><!-- #main_content -->
 
