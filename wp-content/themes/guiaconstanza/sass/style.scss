@@ -1655,6 +1655,17 @@ input[type="text"], textarea {
             }
         }
 
+        .char_limit {
+            width: 200px;
+            float: right;
+            text-align: right;
+            font-size: 0.8em;
+            margin: -14px 0px 0px 0px;
+            padding: 0px;
+
+            .limit { font-weight: bold; }
+        }
+
         textarea { margin-bottom: 15px; }
 
         h5, p { 

@@ -264,6 +264,19 @@ GUIACONSTANZA = {
 			GUIACONSTANZA.common.paginate_recommendations();
 			GUIACONSTANZA.common.slide_nav ('.we_recommend', '.recommend_nav', '.recommend_slide');
 
+			// Characters limit
+			$("#message").keyup(function() {
+				var maxCharacters = 100;
+				var $field = $(this);
+
+			    if ($field.val().length > maxCharacters) {
+			    	$field.val($field.val().substr(0, maxCharacters));
+			    }
+
+			    var remaining = maxCharacters - $field.val().length;
+				$(".char_limit .limit").text(remaining);
+			});
+
 			// Do facebook login
 			$("a.button").on("click", function(e) {
 				e.preventDefault();
