@@ -27,8 +27,9 @@ get_header(); ?>
 				<li><?php the_title(); ?></li>
 			</ul>
 
+			<img src="<?php bloginfo('template_url') ?>/images/img_somos_headline.jpg" alt="Paisaje de Constanza" />
+
 			<div id="main_content">
-				<img src="<?php bloginfo('template_url') ?>/images/somos_img.jpg" alt="Paisaje de Constanza" />
 				<?php the_content() ?>
 			</div><!-- #main_content -->
 
