@@ -266,7 +266,7 @@ GUIACONSTANZA = {
 
 			// Characters limit
 			$("#message").keyup(function() {
-				var maxCharacters = 100;
+				var maxCharacters = 140;
 				var $field = $(this);
 
 			    if ($field.val().length > maxCharacters) {

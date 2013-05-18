@@ -76,7 +76,7 @@
 						<h3></h3>
 					</div>
 					<textarea name="message" id="message" cols="72" rows="6"></textarea>
-					<p class="char_limit">Limite de Caracteres: <span class="limit">100</span></p>
+					<p class="char_limit">Limite de Caracteres: <span class="limit">140</span></p>
 					<h5>Normas de uso:</h5>
 					<p>GuiaConstanza.com no se hace responsable de los comentarios emitidos por sus lectores y colaboradores.</p>
 					<p class="please_no">Por favor no comentes en <strong>MAYÚSCULAS</strong>, te lo agradeceremos.</p>
