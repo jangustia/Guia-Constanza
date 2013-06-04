@@ -1482,7 +1482,7 @@ input[type="text"], textarea {
 
     nav {
         ul {
-            &:first-child { padding-left: 2em; }
+            &:first-child { padding-left: 1.6em; }
         }
     } 
     
@@ -1492,6 +1492,14 @@ input[type="text"], textarea {
         ul {
             margin-right: 0; 
             border:0;
+
+            li {
+                padding: 0px 0px 2px 26px;
+
+                &.twitter_icon { background: transparent url(images/twitter_logo_icon.png) no-repeat; }
+                &.fb_icon { background: transparent url(images/fb_icon_logo.png) no-repeat; }
+                &.rss_icon { background: transparent url(images/feed_icon_logo.png) no-repeat; }
+            }
         }
     }
 }

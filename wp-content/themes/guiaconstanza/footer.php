@@ -30,9 +30,9 @@
 			</nav>
 			<aside>
 				<ul>
-					<li><a href="http://www.twitter.com">Siguenos en Twitter</a></li>
-					<li><a href="http://www.facebook.com">Conviertete en fan en Facebook</a></li>
-					<li><a href="http://www.twitter.com">Subscribete a nuestro Feed</a></li>
+					<li class="twitter_icon"><a href="http://www.twitter.com">Siguenos en Twitter</a></li>
+					<li class="fb_icon"><a href="http://www.facebook.com">Conviertete en fan en Facebook</a></li>
+					<li class="rss_icon"><a href="http://www.twitter.com">Subscribete a nuestro Feed</a></li>
 				</ul>
 			</aside>
 		<?php
