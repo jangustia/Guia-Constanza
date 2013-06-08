@@ -109,7 +109,6 @@
 						</form>
 					</div>
 				<?php endif ?>
-				
 
 				<div id="container" class="wrap" role="main">
 					<div id="main_content">
@@ -167,6 +166,8 @@
 										</li>
 									<?php endwhile; ?>
 								</ul>
+
+								<?php wp_pagenavi(); ?>
 							</div><!-- .places-list -->
 						<?php endif; ?>
 					</div><!-- #main_content -->
