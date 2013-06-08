@@ -1407,17 +1407,11 @@ input[type="text"], input[type="email"], textarea {
         margin: 0px 60px 0px 0px;
         float: left;
         width: 400px;
-    }
-
-    .form_area {
-        float: left;
-
-        input[type="submit"] { float: right; }
 
         .hotel_metadata {
             overflow: hidden;
             margin: 20px 0px 0px 0px;
-            
+
             .info {
                 display: inline;
                 float: none;
@@ -1425,6 +1419,12 @@ input[type="text"], input[type="email"], textarea {
                 width: auto;
             }
         }
+    }
+
+    .form_area {
+        float: left;
+
+        input[type="submit"] { float: right; }
     }
 } 
 .page-id-257 {

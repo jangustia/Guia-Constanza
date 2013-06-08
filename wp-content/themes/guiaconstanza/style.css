@@ -1625,18 +1625,18 @@ input[type="text"], input[type="email"], textarea {
   margin: 0px 60px 0px 0px;
   float: left;
   width: 400px; }
-.page-id-76 .form_area {
-  float: left; }
-  .page-id-76 .form_area input[type="submit"] {
-    float: right; }
-  .page-id-76 .form_area .hotel_metadata {
+  .page-id-76 .contact_info .hotel_metadata {
     overflow: hidden;
     margin: 20px 0px 0px 0px; }
-    .page-id-76 .form_area .hotel_metadata .info {
+    .page-id-76 .contact_info .hotel_metadata .info {
       display: inline;
       float: none;
       margin: 0px 20px 0px 0px;
       width: auto; }
+.page-id-76 .form_area {
+  float: left; }
+  .page-id-76 .form_area input[type="submit"] {
+    float: right; }
 
 .page-id-257 #subheader span {
   background-image: url("images/somos_icon.png"); }
