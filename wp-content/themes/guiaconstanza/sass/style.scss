@@ -215,7 +215,7 @@ body {
 /**
  * Forms
  */
-input[type="text"], textarea {
+input[type="text"], input[type="email"], textarea {
     background: #FFFABD;
     border: 1px solid #FFD200;
     border-radius: 3px;
@@ -735,7 +735,6 @@ input[type="text"], textarea {
         }
     }
 }
-
 
 /* Included features widget (in pages and in featured slideshows) */
 .includes {
@@ -1402,6 +1401,30 @@ input[type="text"], textarea {
 .page-id-76 {
     #subheader {
         span { background-image: url('images/somos_icon.png'); }
+    }
+
+    .contact_info {
+        margin: 0px 60px 0px 0px;
+        float: left;
+        width: 400px;
+    }
+
+    .form_area {
+        float: left;
+
+        input[type="submit"] { float: right; }
+
+        .hotel_metadata {
+            overflow: hidden;
+            margin: 20px 0px 0px 0px;
+            
+            .info {
+                display: inline;
+                float: none;
+                margin: 0px 20px 0px 0px;
+                width: auto;
+            }
+        }
     }
 } 
 .page-id-257 {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Simple Page
+ * Template Name: Contacto
  */
 
 get_header(); ?>
@@ -29,18 +29,8 @@ get_header(); ?>
 
 			<img src="<?php bloginfo('template_url') ?>/images/img_somos_headline.jpg" alt="Paisaje de Constanza" />
 
-			<div id="main_content">
-				<?php the_content() ?>
-			</div><!-- #main_content -->
-
-			<div id="side_content">
-				<h3 class="visuallyhidden">Enlaces</h3>
-				<ul class="button_menu clearfix">
-					<li><a class="button" href="<?php echo get_page_link(257); ?>">Publicidad</a></li>
-					<li><a class="button" href="<?php echo get_page_link(76); ?>">Contacto</a></li>
-				</ul>
-			</div>
-	</div><!-- #somos -->
+			<?php the_content() ?>
+		</div><!-- #somos -->
 
 <?php endwhile; ?>
 <?php get_footer(); ?>
