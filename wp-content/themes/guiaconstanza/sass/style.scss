@@ -1309,6 +1309,20 @@ input[type="text"], input[type="email"], textarea {
         span {background-image: url('images/headericon_dondeir.png');}
     }
 
+    p.loc_excerpt { margin-top: 5px; }
+    h3.loc_header { margin-bottom: 0px; padding-bottom: 0px; }
+
+    .circled {
+        float: left;
+        margin: 8px 15px 0px 5px;
+        @include circle(100px, 100px, #e5e5e5, #f5f5f5);
+
+        .inside {
+            margin: 5px 0px 0px 5px;
+            @include circle(90px, 90px, #FFF, #FFF);
+        }
+    }
+
     #footer {
         margin-top: -8px;
     }

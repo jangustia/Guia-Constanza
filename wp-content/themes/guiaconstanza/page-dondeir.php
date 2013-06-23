@@ -74,9 +74,17 @@
 								<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 									<?php if (($geo_lat = get_post_meta (get_the_ID(), 'geo_lat', TRUE)) && ($geo_long = get_post_meta (get_the_ID(), 'geo_long', TRUE))): ?>
 										<li data-geo_lat="<?php echo $geo_lat; ?>" data-geo_long="<?php echo $geo_long; ?>">
-											<h3><?php the_title(); ?></h3>
-											<p><?php echo get_the_excerpt(); ?></p>
-											<a href="<?php the_permalink(); ?>">Ver más</a>
+											<div class="circled">
+												<div class="inside">
+													<?php if (has_post_thumbnail()) : ?>
+														<?php the_post_thumbnail ('thumbnail'); ?>
+													<?php else : ?>
+														<img class="wp-post-image" src="<?php bloginfo('template_url') ?>/images/atractivos_listing_thumb_guide.png" alt="">
+													<?php endif; ?>
+												</div>
+											</div>
+											<h3 class="loc_header"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+											<p class="loc_excerpt"><?php echo get_the_excerpt(); ?></p>
 										</li>
 									<?php endif; ?>
 								<?php endwhile; ?>

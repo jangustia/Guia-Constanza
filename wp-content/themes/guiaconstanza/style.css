@@ -1510,6 +1510,8 @@ input[type="text"], input[type="email"], textarea {
         background: transparent url(images/bubble_tip.png) no-repeat; }
       #recommend .all_recomendations li img {
         float: left;
+        width: 40px;
+        height: 40px;
         border: 1px solid #cccccc; }
       #recommend .all_recomendations li .box {
         margin-left: 67px;
@@ -1549,6 +1551,36 @@ input[type="text"], input[type="email"], textarea {
  */
 .page-id-24 #subheader span {
   background-image: url("images/headericon_dondeir.png"); }
+.page-id-24 p.loc_excerpt {
+  margin-top: 5px; }
+.page-id-24 h3.loc_header {
+  margin-bottom: 0px;
+  padding-bottom: 0px; }
+.page-id-24 .circled {
+  float: left;
+  margin: 8px 15px 0px 5px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, whitesmoke));
+  background-image: -webkit-linear-gradient(top, #e5e5e5 0%, whitesmoke 100%);
+  background-image: -moz-linear-gradient(top, #e5e5e5 0%, whitesmoke 100%);
+  background-image: -ms-linear-gradient(top, #e5e5e5 0%, whitesmoke 100%);
+  background-image: -o-linear-gradient(top, #e5e5e5 0%, whitesmoke 100%);
+  background-image: linear-gradient(top, #e5e5e5 0%, whitesmoke 100%); }
+  .page-id-24 .circled .inside {
+    margin: 5px 0px 0px 5px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: white;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, white));
+    background-image: -webkit-linear-gradient(top, white 0%, white 100%);
+    background-image: -moz-linear-gradient(top, white 0%, white 100%);
+    background-image: -ms-linear-gradient(top, white 0%, white 100%);
+    background-image: -o-linear-gradient(top, white 0%, white 100%);
+    background-image: linear-gradient(top, white 0%, white 100%); }
 .page-id-24 #footer {
   margin-top: -8px; }
 
