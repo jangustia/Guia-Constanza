@@ -11,7 +11,6 @@
 
 	$loop = new WP_Query ($query_args);
 
-	session_start();
     require_once('php/twitteroauth/twitteroauth.php');
 
     $consumer_key = 'xhuMt9tWHP1t6aJWsJuIw';
@@ -21,7 +20,7 @@
 
     $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
     $tweets = $connection->get('https://api.twitter.com/1.1/search/tweets.json?result_type=recent&q=%23ConstanzaRD')->statuses;
-    
+
 ?>
 			<?php while (have_posts()) : the_post(); ?>
 				<h1 id="subheader" class="wrap">
