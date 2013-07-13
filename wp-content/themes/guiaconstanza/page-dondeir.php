@@ -11,8 +11,17 @@
 
 	$loop = new WP_Query ($query_args);
 
-	$twitter_media = json_decode(file_get_contents("http://search.twitter.com/search.json?result_type=recent&q=%23ConstanzaRD"));
-	$tweets = $twitter_media->results;
+	session_start();
+    require_once('php/twitteroauth/twitteroauth.php');
+
+    $consumer_key = 'xhuMt9tWHP1t6aJWsJuIw';
+    $consumer_secret = 'dVtaxGcQIUeilvcrS3akQTbX91yjWMaDJGFUeSHr5I';
+    $access_token = '75446347-x2BkWQxzKMGYaYNgw9I3odKAb0JS2UFX1WagTMopU';
+    $access_token_secret = 'uNFIGBqjhXjpsMMTjNBPkVzrwVkf0CWmBgaynzJZ0Hs';
+
+    $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
+    $tweets = $connection->get('https://api.twitter.com/1.1/search/tweets.json?result_type=recent&q=%23ConstanzaRD')->statuses;
+    
 ?>
 			<?php while (have_posts()) : the_post(); ?>
 				<h1 id="subheader" class="wrap">
@@ -53,7 +62,7 @@
 										<?php foreach ($tweets as $tweet) : ?>
 											<li>
 												<p>
-													<strong><?php echo $tweet->from_user_name; ?>: </strong>
+													<strong><?php echo $tweet->user->name; ?>: </strong>
 													<?php echo $tweet->text; ?> 
 													<span class="time">
 														<?php echo time_passed(strtotime($tweet->created_at)); ?>
