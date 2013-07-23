@@ -221,7 +221,7 @@ GUIACONSTANZA = {
 				GUIACONSTANZA.common.main_feature();
 			}
 			
-			$("#weather_lightbox").click(function(e) {
+			$("#weather").click(function(e) {
 				e.preventDefault();
 				GUIACONSTANZA.common.open_weather_lightbox();
 			});

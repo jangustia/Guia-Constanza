@@ -319,16 +319,11 @@ input[type="text"], input[type="email"], textarea {
  * Header and Subheaders
  */
 #header, #subheader {
-    background: #81B017 url('images/header_bg.png') repeat-x bottom;background: -moz-linear-gradient(top, #82b117 0%, #325800 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#82b117), color-stop(100%,#325800));
-    background: -webkit-linear-gradient(top, #82b117 0%,#325800 100%);
-    background: -o-linear-gradient(top, #82b117 0%,#325800 100%);
-    background: -ms-linear-gradient(top, #82b117 0%,#325800 100%);
-    background: linear-gradient(top, #82b117 0%,#325800 100%);
     box-shadow: 0 3px 7px rgba(0,0,0,0.50);
     color: #FFF;
     position: relative;
     z-index: 700;
+    @include linear-gradient(top, #c1d823 0%, #82b017 3%, #335900 96%, #2d5000 100%);
 }
 #header {
     h1 {
@@ -357,7 +352,8 @@ input[type="text"], input[type="email"], textarea {
             display: block;
             width: 100px;
             right: 30px;
-            top: 7px;
+            top: 1px;
+            cursor: pointer;
 
             img {
                 display: block;
@@ -369,9 +365,8 @@ input[type="text"], input[type="email"], textarea {
                     display: block;
                     float: right;
                     margin: 14px 0px 0px 0px;
-                    font-weight: bold;
                     color: white;
-                    font-size: 1.4em;
+                    font-size: 1.5em;
                 }
             }
         }
@@ -382,20 +377,34 @@ input[type="text"], input[type="email"], textarea {
             top: 10px; 
             float: right;
 
+            ::-webkit-input-placeholder {
+                color: #afd036;
+            }
+
+            :-moz-placeholder {
+                color: #afd036;
+            }
+
+            :-ms-input-placeholder {
+                color: #afd036;
+            }
+
             input[type=search], input[type=submit] {
-                border: 1px solid #333;
+                border: 1px solid #2d4f00;
                 border-radius: 20px;
-                padding: 7px 10px;
+                padding: 8px 10px;
+                box-shadow: 1px 1px 1px 0px #5e9308;
             }
 
             input[type=search] {
-                -webkit-appearance: none;
-                background: #FFF;
-                color: #999;
+                -moz-appearance: textfield;
+                -webkit-appearance: textfield;
+                appearance: textfield;
+                background: #406704;
+                color: #afd036;
+                border: none;
 
                 &:hover, &:focus {
-                    border-color: #000;
-                    color: #345901;
                     outline: 0;
                 }
             }
