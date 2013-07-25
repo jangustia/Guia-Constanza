@@ -72,7 +72,11 @@
 			<div class="write_recommendation">
 				<form action="#" class="submit_recommendation" method="post">
 					<div class="recommendation_heading">
-						<img src="<?php bloginfo('template_url') ?>/images/recomend_thumb.png" alt="Recommend" />
+						<div class="circled">
+							<div class="inside">
+								<img src="<?php bloginfo('template_url') ?>/images/recomend_thumb.png" alt="Recommend" />
+							</div>
+						</div>
 						<h3></h3>
 					</div>
 					<textarea name="message" id="message" cols="72" rows="6"></textarea>

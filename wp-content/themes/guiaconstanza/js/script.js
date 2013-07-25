@@ -134,7 +134,7 @@ GUIACONSTANZA = {
 
 				FB.api("/me", function(response) {
 					$write_recommendation.find("h3").text(response.name);
-					$write_recommendation.find("img").attr("src", "https://graph.facebook.com/" + response.id + "/picture?width=40&height=40");
+					$write_recommendation.find("img").attr("src", "https://graph.facebook.com/" + response.id + "/picture?width=50&height=50");
 
 					$("#submit_recommendation_btn").on("click", function(e) {
 						e.preventDefault();

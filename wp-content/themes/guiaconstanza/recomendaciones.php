@@ -55,7 +55,11 @@
 					<ul class="all_recomendations">
 						<?php foreach ($recommendations as $recommendation) : ?>
 							<li>
-								<img src="https://graph.facebook.com/<?php echo $recommendation->user_id; ?>/picture?width=40&height=40" alt="Recommend" />
+								<div class="circled">
+									<div class="inside">
+										<img src="https://graph.facebook.com/<?php echo $recommendation->user_id; ?>/picture?width=50&height=50" alt="Recommend" />
+									</div>
+								</div>
 								<span class="tip"></span>
 								<div class="box">
 									<h3><?php echo $recommendation->name; ?></h3>
