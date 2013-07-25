@@ -1154,13 +1154,13 @@ input[type="text"], input[type="email"], textarea {
   position: relative;
   z-index: 9997; }
   #adv_search form {
-    background: #e5e696 url("images/bg_advsearch.png") repeat-x;
-    background: -moz-linear-gradient(top, #e5e696 0%, #c8ca56 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e696), color-stop(100%, #c8ca56));
-    background: -webkit-linear-gradient(top, #e5e696 0%, #c8ca56 100%);
-    background: -o-linear-gradient(top, #e5e696 0%, #c8ca56 100%);
-    background: -ms-linear-gradient(top, #e5e696 0%, #c8ca56 100%);
-    background: linear, top, #e5e696 0%, #c8ca56 100%;
+    background-color: white;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(1%, #e5e695), color-stop(100%, #c8ca56));
+    background-image: -webkit-linear-gradient(top, white 0%, #e5e695 1%, #c8ca56 100%);
+    background-image: -moz-linear-gradient(top, white 0%, #e5e695 1%, #c8ca56 100%);
+    background-image: -ms-linear-gradient(top, white 0%, #e5e695 1%, #c8ca56 100%);
+    background-image: -o-linear-gradient(top, white 0%, #e5e695 1%, #c8ca56 100%);
+    background-image: linear-gradient(top, white 0%, #e5e695 1%, #c8ca56 100%);
     border: 1px solid #bec04b;
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.35), 0 15px 15px 0 rgba(0, 0, 0, 0.1);
     position: absolute;
@@ -1193,8 +1193,8 @@ input[type="text"], input[type="email"], textarea {
   #adv_search form > div {
     position: absolute;
     top: 60px;
-    right: -20px;
-    width: 300px; }
+    right: 0px;
+    width: 250px; }
   #adv_search label {
     display: block;
     float: left;
@@ -1497,6 +1497,8 @@ input[type="text"], input[type="email"], textarea {
     margin-bottom: 1em;
     padding-bottom: .7em;
     text-transform: none; }
+    #recommend h2 strong {
+      color: #a0410d; }
   #recommend .all_recomendations {
     list-style: none;
     margin: 0px;
@@ -1509,20 +1511,47 @@ input[type="text"], input[type="email"], textarea {
       #recommend .all_recomendations li .tip {
         position: absolute;
         display: block;
-        top: 20px;
-        left: 46px;
+        top: 15px;
+        left: 44px;
         width: 24px;
         height: 27px;
         background: transparent url(images/bubble_tip.png) no-repeat; }
-      #recommend .all_recomendations li img {
+      #recommend .all_recomendations li .circled {
         float: left;
-        width: 40px;
-        height: 40px;
-        border: 1px solid #cccccc; }
+        margin: 4px 15px 0px 0px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #e5e5e5;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, whitesmoke));
+        background-image: -webkit-linear-gradient(top, #e5e5e5 0%, whitesmoke 100%);
+        background-image: -moz-linear-gradient(top, #e5e5e5 0%, whitesmoke 100%);
+        background-image: -ms-linear-gradient(top, #e5e5e5 0%, whitesmoke 100%);
+        background-image: -o-linear-gradient(top, #e5e5e5 0%, whitesmoke 100%);
+        background-image: linear-gradient(top, #e5e5e5 0%, whitesmoke 100%); }
+        #recommend .all_recomendations li .circled .inside {
+          margin: 3px 0px 0px 4px;
+          width: 43px;
+          height: 43px;
+          border-radius: 50%;
+          background-color: white;
+          background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, white));
+          background-image: -webkit-linear-gradient(top, white 0%, white 100%);
+          background-image: -moz-linear-gradient(top, white 0%, white 100%);
+          background-image: -ms-linear-gradient(top, white 0%, white 100%);
+          background-image: -o-linear-gradient(top, white 0%, white 100%);
+          background-image: linear-gradient(top, white 0%, white 100%); }
+          #recommend .all_recomendations li .circled .inside img {
+            display: block;
+            width: 50px;
+            height: 50px;
+            margin: 0px 0px 0px -5px; }
       #recommend .all_recomendations li .box {
         margin-left: 67px;
         padding: 8px;
-        border-radius: 9px; }
+        border-radius: 9px;
+        box-shadow: none;
+        background: transparent url(images/comment_bg.jpg) repeat; }
         #recommend .all_recomendations li .box h3 {
           color: #598527;
           margin: 0px 0px 6px 0px; }
@@ -1531,7 +1560,7 @@ input[type="text"], input[type="email"], textarea {
           margin: 0px 0px 6px 0px; }
         #recommend .all_recomendations li .box span {
           color: #345901;
-          font-size: 0.8em; }
+          font-size: 0.9em; }
   #recommend .pages_area {
     margin: 30px 0px 0px 0px; }
     #recommend .pages_area .pagination {
@@ -1875,13 +1904,39 @@ input[type="text"], input[type="email"], textarea {
     .recomendaciones_content .write_recommendation .recommendation_heading {
       overflow: hidden;
       margin-bottom: 10px; }
-      .recomendaciones_content .write_recommendation .recommendation_heading img {
+      .recomendaciones_content .write_recommendation .recommendation_heading .circled {
         float: left;
-        display: block;
-        border: 1px solid #333333; }
+        margin: 4px 15px 0px 0px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #e5e5e5;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, whitesmoke));
+        background-image: -webkit-linear-gradient(top, #e5e5e5 0%, whitesmoke 100%);
+        background-image: -moz-linear-gradient(top, #e5e5e5 0%, whitesmoke 100%);
+        background-image: -ms-linear-gradient(top, #e5e5e5 0%, whitesmoke 100%);
+        background-image: -o-linear-gradient(top, #e5e5e5 0%, whitesmoke 100%);
+        background-image: linear-gradient(top, #e5e5e5 0%, whitesmoke 100%); }
+        .recomendaciones_content .write_recommendation .recommendation_heading .circled .inside {
+          margin: 3px 0px 0px 4px;
+          width: 43px;
+          height: 43px;
+          border-radius: 50%;
+          background-color: white;
+          background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, white));
+          background-image: -webkit-linear-gradient(top, white 0%, white 100%);
+          background-image: -moz-linear-gradient(top, white 0%, white 100%);
+          background-image: -ms-linear-gradient(top, white 0%, white 100%);
+          background-image: -o-linear-gradient(top, white 0%, white 100%);
+          background-image: linear-gradient(top, white 0%, white 100%); }
+          .recomendaciones_content .write_recommendation .recommendation_heading .circled .inside img {
+            display: block;
+            width: 50px;
+            height: 50px;
+            margin: 0px 0px 0px -5px; }
       .recomendaciones_content .write_recommendation .recommendation_heading h3 {
         margin: 0;
-        padding: 10px 0px 0px 50px;
+        padding: 18px 0px 0px 50px;
         color: #598527;
         font-size: 1.2em; }
     .recomendaciones_content .write_recommendation .char_limit {
