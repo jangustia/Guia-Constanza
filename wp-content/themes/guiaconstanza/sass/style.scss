@@ -846,13 +846,7 @@ input[type="text"], input[type="email"], textarea {
     z-index: 9997;
 
     form {
-        background: #e5e696 url('images/bg_advsearch.png') repeat-x;
-        background: -moz-linear-gradient(top, #e5e696 0%, #c8ca56 100%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e696), color-stop(100%,#c8ca56));
-        background: -webkit-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
-        background: -o-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
-        background: -ms-linear-gradient(top, #e5e696 0%,#c8ca56 100%);
-        background: linear-gradient(top, #e5e696 0%,#c8ca56 100%);
+        @include linear-gradient(top, #ffffff 0%, #e5e695 1%, #c8ca56 100%);
         border: 1px solid #bec04b;
         box-shadow: 0 1px 5px 0 rgba(0,0,0,.35), 0 15px 15px 0 rgba(0,0,0,.10);
         position: absolute;
@@ -891,8 +885,8 @@ input[type="text"], input[type="email"], textarea {
     form > div {
         position: absolute;
         top: 60px;
-        right: -20px;
-        width: 300px;
+        right: 0px;
+        width: 250px;
     }
 
     label {
