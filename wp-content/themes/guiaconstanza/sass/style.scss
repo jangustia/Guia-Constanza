@@ -53,6 +53,11 @@ body {
 
     &:hover { @include linear-gradient(top, #e6e6e7 0%, #fefefe 100%); }
 }
+.fb_like_box {
+    display: block;
+    width: 410px;
+    margin: 106px 0px 30px 0px;
+}
 
 // Page Wrapper
 .wrap {
@@ -1282,7 +1287,7 @@ input[type="text"], input[type="email"], textarea {
             .box { 
                 margin-left: 67px;
                 padding: 8px; 
-                border-radius: 9px;
+                border-radius: 5px;
                 box-shadow: none;
                 background: transparent url(images/comment_bg.jpg) repeat;
 
@@ -1313,6 +1318,18 @@ input[type="text"], input[type="email"], textarea {
                 margin-right: 10px;
             }
         }
+    }
+
+    .add_reco {
+        display: block;
+        float: right;
+        width: 222px;
+        height: 44px;
+        margin-top: -10px;
+        text-indent: -9999px;
+        background: transparent url('images/add_recomendation_btn.png') no-repeat;
+
+        &:hover { background: transparent url('images/add_recomendation_btn_hover.png') no-repeat; }
     }
 
     .button {

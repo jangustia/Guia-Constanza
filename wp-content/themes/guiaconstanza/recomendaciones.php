@@ -75,7 +75,7 @@
 							
 						</ul>
 
-						<a class="button" href="#"><span>Añadir Recomendación</span></a>
+						<a class="add_reco" href="#"><span>Añadir Recomendación</span></a>
 					</div><!-- .pages_area -->
 				</section>
 			</div> <!-- #recommend -->
@@ -87,6 +87,10 @@
 				<?php // Get "Atractivos" section
 				get_sidebar( 'atractivos' ); ?>
 			</div><!-- .places-list -->
+
+			<div class="fb_like_box">
+				<div class="fb-like-box" data-href="https://www.facebook.com/guiaconstanza" data-width="410" data-show-faces="true" data-stream="false" data-show-border="true" data-header="true"></div>
+			</div>
 		</aside>
 
 <?php get_footer(); ?>

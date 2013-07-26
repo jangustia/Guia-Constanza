@@ -278,7 +278,7 @@ GUIACONSTANZA = {
 			});
 
 			// Do facebook login
-			$("a.button").on("click", function(e) {
+			$("a.add_reco").on("click", function(e) {
 				e.preventDefault();
 
 				FB.getLoginStatus(function(response) {
