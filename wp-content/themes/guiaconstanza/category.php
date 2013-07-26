@@ -99,13 +99,10 @@
 					<div id="adv_search" class="wrap">
 						<form action="<?php echo get_category_link ($category->cat_ID) ?>">
 							<h2>Búsqueda Avanzada</h2>
-							<input type="text" id="name" name="nombre"
-								value="<?php echo $nombre ?>"
-								placeholder="Nombre"/>
-
+							<input type="text" id="name" name="nombre" value="<?php echo $nombre ?>" placeholder="Nombre"/>
 							<?php get_template_part ('search', $category->slug); ?>
-
 							<input class="button" type="submit" value="Buscar"/>
+							<span class="the_tip"></span>
 						</form>
 					</div>
 				<?php endif ?>
