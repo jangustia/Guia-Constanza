@@ -12,7 +12,7 @@
 	));
 	
 	$blogs = new WP_Query (array (
-		'category_name'  => 'blog',
+		'post_type'  => 'gc_atractivos',
 		'posts_per_page' => 5,
 		'orderby'        => 'rand'
 	));
@@ -71,7 +71,7 @@
 					</section>
 					
 					<section id="featured_posts">
-						<h2>Blog: La Suiza del Caribe</h2>
+						<h2>Atractivos</h2>
 						
 						<nav class="featured_arrows">
 							<ul>
