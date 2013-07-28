@@ -14,7 +14,7 @@
 			<nav>
 				<ul>
 					<li><a href="<?php echo get_page_link(28); ?>">Nosotros</a></li>
-					<li><a href="<?php echo get_category_link(257); ?>">Afiliarse</a></li>
+					<li><a href="<?php echo get_page_link(257); ?>">Afiliarse</a></li>
 					<li><a href="<?php echo get_page_link(76); ?>">Contacto</a></li>
 				</ul>
 				<ul>
