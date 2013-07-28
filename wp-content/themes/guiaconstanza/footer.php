@@ -13,9 +13,9 @@
 		<footer id="footer" role="contentinfo" class="wrap">
 			<nav>
 				<ul>
+					<li><a href="<?php echo get_page_link(28); ?>">Nosotros</a></li>
+					<li><a href="<?php echo get_category_link(257); ?>">Afiliarse</a></li>
 					<li><a href="<?php echo get_page_link(76); ?>">Contacto</a></li>
-					<li><a href="<?php echo get_category_link(10); ?>">Blog</a></li>
-					<li><a href="<?php echo get_page_link(28); ?>">Somos</a></li>
 				</ul>
 				<ul>
 					<li><a href="<?php echo get_category_link(3); ?>">Hoteles</a></li>
@@ -24,15 +24,15 @@
 				</ul>
 				<ul>
 					<li><a href="<?php echo get_category_link(6); ?>">Atractivos</a></li>
-					<li><a href="<?php echo get_category_link(8); ?>">Fotografia</a></li>
+					<!-- <li><a href="<?php echo get_category_link(8); ?>">Fotografia</a></li> -->
 					<li><a href="<?php echo get_page_link(26); ?>">Recomendaciones</a></li>
 				</ul>
 			</nav>
 			<aside>
 				<ul>
-					<li class="twitter_icon"><a href="http://www.twitter.com">Siguenos en Twitter</a></li>
-					<li class="fb_icon"><a href="http://www.facebook.com">Conviertete en fan en Facebook</a></li>
-					<li class="rss_icon"><a href="http://www.twitter.com">Subscribete a nuestro Feed</a></li>
+					<li class="twitter_icon"><a target="_blank" href="https://twitter.com/guiaconstanza">Siguenos en Twitter</a></li>
+					<li class="fb_icon"><a target="_blank" href="https://www.facebook.com/guiaconstanza">Conviertete en fan en Facebook</a></li>
+					<li class="rss_icon"><a target="_blank" href="<?php bloginfo('rss2_url'); ?>">Subscribete a nuestro Feed</a></li>
 				</ul>
 			</aside>
 		<?php
