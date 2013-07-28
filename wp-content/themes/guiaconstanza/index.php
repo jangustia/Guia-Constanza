@@ -85,7 +85,17 @@
 						</ul><!-- #marker_list -->
 					</div><!-- #map_container -->
 					<div class="verticalbanner"></div>
-					<div class="squarepopup"></div>
+					<div class="squarepopup">
+						<script type="text/javascript"><!--
+							google_ad_client = "ca-pub-8397939586383038";
+							/* Home Ads GC */
+							google_ad_slot = "1907621247";
+							google_ad_width = 250;
+							google_ad_height = 250;
+							//-->
+						</script>
+						<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
 				</section>
 			</div><!-- #side_content -->
 
