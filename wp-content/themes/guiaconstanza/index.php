@@ -84,7 +84,11 @@
 						<?php endwhile; ?>
 						</ul><!-- #marker_list -->
 					</div><!-- #map_container -->
-					<div class="verticalbanner"></div>
+					<div class="verticalbanner">
+						<a href="<?php echo get_page_link(257); ?>">
+							<img src="<?php bloginfo('template_url') ?>/images/available_space.jpg" alt="Espacio Disponible">
+						</a>
+					</div>
 					<div class="squarepopup">
 						<script type="text/javascript"><!--
 							google_ad_client = "ca-pub-8397939586383038";
