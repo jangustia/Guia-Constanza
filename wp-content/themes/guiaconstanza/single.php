@@ -138,7 +138,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 							<div id="details_map" data-geo_lat="<?php echo $geo_lat; ?>" data-geo_long="<?php echo $geo_long; ?>"></div>
 						<?php endif; ?>
 
-						<section class="ratings">
+						<section class="ratings" style="display:none">
 							<h3>Calificar <?php echo $rate_title; ?></h3>
 							<form>
 								<h4>Calificación:</h4>
