@@ -12,7 +12,7 @@
 	));
 	
 	$blogs = new WP_Query (array (
-		'post_type'  => 'gc_atractivos',
+		'post_type'  	 => 'gc_atractivos',
 		'posts_per_page' => 5,
 		'orderby'        => 'rand'
 	));
@@ -59,7 +59,7 @@
 										<?php endif; ?>
 									</div>
 								</div>
-								<p><?php echo new_excerpt (200); ?></p>
+								<p><?php echo new_excerpt (180); ?></p>
 
 								<ul class="includes_small">
 								<?php foreach (bares_y_rests_icons() as $slug => $name): ?>

@@ -59,7 +59,7 @@
 										<?php endif; ?>
 									</div>
 								</div>
-								<p><?php echo new_excerpt (200); ?></p>
+								<p><?php echo new_excerpt (180); ?></p>
 
 								<ul class="includes_small">
 								<?php $counter = 0; ?>
