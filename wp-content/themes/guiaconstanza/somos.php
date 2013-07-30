@@ -36,7 +36,9 @@ get_header(); ?>
 			<div id="side_content">
 				<h3 class="visuallyhidden">Enlaces</h3>
 				<ul class="button_menu clearfix">
-					<li><a class="button" href="<?php echo get_page_link(257); ?>">Publicidad</a></li>
+					<?php if (!is_page(257)) : ?>
+						<li><a class="button" href="<?php echo get_page_link(257); ?>">Afiliarse</a></li>
+					<?php endif; ?>
 					<li><a class="button" href="<?php echo get_page_link(76); ?>">Contacto</a></li>
 				</ul>
 			</div>
