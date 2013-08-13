@@ -40,7 +40,7 @@ html {
 
 html, button, input, select, textarea {
   font-family: sans-serif;
-  color: #222; }
+  color: #40484d; }
 
 body {
   margin: 0;
@@ -367,6 +367,15 @@ body {
   width: 410px;
   margin: 106px 0px 30px 0px; }
 
+.bordered {
+  margin-top: 10px;
+  border: solid 1px gainsboro;
+  padding: 10px; }
+
+.comments_title {
+  color: #A1420F;
+  font-size: 1.2em; }
+
 .wrap {
   margin: 0 auto;
   position: relative;
@@ -648,7 +657,7 @@ input[type="text"], input[type="email"], textarea {
  * Header and Subheaders
  */
 #header, #subheader {
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
   color: #FFF;
   position: relative;
   z-index: 700;
@@ -1053,7 +1062,7 @@ input[type="text"], input[type="email"], textarea {
     background-image: url("images/icons_services.png");
     color: #FFF;
     float: left;
-    font-size: 77%;
+    font-size: 74%;
     height: auto;
     margin: 10px 7px 0 0;
     padding: 51px 0 3px;
@@ -1149,7 +1158,7 @@ input[type="text"], input[type="email"], textarea {
       white-space: normal;
       margin: 18px 0px 0px 0px; }
     .places-list.smaller .skyscraper {
-      left: 280px; }
+      left: 290px; }
 
 /**
  * Advanced Search widget
@@ -1205,7 +1214,7 @@ input[type="text"], input[type="email"], textarea {
   #adv_search form > div {
     position: absolute;
     top: 60px;
-    right: 0px;
+    right: 25px;
     width: 250px; }
   #adv_search label {
     display: block;
@@ -1218,7 +1227,7 @@ input[type="text"], input[type="email"], textarea {
   #adv_search .button {
     position: absolute;
     bottom: 10px;
-    right: 10px; }
+    right: 22px; }
 
 /**
  * We Recommend Widget
@@ -1392,9 +1401,9 @@ input[type="text"], input[type="email"], textarea {
     font-size: 2em;
     padding-bottom: .3em; }
   #details figure {
-    background: url("images/bg_details_slider.png") no-repeat -8px -11px;
+    border: solid 1px gainsboro;
     margin-top: 15px;
-    padding: 15px 0 9px 11px;
+    padding: 11px 0 9px 11px;
     position: relative; }
     #details figure img {
       width: 460px; }
@@ -1436,8 +1445,17 @@ input[type="text"], input[type="email"], textarea {
   list-style: none; }
 
 #details_map {
-  width: 464px;
+  width: 441px;
   height: 212px; }
+
+.post_share {
+  vertical-align: middle;
+  padding-top: 10px;
+  padding-bottom: 6px;
+  margin-top: 15px;
+  border-top: solid 1px #ececec; }
+  .post_share img {
+    margin: 0 0.5em; }
 
 .ratings form {
   background-color: #E8F6C3;
@@ -1498,6 +1516,8 @@ input[type="text"], input[type="email"], textarea {
  ****************************/
 .page-id-26 #subheader span {
   background-image: url("images/recomendaciones_icon.png"); }
+.page-id-26 .skyscraper {
+  left: 295px; }
 
 #recommend {
   margin: 10px 0px 0px 0px; }

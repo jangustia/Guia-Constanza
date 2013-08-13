@@ -58,6 +58,15 @@ body {
     width: 410px;
     margin: 106px 0px 30px 0px;
 }
+.bordered {
+    margin-top: 10px;
+    border: solid 1px #dcdcdc;
+    padding: 10px;
+}
+.comments_title {
+    color: #A1420F;
+    font-size: 1.2em;
+}
 
 // Page Wrapper
 .wrap {
@@ -323,7 +332,7 @@ input[type="text"], input[type="email"], textarea {
  * Header and Subheaders
  */
 #header, #subheader {
-    box-shadow: 0 3px 7px rgba(0,0,0,0.50);
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
     color: #FFF;
     position: relative;
     z-index: 700;
@@ -761,7 +770,7 @@ input[type="text"], input[type="email"], textarea {
         background-image: url("images/icons_services.png");
         color: #FFF;
         float: left;
-        font-size: 77%;
+        font-size: 74%;
         height: auto;
         margin: 10px 7px 0 0;
         padding: 51px 0 3px;
@@ -838,7 +847,7 @@ input[type="text"], input[type="email"], textarea {
         }
 
         h4 { font-size: 125%; white-space: normal; margin: 18px 0px 0px 0px; }
-        .skyscraper { left: 294px; }
+        .skyscraper { left: 290px; }
     }
 }
 
@@ -899,7 +908,7 @@ input[type="text"], input[type="email"], textarea {
     form > div {
         position: absolute;
         top: 60px;
-        right: 0px;
+        right: 25px;
         width: 250px;
     }
 
@@ -916,7 +925,7 @@ input[type="text"], input[type="email"], textarea {
     .button {
         position: absolute;
         bottom: 10px;
-        right: 10px;
+        right: 22px;
     }
 }
 
@@ -1110,9 +1119,9 @@ input[type="text"], input[type="email"], textarea {
     }
 
     figure {
-        background: url('images/bg_details_slider.png') no-repeat -8px -11px;
+        border: solid 1px #dcdcdc;
         margin-top: 15px;
-        padding: 15px 0 9px 11px;
+        padding: 11px 0 9px 11px;
         position: relative;
 
         img { width: 460px; }
@@ -1148,8 +1157,18 @@ input[type="text"], input[type="email"], textarea {
 }
 
 #details_map {
-    width: 464px;
+    width: 441px;
     height: 212px;
+}
+
+.post_share {
+    vertical-align: middle;
+    padding-top: 10px;
+    padding-bottom: 6px;
+    margin-top: 15px;
+    border-top: solid 1px #ececec;
+
+    img {margin: 0 .5em;}
 }
 
 // Ratings of the Hotel or Bar
