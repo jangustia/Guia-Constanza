@@ -135,8 +135,19 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 
 						<?php if (!empty ($geo_lat) && !empty ($geo_long)): ?>
 							<h3>Ubicación</h3>
-							<div id="details_map" data-geo_lat="<?php echo $geo_lat; ?>" data-geo_long="<?php echo $geo_long; ?>"></div>
+							<div class="bordered">
+								<div id="details_map" data-geo_lat="<?php echo $geo_lat; ?>" data-geo_long="<?php echo $geo_long; ?>"></div>
+							</div>
 						<?php endif; ?>
+
+						<div class="post_share">
+							<!-- Share on Twitter -->
+							<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+							<!-- Share on FB -->
+							<div class="fb-like" data-send="false" data-width="315" data-show-faces="false"></div>
+						</div>
 
 						<section class="ratings" style="display:none">
 							<h3>Calificar <?php echo $rate_title; ?></h3>

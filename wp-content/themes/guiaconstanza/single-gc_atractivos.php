@@ -51,6 +51,14 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 									</span>
 								</div>
 							<?php the_content(); ?>
+							<div class="post_share">
+								<!-- Share on Twitter -->
+								<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+								<!-- Share on FB -->
+								<div class="fb-like" data-send="false" data-width="315" data-show-faces="false"></div>
+							</div>
 							<?php echo do_shortcode('[fbcomments]'); ?>
 					</div><!-- #details -->
 				</div><!-- #main_content -->
