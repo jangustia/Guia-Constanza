@@ -89,7 +89,7 @@
 			</div><!-- .places-list -->
 
 			<div class="fb_like_box">
-				<div class="fb-like-box" data-href="https://www.facebook.com/guiaconstanza" data-width="410" data-show-faces="true" data-stream="false" data-show-border="true" data-header="true"></div>
+				<div class="fb-like-box" data-href="https://www.facebook.com/guiaconstanza" data-width="406" data-show-faces="true" data-stream="false" data-show-border="true" data-header="true"></div>
 			</div>
 		</aside>
 
