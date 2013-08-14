@@ -1375,8 +1375,8 @@ input[type="text"], input[type="email"], textarea {
         span {background-image: url('images/headericon_dondeir.png');}
     }
 
-    p.loc_excerpt { margin-top: 5px; }
-    h3.loc_header { margin-bottom: 0px; padding-bottom: 0px; }
+    p.loc_excerpt { margin-top: 5px; color: #40484D; }
+    h3.loc_header { font-size: 1.4em; margin-bottom: 0px; padding-bottom: 0px; }
 
     .circled {
         float: left;
@@ -1456,9 +1456,10 @@ input[type="text"], input[type="email"], textarea {
 }
 
 #dondeir_share {
-    text-align: right;
+    text-align: left;
     vertical-align: middle;
     padding-bottom: 6px;
+    padding-left: 17px;
 
     img {margin: 0 .5em;}
 }

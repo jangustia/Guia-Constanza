@@ -1629,8 +1629,10 @@ input[type="text"], input[type="email"], textarea {
 .page-id-24 #subheader span {
   background-image: url("images/headericon_dondeir.png"); }
 .page-id-24 p.loc_excerpt {
-  margin-top: 5px; }
+  margin-top: 5px;
+  color: #40484D; }
 .page-id-24 h3.loc_header {
+  font-size: 1.4em;
   margin-bottom: 0px;
   padding-bottom: 0px; }
 .page-id-24 .circled {
@@ -1711,9 +1713,10 @@ input[type="text"], input[type="email"], textarea {
     height: 481px; }
 
 #dondeir_share {
-  text-align: right;
+  text-align: left;
   vertical-align: middle;
-  padding-bottom: 6px; }
+  padding-bottom: 6px;
+  padding-left: 17px; }
   #dondeir_share img {
     margin: 0 0.5em; }
 
