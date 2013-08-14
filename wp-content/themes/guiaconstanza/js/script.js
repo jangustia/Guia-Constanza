@@ -333,7 +333,7 @@ GUIACONSTANZA = {
 			var map_container = $('#' + map_contain_id),
 				marker_pos    = new google.maps.LatLng (parseFloat(map_container.data ('geo_lat')), parseFloat(map_container.data ('geo_long'))),
 			    gmap          = new google.maps.Map (document.getElementById (map_contain_id), {
-					zoom               : 10,
+					zoom               : 14,
 					mapTypeControl     : false,
 					streetViewControl  : false,
 					overviewMapControl : true,
