@@ -123,27 +123,7 @@
 										<li><?php printf( __( '%s', 'boilerplate' ), '' . single_cat_title( '', false ) . '' );?></li>
 									</ul>
 									
-									<div class="featured_atractivo">
-										<?php
-											$featured = new WP_Query (array (
-												'post_type'      => 'gc_atractivos',
-												'posts_per_page' => 1,
-												'orderby'        => 'rand'
-											));
-										?>
-
-										<?php while ($featured->have_posts()): $featured->the_post(); ?>
-											<a href="<?php the_permalink(); ?>">
-												<?php the_post_thumbnail ('atractivo-featured', array ('title'=>get_the_title())); ?></a>
-										<?php endwhile; ?>
-
-										<div class="post_sum">
-											<a href="<?php the_permalink(); ?>">
-												<?php the_title(); ?>
-											</a>
-										</div>
-									</div><!-- .featured_atractivo -->
-									<?php //get_sidebar( 'featured-atractivos' ); ?>
+									<?php get_sidebar( 'featured-atractivos' ); ?>
 								<?php endif; ?>
 							
 								<ul>

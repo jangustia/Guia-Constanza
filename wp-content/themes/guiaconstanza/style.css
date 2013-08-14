@@ -941,13 +941,17 @@ input[type="text"], input[type="email"], textarea {
   position: relative;
   height: 240px; }
 
-#hotel_slide img, #atractivo_slider img, #single_gallery img {
+#hotel_slide img, #single_gallery img {
   width: 400px;
   height: 240px; }
 
+#atractivo_slider img {
+  width: 445px;
+  height: 240px; }
+
 #featured_hotel .nivo-caption,
-#featured_atractivos .nivo-caption,
-#single_gallery .nivo-caption {
+#single_gallery .nivo-caption,
+#featured_atractivos .nivo-caption {
   font-size: 20px;
   font-weight: bold;
   color: #FFF;
@@ -966,10 +970,16 @@ input[type="text"], input[type="email"], textarea {
   background-image: -o-linear-gradient(top, rgba(51, 51, 51, 0) 0%, #0a0a0a 100%);
   background-image: linear-gradient(top, rgba(51, 51, 51, 0) 0%, #0a0a0a 100%); }
 
+#featured_atractivos .nivo-caption {
+  width: 415px; }
+
 #featured_hotel .nivo-caption p,
 #featured_atractivos .nivo-caption p,
 #single_gallery .nivo-caption p {
   margin: 33px 0px 0px 0px; }
+
+#featured_atractivos .nivo-caption p {
+  color: #FFF; }
 
 #featured_hotel .nivo-controlNav,
 #featured_atractivos .nivo-controlNav,
@@ -1312,7 +1322,7 @@ input[type="text"], input[type="email"], textarea {
  */
 .category-atractivos #featured_atractivos {
   margin-top: 15px;
-  width: 471px; }
+  width: 445px; }
 .category-atractivos .featured_atractivo {
   display: block;
   position: relative;
@@ -1347,7 +1357,7 @@ input[type="text"], input[type="email"], textarea {
   margin-top: 20px;
   margin-left: 20px!important; }
   .category-atractivos #side_content .places-list .skyscraper {
-    left: 277px; }
+    left: 283px; }
 .category-atractivos .we_recommend {
   padding: 12px; }
 .category-atractivos .skyscraper {

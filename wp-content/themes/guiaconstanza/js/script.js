@@ -315,8 +315,7 @@ GUIACONSTANZA = {
 			$('#atractivo_slider').nivoSlider ({
 				effect         : 'fade',
 				pauseTime      : 5000,
-				directionNav   : false,
-				captionOpacity : 1.0
+				directionNav   : false
 			});
 
 			GUIACONSTANZA.common.slide_nav ('.we_recommend', '.recommend_nav', '.recommend_slide');

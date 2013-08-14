@@ -675,14 +675,18 @@ input[type="text"], input[type="email"], textarea {
     height: 240px 
 }
 
-#hotel_slide img, #atractivo_slider img, #single_gallery img {
+#hotel_slide img, #single_gallery img {
     width: 400px;
+    height: 240px;
+}
+#atractivo_slider img {
+    width: 445px;
     height: 240px;
 }
 
 #featured_hotel .nivo-caption, 
-#featured_atractivos .nivo-caption, 
-#single_gallery .nivo-caption {
+#single_gallery .nivo-caption,
+#featured_atractivos .nivo-caption {
     font-size: 20px;
     font-weight: bold;
     color: #FFF;
@@ -695,10 +699,16 @@ input[type="text"], input[type="email"], textarea {
     height: 70px;
     @include linear-gradient(top, rgba(51,51,51,0) 0%, rgba(10,10,10,1) 100%);
 }
+#featured_atractivos .nivo-caption {
+    width: 415px;
+}
 
 #featured_hotel .nivo-caption p, 
 #featured_atractivos .nivo-caption p, 
 #single_gallery .nivo-caption p { margin: 33px 0px 0px 0px; }
+#featured_atractivos .nivo-caption p {
+    color: #FFF;
+}
 
 #featured_hotel .nivo-controlNav, 
 #featured_atractivos .nivo-controlNav, 
@@ -1014,7 +1024,7 @@ input[type="text"], input[type="email"], textarea {
  * Atractivos Category
  */
 .category-atractivos {
-    #featured_atractivos { margin-top: 15px; width: 471px; }
+    #featured_atractivos { margin-top: 15px; width: 445px; }
 
     .featured_atractivo {
         display: block;
@@ -1050,7 +1060,7 @@ input[type="text"], input[type="email"], textarea {
         margin-left: 20px!important;
 
         .places-list {
-            .skyscraper { left: 277px; }
+            .skyscraper { left: 283px; }
         }
     }
 

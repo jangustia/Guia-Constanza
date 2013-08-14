@@ -5,10 +5,12 @@
 		'orderby'        => 'rand'
 	));
 ?>
-				<section id="featured_atractivos">
+				<section id="featured_atractivos" class="featured_atractivo">
 					<div id="atractivo_slider" class="nivoSlider">
-					<?php while ($featured->have_posts()): $featured->the_post(); ?>
-						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail ('atractivo-featured', array ('title'=>get_the_title())); ?></a>
-					<?php endwhile; ?>
+						<?php while ($featured->have_posts()): $featured->the_post(); ?>
+							<a href="<?php the_permalink(); ?>">
+								<?php the_post_thumbnail ('atractivo-featured', array ('title'=>get_the_title())); ?>
+							</a>
+						<?php endwhile; ?>
 					</div>
 				</section>
