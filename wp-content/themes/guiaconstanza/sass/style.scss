@@ -1079,7 +1079,7 @@ input[type="text"], input[type="email"], textarea {
  * Atractivos Single
  */
 .single-gc_atractivos {
-    #side_content { 
+    #side_content {
         margin-left: 0px!important;
 
         .places-list {
@@ -1091,7 +1091,16 @@ input[type="text"], input[type="email"], textarea {
 
     #details {
         h2 { border-bottom: none; }
-        img { float: left; margin: 0px 10px 0px 0px; }
+
+        img {
+            float: left;
+            max-width: 446px;
+            padding: 10px;
+            border: solid 1px #CCC;
+            margin: 0px 10px 10px 0px;
+        }
+
+        p { font-size: 1.1em; }
     }
 
     .postmeta { 
@@ -1178,7 +1187,14 @@ input[type="text"], input[type="email"], textarea {
     margin-top: 15px;
     border-top: solid 1px #ececec;
 
-    img {margin: 0 .5em;}
+    img { margin: 0 .5em; }
+}
+
+.comments_title {
+    color: #A1420F;
+    font-size: 1.2em!important;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 // Ratings of the Hotel or Bar
@@ -1193,7 +1209,7 @@ input[type="text"], input[type="email"], textarea {
         padding: 1em;
         position: relative;
 
-        h4 {font-size: 1em; margin: 0;}
+        h4 { font-size: 1em; margin: 0; }
     }
 
     label {
@@ -1219,7 +1235,7 @@ input[type="text"], input[type="email"], textarea {
         }
     }
 
-    strong {font-size: 0.7em;}
+    strong { font-size: 0.7em; }
 }
 
 .rating_bar {
