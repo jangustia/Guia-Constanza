@@ -10,7 +10,7 @@ GUIACONSTANZA = {
 		constanza_lat      : 18.912133,
 		constanza_long     : -70.74337,
 		current_infowindow : null,
-		
+
 		dondeir_map: function (type) {
 			var constanza_pos = new google.maps.LatLng (GUIACONSTANZA.common.constanza_lat, GUIACONSTANZA.common.constanza_long),
 			    gmap          = new google.maps.Map (document.getElementById ('dondeir_map'), {
@@ -20,11 +20,11 @@ GUIACONSTANZA = {
 					overviewMapControl : true,
 					zoomControlOptions : {
 	  					style: google.maps.ZoomControlStyle.DEFAULT
-	  				},			    
+	  				},
 					center             : constanza_pos,
 					mapTypeId          : google.maps.MapTypeId.ROADMAP
 				});
-			
+
 			$('#marker_list li').each (function()
 			{
 				var marker_element = $(this),
@@ -42,7 +42,7 @@ GUIACONSTANZA = {
 				    		'<a class="infobox_home" href="'+ url +'">'+ title +'</a>' :
 				    		marker_element.html())
 				    });
-				
+
 				google.maps.event.addListener (marker, 'click', function() {
 					info_window.open (gmap, marker);
 					if (GUIACONSTANZA.common.current_infowindow)
@@ -51,7 +51,7 @@ GUIACONSTANZA = {
 				});
 			});
 		},
-		
+
 		main_feature: function () {
 			$('#hotel_slide').nivoSlider ({
 				effect         : 'fade',
@@ -60,20 +60,20 @@ GUIACONSTANZA = {
 				captionOpacity : 1.0
 			});
 		},
-		
+
 		slide_nav: function (container_selector, nav_selector, content_selector) {
 			var $nav = $(container_selector +' '+ nav_selector),
 			    $nav_buttons = $nav.find ('a');
-			
+
 			$nav_buttons.click (function() {
 				var $button    = $(this),
 				    $container = $button.closest (container_selector),
 				    $current   = $container.find (content_selector + '.active'),
 				    $new;
-				
+
 				$current.hide();
 				$current.removeClass ('active');
-				
+
 				if ($button.hasClass ('prev')) {
 					$new = $current.prev (content_selector);
 					if (!$new.length)
@@ -84,31 +84,31 @@ GUIACONSTANZA = {
 					if (!$new.length)
 						$new = $container.find (content_selector).first();
 				}
-				
+
 				$new.fadeIn (400, function() {
 					$(this).addClass ('active');
 				});
 			});
 		},
-		
+
 		open_weather_lightbox : function() {
 			var $lightbox = $('.lightbox');
 			var $details = $('.clima_details');
-			
+
 			$lightbox.fadeIn("fast", function() {
 				$details.fadeIn("fast");
 			});
-			
+
 			$(".close_btn").click(function(e) {
 				e.preventDefault();
 				GUIACONSTANZA.common.close_weather_lightbox();
 			});
 		},
-		
+
 		close_weather_lightbox : function() {
 			var $lightbox = $('.lightbox');
 			var $details = $('.clima_details');
-			
+
 			$details.fadeOut("fast", function() {
 				$lightbox.fadeOut();
 			});
@@ -119,7 +119,7 @@ GUIACONSTANZA = {
 		        if (response.authResponse) {
 		            GUIACONSTANZA.common.fb_insert_recommendation();
 		        } else {
-		            
+
 		        }
 		    });
 		},
@@ -166,7 +166,7 @@ GUIACONSTANZA = {
 								GUIACONSTANZA.common.paginate_recommendations();
 							},
 							error : function() {
-								
+
 							}
 						});
 					});
@@ -202,7 +202,7 @@ GUIACONSTANZA = {
 								return '<li>' + this.value + '</li>';
 							else
 								return '<li><a href="#">' + this.value + '</a></li>';
-						
+
 						case 'next': // >
 							return '<li><a href="#">&raquo;</a></li>';
 						case 'prev': // <
@@ -211,50 +211,50 @@ GUIACONSTANZA = {
 				}
 			});
 		},
-		
+
 		init : function() {
 			var $featured = $('#featured');
-			
+
 			if ($featured.length) {
 				GUIACONSTANZA.common.slide_nav ('#featured_bars', '.featured_arrows', '.slide');
 				GUIACONSTANZA.common.slide_nav ('#featured_posts', '.featured_arrows', '.slide');
 				GUIACONSTANZA.common.main_feature();
 			}
-			
+
 			$("#weather").click(function(e) {
 				e.preventDefault();
 				GUIACONSTANZA.common.open_weather_lightbox();
 			});
 		}
 	}, // end common object
-	
-	
+
+
 	//----
-	
-	
+
+
 	// !Home
 	home: {
 		init : function() {
 			GUIACONSTANZA.common.dondeir_map ('home');
 		}
 	}, // end home object
-	
-	
+
+
 	//----
-	
-	
+
+
 	// !Page
 	page: {
 		current_infowindow : null,
-		
+
 		init : function() {
 		},
-		
+
 		// !Donde Ir
 		page_id_24 : function() {
 			GUIACONSTANZA.common.dondeir_map ('dondeir');
 			$(".tweets_container").mCustomScrollbar();
-		}, 
+		},
 
 		// Recomendaciones
 		page_id_26 : function() {
@@ -302,11 +302,11 @@ GUIACONSTANZA = {
 			});
 		}
 	}, // end page object
-	
-	
+
+
 	//----
-	
-	
+
+
 	// !Category
 	category: {
 		init : function() {
@@ -321,11 +321,11 @@ GUIACONSTANZA = {
 			GUIACONSTANZA.common.slide_nav ('.we_recommend', '.recommend_nav', '.recommend_slide');
 		}
 	}, // end category object
-	
-	
+
+
 	//----
-	
-	
+
+
 	// !Single
 	single: {
 		single_marker_map : function (map_contain_id) {
@@ -338,7 +338,7 @@ GUIACONSTANZA = {
 					overviewMapControl : true,
 					zoomControlOptions : {
 	  					style: google.maps.ZoomControlStyle.SMALL
-	  				},			    
+	  				},
 					center             : marker_pos,
 					mapTypeId          : google.maps.MapTypeId.ROADMAP
 				}),
@@ -346,11 +346,11 @@ GUIACONSTANZA = {
 					position  : marker_pos,
 					map       : gmap,
 					title     : $('#details .org').text(),
-					icon      : 'wp-content/themes/guiaconstanza/images/gmap_icon.png',
+					icon      : 'http://guiaconstanza.com/wp-content/themes/guiaconstanza/images/gmap_icon.png',
 					animation : google.maps.Animation.DROP
 			  });
 		},
-		
+
 		init : function() {
 			$('#single_gallery').nivoSlider ({
 				effect         : 'fade',
@@ -361,11 +361,11 @@ GUIACONSTANZA = {
 
 			GUIACONSTANZA.common.slide_nav ('.we_recommend', '.recommend_nav', '.recommend_slide');
 		},
-		
+
 		category_hoteles : function() {
 			this.single_marker_map ('details_map');
 		},
-		
+
 		category_bares_y_restaurantes : function() {
 			this.single_marker_map ('details_map');
 		}
@@ -386,7 +386,7 @@ UTIL = {
       ns[controller][action]();
     }
   },
-  
+
 	action_from_body: function() {
 		var body        = $(document.body),
 		    con_classes = new Array ('home', 'page', 'category', 'single', 'search', 'archive'),
@@ -398,27 +398,27 @@ UTIL = {
 		    	controller : '',
 		    	action     : ''
 		    };
-		
+
 		for (i = 0; i < con_length; i++) {
 			if (body.hasClass (con_classes[i])) {
 				exec.controller = con_classes[i].replace (/-/g, '_');
 				break;
 			}
 		}
-		
+
 		for (i = 0; i < act_length; i++) {
 			if (body.hasClass (act_classes[i])) {
 				exec.action = act_classes[i].replace (/-/g, '_');
 				break;
 			}
 		}
-		
+
 		return exec;
 	},
 
 	init: function() {
 		var action_obj = UTIL.action_from_body();
-		
+
 		UTIL.exec ('common');
 		UTIL.exec (action_obj.controller);
 		UTIL.exec (action_obj.controller, action_obj.action);
