@@ -116,10 +116,10 @@ body {
     }
 
     .places-list {
-        position: relative; 
-        margin-top: 15px; 
+        position: relative;
+        margin-top: 15px;
         width: 260px;
-        
+
         ul {
             li { padding: 15px 0; }
         }
@@ -137,10 +137,10 @@ body {
     }
 
     .places-list {
-        .skyscraper { 
-            position: absolute; 
-            top: 0; 
-            left: 295px; 
+        .skyscraper {
+            position: absolute;
+            top: 0;
+            left: 295px;
         }
     }
 }
@@ -163,14 +163,14 @@ body {
 
     h3, h4 { color: #A1420F; }
     h3 {
-        font-size: 1.8em; 
-        margin: 0 0 .5em 0; 
+        font-size: 1.8em;
+        margin: 0 0 .5em 0;
         padding: 0;
     }
 
     section {
         &:last-child {
-            padding-right: 15em; 
+            padding-right: 15em;
             position: relative;
 
             .skyscraper { position: absolute; right: 0; top: 1em; }
@@ -384,10 +384,10 @@ input[type="text"], input[type="email"], textarea {
             }
         }
 
-        // Search Area 
+        // Search Area
         #search {
-            position: relative; 
-            top: 10px; 
+            position: relative;
+            top: 10px;
             float: right;
 
             ::-webkit-input-placeholder {
@@ -564,7 +564,7 @@ input[type="text"], input[type="email"], textarea {
 
     li:first-child {
         a { border-left: none; }
-    } 
+    }
     li:last-child {
         a { border-right: none; }
     }
@@ -580,14 +580,14 @@ input[type="text"], input[type="email"], textarea {
     margin: 0;
     padding: 0 0 7px!important;
 
-    li { 
+    li {
         display: inline;
         border-bottom: none!important;
         padding: 0px!important;
 
-        &:after { content: ' »'; } 
+        &:after { content: ' »'; }
         &:last-child:after { content: ''; }
-    }    
+    }
 }
 
 /**
@@ -668,11 +668,11 @@ input[type="text"], input[type="email"], textarea {
     .next { background-image: url('images/sideright.png'); }
 }
 
-#featured_hotel, #featured_atractivos { width: 400px; } 
+#featured_hotel, #featured_atractivos { width: 400px; }
 
-#hotel_slide, #atractivo_slider, #single_gallery { 
-    position: relative; 
-    height: 240px 
+#hotel_slide, #atractivo_slider, #single_gallery {
+    position: relative;
+    height: 240px
 }
 
 #hotel_slide img, #single_gallery img {
@@ -684,7 +684,7 @@ input[type="text"], input[type="email"], textarea {
     height: 240px;
 }
 
-#featured_hotel .nivo-caption, 
+#featured_hotel .nivo-caption,
 #single_gallery .nivo-caption,
 #featured_atractivos .nivo-caption {
     font-size: 20px;
@@ -703,15 +703,15 @@ input[type="text"], input[type="email"], textarea {
     width: 415px;
 }
 
-#featured_hotel .nivo-caption p, 
-#featured_atractivos .nivo-caption p, 
+#featured_hotel .nivo-caption p,
+#featured_atractivos .nivo-caption p,
 #single_gallery .nivo-caption p { margin: 33px 0px 0px 0px; }
 #featured_atractivos .nivo-caption p {
     color: #FFF;
 }
 
-#featured_hotel .nivo-controlNav, 
-#featured_atractivos .nivo-controlNav, 
+#featured_hotel .nivo-controlNav,
+#featured_atractivos .nivo-controlNav,
 #single_gallery .nivo-controlNav {
     position: absolute;
     top: 6px;
@@ -719,8 +719,8 @@ input[type="text"], input[type="email"], textarea {
     z-index: 999;
 }
 
-#featured_hotel .nivo-control, 
-#featured_atractivos .nivo-control, 
+#featured_hotel .nivo-control,
+#featured_atractivos .nivo-control,
 #single_gallery .nivo-control {
     background: url('images/rotator.png') no-repeat center;
     float: left;
@@ -730,8 +730,8 @@ input[type="text"], input[type="email"], textarea {
     height: 14px;
 }
 
-#featured_hotel .active, 
-#featured_atractivos .active, 
+#featured_hotel .active,
+#featured_atractivos .active,
 #single_gallery .active {
     background-image: url('images/hover_rotator.png');
 }
@@ -841,7 +841,7 @@ input[type="text"], input[type="email"], textarea {
     /**
      * Smaller 'Atractivos' list styling
      */
-    &.smaller { 
+    &.smaller {
         width: 230px;
 
         .circled {
@@ -1030,8 +1030,8 @@ input[type="text"], input[type="email"], textarea {
         display: block;
         position: relative;
         margin: 20px 0px 15px 0px;
-        box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);
-        border: solid 9px #FFF;
+        padding: 11px 11px 9px 11px;
+        border: solid 1px #dcdcdc;
 
         img { width: 445px; height: 252px; }
 
@@ -1055,8 +1055,8 @@ input[type="text"], input[type="email"], textarea {
 
     .places-list { width: 466px; }
 
-    #side_content { 
-        margin-top: 20px; 
+    #side_content {
+        margin-top: 20px;
         margin-left: 20px!important;
 
         .places-list {
@@ -1103,10 +1103,10 @@ input[type="text"], input[type="email"], textarea {
         p { font-size: 1.1em; }
     }
 
-    .postmeta { 
-        border-bottom: 1px dashed #CCC; 
-        padding-bottom: .3em; 
-        overflow: hidden; 
+    .postmeta {
+        border-bottom: 1px dashed #CCC;
+        padding-bottom: .3em;
+        overflow: hidden;
     }
 }
 
@@ -1121,12 +1121,12 @@ input[type="text"], input[type="email"], textarea {
  * Bares & Restaurantes
  * (single.php)
  ******************************/
-#details { 
+#details {
     margin-top: 15px;
 
     h3 {
-        color: #A1420F; 
-        font-size: 1.2em; 
+        color: #A1420F;
+        font-size: 1.2em;
         margin: 2em 0 0;
     }
 
@@ -1147,8 +1147,8 @@ input[type="text"], input[type="email"], textarea {
         span { display: none; }
     }
 
-    #featured_hotel .nivo-controlNav, 
-    #featured_atractivos .nivo-controlNav, 
+    #featured_hotel .nivo-controlNav,
+    #featured_atractivos .nivo-controlNav,
     #single_gallery .nivo-controlNav {
         right: 30px;
     }
@@ -1290,7 +1290,7 @@ input[type="text"], input[type="email"], textarea {
 
         strong { color: #a0410d; }
     }
-    
+
     .all_recomendations {
         list-style: none;
         margin: 0px;
@@ -1298,7 +1298,7 @@ input[type="text"], input[type="email"], textarea {
 
         li {
             display: block;
-            border: 0; 
+            border: 0;
             position: relative;
             margin-bottom: 20px;
 
@@ -1330,9 +1330,9 @@ input[type="text"], input[type="email"], textarea {
                 }
             }
 
-            .box { 
+            .box {
                 margin-left: 67px;
-                padding: 8px; 
+                padding: 8px;
                 border-radius: 5px;
                 box-shadow: none;
                 background: transparent url(images/comment_bg.jpg) repeat;
@@ -1342,9 +1342,9 @@ input[type="text"], input[type="email"], textarea {
                     margin: 0px 0px 6px 0px;
                 }
 
-                p { 
+                p {
                     color: #212121;
-                    margin: 0px 0px 6px 0px; 
+                    margin: 0px 0px 6px 0px;
                 }
                 span { color: #345901; font-size: 0.9em; }
             }
@@ -1432,7 +1432,7 @@ input[type="text"], input[type="email"], textarea {
     }
 
     section {
-        margin: 0px 15px; 
+        margin: 0px 15px;
         width: 430px;
         float: left;
 
@@ -1445,10 +1445,10 @@ input[type="text"], input[type="email"], textarea {
         p {font-size: 1.1em;}
     }
 
-    .tweets_container { 
+    .tweets_container {
         width: 430px;
         height: 160px;
-        clear: both; 
+        clear: both;
     }
 
     #constanza_tweets {
@@ -1505,7 +1505,7 @@ input[type="text"], input[type="email"], textarea {
     #subheader {
         span { background-image: url('images/somos_icon.png'); }
     }
-} 
+}
 
 .page-id-76 {
     #subheader {
@@ -1535,12 +1535,12 @@ input[type="text"], input[type="email"], textarea {
 
         input[type="submit"] { float: right; }
     }
-} 
+}
 .page-id-257 {
     #subheader {
         span { background-image: url('images/somos_icon.png'); }
     }
-} 
+}
 
 #contact_form {
     input[type="text"] { margin-bottom: 20px; }
@@ -1589,8 +1589,8 @@ input[type="text"], input[type="email"], textarea {
         margin: 0;
         padding: 0;
         float: left;
-        border-right: 1px dotted #999; 
-        margin-right: 2.3em; 
+        border-right: 1px dotted #999;
+        margin-right: 2.3em;
         padding-right: 3.3em;
     }
 
@@ -1616,13 +1616,13 @@ input[type="text"], input[type="email"], textarea {
         ul {
             &:first-child { padding-left: 1.6em; }
         }
-    } 
-    
+    }
+
     aside {
         float: left;
 
         ul {
-            margin-right: 0; 
+            margin-right: 0;
             border:0;
 
             li {
@@ -1752,8 +1752,8 @@ input[type="text"], input[type="email"], textarea {
     .login_area {
         padding: 20px 40px 40px 40px!important;
 
-        p { 
-            color: #737373; 
+        p {
+            color: #737373;
             text-align: center;
             font-size: 1.3em;
             margin-bottom: 30px;
@@ -1820,11 +1820,11 @@ input[type="text"], input[type="email"], textarea {
 
         textarea { margin-bottom: 15px; }
 
-        h5, p { 
+        h5, p {
             width: 390px;
             float: left;
-            margin: 0; 
-            padding: 0; 
+            margin: 0;
+            padding: 0;
         }
 
         .please_no { margin-top: 15px; }
